@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+  padding: 1;
+}
+header{
+  background-color: SteelBlue;
+  height: 70px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.topo{
+  width: 100%;
+  font-size: 40px;
+  font-family: "Verdana";
+  letter-spacing: 10px;
+}
+.form{
+  margin-left: 40%;
+  padding-top: 20%;
+  font-size: 25px;
+  font-family: "Verdana";
+}
+
+.form input{
+  font-size: 19px;
+  width: 250px;
+  border: 2px solid;
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.form label{
+
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  background: SteelBlue;
+  width: 100%;
+  padding-top: 40px;
+  text-align: center;
+  font-size: 22px;
+}

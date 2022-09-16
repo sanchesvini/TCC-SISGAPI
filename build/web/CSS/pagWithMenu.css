@@ -1,0 +1,64 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07/09/2022, 16:00:32
+    Author     : vinic
+*/
+a{
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 20px 5px;
+}
+
+a:hover{
+  background-color: SteelBlue;
+  color: black;
+}
+
+label{
+  padding: 15px;
+  position: absolute;
+  z-index: 1;
+}
+
+ul{
+  list-style: none;
+  top: 70px;
+  position: absolute;
+  padding-left: 0
+}
+
+img{
+  width: 40px;
+}
+img:hover{
+  cursor: pointer
+}
+
+input[type="checkbox"]{
+  display: none;
+}
+
+nav.active {
+  left: 0;
+}
+
+nav{
+  border: 1px;
+  width: 300px;
+  height: 100%;
+  left: -350px;
+  position: absolute;
+  background-color: blue;
+  padding-left: 50px
+}
+
+input[type="checkbox"]:checked ~ nav{
+  transform: translateX(350px);
+}
+
+

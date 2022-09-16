@@ -1,0 +1,50 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14/09/2022, 13:54:58
+    Author     : vinic
+*/
+
+/*PARTE DO HEADER*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.topo{
+    background-color: SteelBlue;
+    height: 20%;
+    font-weight: bold;
+    font-size: 2.5em;
+    font-family: "Verdana";
+    padding: 3%;
+    letter-spacing: 0.2em;
+}
+/*PARTE DO FORMULÁRIO (DE TODOS)*/
+.form{
+    margin: auto;
+    font-size: 25%;
+    font-family: "Verdana";
+    grid-area: 2 / 2 / 3 / 3;
+}
+.form input{
+    width: 300px;
+    border: 2px solid;
+    display: inline-block;
+    padding-left: 10px;
+    height: 40px;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+/*ESPECIFICO CADASTROO PROJETOS*/
+.formCadProj{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: px;
+    grid-row-gap: 0px;
+}
