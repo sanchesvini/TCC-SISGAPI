@@ -122,6 +122,25 @@ public class ProjetoDAO {
         return null;
         
     }
+    public Projeto getProjetoByIdProjeto(int id_projeto) throws SQLException{
+        
+        String sql = "SELECT id, nome, descricao, tipo, id_curso, projeto, tipo_arquivo FROM PROJETOS WHERE id = ?";
+        
+        Connection connection = new ConnectionFactory().getConnection();
+        PreparedStatement stmt = connection.prepareStatement(sql);
+
+        stmt.setInt(1, id_projeto);
+
+        ResultSet rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            Projeto p = new Projeto(rs.getInt("ID"), rs.getString("nome"), rs.getString("descricao"), rs.getInt("TIPO"), rs.getBytes("PROJETO"), rs.getString("TIPO_ARQUIVO"));
+            return p;
+        }
+
+        return null;
+        
+    }
     
     public void anexarProjeto(byte[] trabalho, String tipo, int id_projeto) throws SQLException{
         String sql = "UPDATE PROJETOS SET projeto = ? , tipo_arquivo = ? WHERE id = ?";

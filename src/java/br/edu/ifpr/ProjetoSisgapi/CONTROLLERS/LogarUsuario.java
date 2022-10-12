@@ -50,7 +50,7 @@ public class LogarUsuario extends HttpServlet {
 
                 HttpSession sessao = request.getSession(true);
                 sessao.setAttribute("autenticado", u);
-                System.out.println(u.getId_curso());
+                
 
                
            

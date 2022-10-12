@@ -54,10 +54,10 @@
                 <fieldset>
                     <legend>Trabalho em andamento</legend>
                     <div>
-                        <form method="get" action="DownloadProjeto?id={projeto.id}" enctype="multipart/form-data">
+                        <form method="post" action="DownloadProjeto?id=${projeto.id}">
                             ICONE ARQUIVO
                             
-                            <input type="submit" name="enviar" value="Download" >
+                            <button type="submit" > Download</button>
                             
                             
                         </form>

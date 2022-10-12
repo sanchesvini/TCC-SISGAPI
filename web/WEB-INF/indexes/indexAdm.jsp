@@ -55,7 +55,7 @@
                     <li> <a href="AgendarBanca">Agendar Banca</a></li>
                     
                     <li> <a href="PlanejarCronograma">Planejar Cronograma</a></li>
-                    <li> <a href="PlanejarCronograma">Planejar Cronograma</a></li>
+                    <li> <a href="GerenciarProjetos">Gerenciar Projetos</a></li>
                 </ul>
             </nav>
 
