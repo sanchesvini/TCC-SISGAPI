@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="fo" tagdir="/WEB-INF/tags/" %>
+
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
@@ -75,9 +77,7 @@
     </div>
 
 
-    <footer>
-        Copywrite SISGAPI Â© 2022 - Todos os direitos reservados
-    </footer>
+    <fo:footer></fo:footer>
 </div>
 </body>
 
