@@ -40,7 +40,8 @@ public class CadastrarProjeto extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        ArrayList<Long> usuarios = new ArrayList<>();
+        ArrayList<Long> estudantes = new ArrayList<>();
+        ArrayList<Long> orientadores = new ArrayList<>();
         Long estudante11, estudante22, estudante33, estudante44, orientador11, orientador22, orientador33;
         String estudante1, estudante2, estudante3, estudante4, orientador1, orientador2, orientador3;
         String nome_projeto, descricao;
@@ -52,19 +53,21 @@ public class CadastrarProjeto extends HttpServlet {
         estudante4 = request.getParameter("estudante4");
         
         if(!estudante1.equals("")){
-            estudante11 = Long.parseLong(request.getParameter("estudante1"));
-            usuarios.add(estudante11);
+            estudante11 = Long.parseLong(estudante1);
+            estudantes.add(estudante11);
         }
-        else if(!estudante1.equals("")){
-            estudante22 = Long.parseLong(request.getParameter("estudante2"));
-            usuarios.add(estudante22);
-        }else if(!estudante1.equals("")){
-            estudante33 = Long.parseLong(request.getParameter("estudante3"));
-            usuarios.add(estudante33);
+        else if(!estudante2.equals("")){
+            estudante22 = Long.parseLong(estudante2);
+            estudantes.add(estudante22);
+        }else if(!estudante3.equals("")){
+            estudante33 = Long.parseLong(estudante3);
+            estudantes.add(estudante33);
         }
         else if(!estudante4.equals("")){
-            estudante44 = Long.parseLong(request.getParameter("estudante4"));
-            usuarios.add(estudante44);
+            estudante44 = Long.parseLong(estudante4);
+            estudantes.add(estudante44);
+        }else{
+            System.out.println("Nenhum estudante informado.");
         }
         
         
@@ -73,15 +76,17 @@ public class CadastrarProjeto extends HttpServlet {
         orientador3 = request.getParameter("orientador3");
         
         if(!orientador1.equals("")){
-            orientador11 = Long.parseLong(request.getParameter("orientador1"));
-            usuarios.add(orientador11);
+            orientador11 = Long.parseLong(orientador1);
+            orientadores.add(orientador11);
         }else if(!orientador2.equals("")){
-            orientador22 = Long.parseLong(request.getParameter("orientador2"));
-            usuarios.add(orientador22);
+            orientador22 = Long.parseLong(orientador2);
+            orientadores.add(orientador22);
         }
         else if(!orientador3.equals("")){
-            orientador33 = Long.parseLong(request.getParameter("orientador3"));
-            usuarios.add(orientador33);
+            orientador33 = Long.parseLong(orientador3);
+            orientadores.add(orientador33);
+        }else{
+            System.out.println("Nenhum orientador informado.");
         }
         
         
@@ -96,13 +101,15 @@ public class CadastrarProjeto extends HttpServlet {
         Usuario adm = (Usuario) sessao.getAttribute("autenticado");
         id_curso = adm.getId_curso();
         
-        Projeto projeto = new Projeto(nome_projeto, descricao, tipo);
+        Projeto projeto = new Projeto(nome_projeto, descricao, tipo, id_curso);
   
         
         ProjetoModel pmodel = new ProjetoModel();
+        
+  
         try {
             pmodel.createProject(projeto);
-            pmodel.linkProject(projeto, usuarios);
+            pmodel.linkProject(projeto, estudantes, orientadores);
             response.sendRedirect("WEB-INF/indexes/indexAdm.jsp");
         } catch (SQLException ex) {
             Logger.getLogger(CadastrarProjeto.class.getName()).log(Level.SEVERE, null, ex);

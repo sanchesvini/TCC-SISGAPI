@@ -33,4 +33,25 @@ public class UsuarioModel {
         return dao.login(login, senha);
         
     }
+    
+    public boolean isEstudante(Usuario u){
+        if(u.getTipo() == 3){
+            return true;
+        }
+        return false;
+        
+    }
+    
+    public boolean isOrientador(Usuario u){
+        if(u.getTipo() == 2){
+            return true;
+        }
+        return false;
+    }
+    public boolean isAdm(Usuario u){
+        if(u.getTipo() == 1){
+            return true;
+        }
+        return false;
+    }
 }

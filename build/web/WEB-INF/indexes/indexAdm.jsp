@@ -15,6 +15,7 @@
         <link rel="stylesheet" type="text/css" href="./CSS/indexes.css">
     </head>
     <body>
+        
         <div class="sis">
             <header>
                 <input type="checkbox" id="check">
@@ -26,7 +27,7 @@
                 <div id="infos-usuario">
                     <img class="icons" src="./CSS/do-utilizador.png">
                     <div>
-                        ${autenticado.nome} </br> 
+                        ${autenticado.nome} <br> 
                         <c:choose>
                             <c:when test="${autenticado.tipo == 1}">
                                 Administrador
@@ -51,6 +52,10 @@
                     <li><a href="#"> cronograma</a></li>
                     <li> <a href="CadastrarUsuario">cadastrar novo usuário</a></li>
                     <li> <a href="CadastrarProjeto">cadastrar novo projeto</a></li>
+                    <li> <a href="AgendarBanca">Agendar Banca</a></li>
+                    
+                    <li> <a href="PlanejarCronograma">Planejar Cronograma</a></li>
+                    <li> <a href="PlanejarCronograma">Planejar Cronograma</a></li>
                 </ul>
             </nav>
 

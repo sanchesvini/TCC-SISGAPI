@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html>
@@ -64,35 +65,182 @@
     <body>
         <header>
             <div class="topo"> SISGAPI </div>
-            <div class="entrar"> <button type="button" name="button"><a href="login.html">Entrar</a></button></div>
+
         </header>
         <table>
             <tr>
-                <th>Alunos</th>
-                <th>Projeto</th>
-                <th>Banca</th>
-                <th>Data</th>
-                <th>Hora</th>
-                <th>Local</th>
+                <th>Atividade</th>
+                <th>Janeiro</th>
+                <th>Fevereiro</th>
+                <th>Março</th>
+                <th>Abril</th>
+                <th>Maio</th>
+                <th>Junho</th>
+                <th>Julho</th>
+                <th>Agosto</th> 
+                <th>Setembro</th> 
+                <th>Outubro</th>
+                <th>Novembro</th> 
+                <th>Dezembro</th>
 
             </tr>
-            <c:forEach varStatus="status" var="" items="${}">
-                <tr>
-                    <td>${}</td>
-                    <td>${}</td>
-                    <td>${}</td>
-                    <td>${}</td>
-                    <td>${}</td>
-                    <td>${}</td>
-                    <td>${}</td>
-                </tr>
+            <c:forEach varStatus="status" var="atividade" items="${atividades}">
+                <c:forEach varStatus="status" var="mes" items="${meses}">
+                    <tr>
+                        <td>${atividade.atividade}</td>
+                        <td>
+                            <c:choose>
+
+                                <c:when test="${mes == 01}">
+
+                                    ${atividade.prazo}
+
+                                </c:when>
+
+
+                            </c:choose>
+                        </td>
+                        <td>
+                            <c:choose>
+
+                                <c:when test="${mes == 02}">
+
+                                    ${atividade.prazo}
+
+                                </c:when>
+
+
+                            </c:choose>
+                        </td>
+                        <td>
+                            <c:choose>
+
+                                <c:when test="${mes == 03}">
+
+                                    ${atividade.prazo}
+
+                                </c:when>
+
+
+                            </c:choose>
+                        </td>
+                        <td>
+                            <c:choose>
+
+                                <c:when test="${mes == 04}">
+
+                                    ${atividade.prazo}
+
+                                </c:when>
+
+
+                            </c:choose>
+                        </td>
+                        <td>
+                            <c:choose>
+
+                                <c:when test="${mes == 05}">
+
+                                    ${atividade.prazo}
+
+                                </c:when>
+
+
+                            </c:choose>
+                        </td>
+                        <td>
+                            <c:choose>
+
+                                <c:when test="${mes == 06}">
+
+                                    ${atividade.prazo}
+
+                                </c:when>
+
+
+                            </c:choose>
+                        </td>
+                        <td>
+                            <c:choose>
+
+                                <c:when test="${mes == 07}">
+
+                                    ${atividade.prazo}
+
+                                </c:when>
+
+
+                            </c:choose>
+                        </td>
+                        <td>
+                            <c:choose>
+
+                                <c:when test="${mes == 08}">
+
+                                    ${atividade.prazo}
+
+                                </c:when>
+
+
+                            </c:choose>
+                        </td>
+                        <td>
+                            <c:choose>
+
+                                <c:when test="${mes == 09}">
+
+                                    ${atividade.prazo}
+
+                                </c:when>
+
+
+                            </c:choose>
+                        </td>
+                        <td>
+                            <c:choose>
+
+                                <c:when test="${mes == 10}">
+
+                                    ${atividade.prazo}
+
+                                </c:when>
+
+
+                            </c:choose>
+                        </td>
+                        <td>
+                            <c:choose>
+
+                                <c:when test="${mes == 11}">
+
+                                    ${atividade.prazo}
+
+                                </c:when>
+
+
+                            </c:choose>
+                        </td>
+                        <td>
+                            <c:choose>
+
+                                <c:when test="${mes == 12}">
+
+                                    ${atividade.prazo}
+
+                                </c:when>
+
+
+                            </c:choose>
+                        </td>
+
+                    </tr>
+                </c:forEach>
+
             </c:forEach>
         </table>
         <footer>
             Copywrite SISGAPI  2022 - Todos os direitos reservados
-            <div class="button">
-                <button type="button" name="button"><a href="index.html">Voltar</a></button>
-            </div>
+
         </footer>
     </body>
 </html>

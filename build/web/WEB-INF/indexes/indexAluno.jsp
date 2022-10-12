@@ -47,6 +47,9 @@
                     <li><a href="#"> apoio ao projeto</a></li>
                     <li><a href="#"> cronograma</a></li>
                     <li> <a href="cadastro.html">Cadastro</a></li>
+                    <li> <a href="PlanejarCronograma">Planejar Cronograma</a></li>
+                    <li> <a href="AbrirCronograma">Ver Cronograma</a></li>
+                    <li> <a href="AdicionarProjeto">Adicionar projeto</a></li>
                 </ul>
             </nav>
 

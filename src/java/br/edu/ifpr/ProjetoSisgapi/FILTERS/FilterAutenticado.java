@@ -41,7 +41,7 @@ public class FilterAutenticado implements Filter {
             res.sendRedirect("index.html");
         }else{
             filter.doFilter(request, response);
-            System.out.println("CHEGUEI AQUI================================");
+            System.out.println("CHEGUEI AQUI================================ FILTER AUTENTICADO");
 
         }
 

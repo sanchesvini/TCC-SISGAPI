@@ -4,6 +4,9 @@
  */
 package br.edu.ifpr.ProjetoSisgapi.ENTITIES;
 
+import br.edu.ifpr.ProjetoSisgapi.DAOS.UsuarioDAO;
+import java.sql.SQLException;
+
 /**
  *
  * @author usuario
@@ -32,6 +35,9 @@ public class Usuario {
         this.email = email;
         this.senha = senha;
         this.id_curso = id_curso;
+    }
+
+    public Usuario() {
     }
 
     public Usuario(int id, String nome, String email, int tipo, int id_curso) {
@@ -92,4 +98,28 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }  
+    
+    UsuarioDAO udao = new UsuarioDAO();
+    
+    public boolean isOrientador(Long matricula) throws SQLException {
+
+        Usuario user = udao.getUserForMatricula(matricula);
+        if (user.getTipo() == 2) {
+            return true;
+        }
+
+        return false;
+
+    }
+
+    public boolean isEstudante(Long matricula) throws SQLException {
+        
+        Usuario user = udao.getUserForMatricula(matricula);
+        if (user.getTipo() == 3) {
+            return true;
+        }
+
+        return false;
+
+    }
 }
