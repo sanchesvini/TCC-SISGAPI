@@ -25,38 +25,43 @@ import javax.servlet.http.HttpSession;
  *
  * @author vinic
  */
-@WebServlet(name = "DownloadProjeto", urlPatterns = {"/DownloadProjeto"})
-public class DownloadProjeto extends HttpServlet {
+@WebServlet(name = "GerenciarProjetos", urlPatterns = {"/GerenciarProjetos"})
+public class GerenciarProjetos extends HttpServlet {
 
+   
+
+   
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        HttpSession sessao = request.getSession();
+ 
+        Usuario u = (Usuario) sessao.getAttribute("autenticado");
+        ProjetoModel pmodel = new ProjetoModel();
+        try {
+            ArrayList<Projeto> projetos = pmodel.getAllProjetosByIdCurso(u.getId_curso());
+            System.out.println(projetos.get(0));
+            
+            request.setAttribute("curso", u.getId_curso());
+            request.setAttribute("projetos", projetos);
+            request.getRequestDispatcher("WEB-INF/gerenciarProjetos.jsp").forward(request, response);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(GerenciarProjetos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+     
+        
     }
 
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int id_projeto = Integer.parseInt(request.getParameter("id"));
-
-        ProjetoModel model = new ProjetoModel();
-
-        try {
-            //adm tem acesso a todos os projetos do curso que ele é adm 
-            HttpSession sessao = request.getSession();
-
-            Usuario u = (Usuario) sessao.getAttribute("autenticado");
-
-            Projeto p = model.getProjetoByIdProjeto(id_projeto);
-
-            response.setContentType(p.getTipo_arquivo());
-            response.getOutputStream().write(p.getProjeto());
-            
-            response.sendRedirect("GerenciarProjeto");
-
-        } catch (SQLException ex) {
-            Logger.getLogger(DownloadProjeto.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
     }
+
+  
 
 }
