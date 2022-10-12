@@ -43,6 +43,8 @@ public class DownloadProjeto extends HttpServlet {
             Usuario u = (Usuario) sessao.getAttribute("autenticado");
             ArrayList<Projeto> projetos = model.getAllProjetosByIdCurso(u.getId_curso());
             
+            //criando uma nova funcionalidade na branch "testando-branch"
+            
             response.setContentType(p.getTipo_arquivo);
             response.getOutputStream().write(u.getProjeto());
             
