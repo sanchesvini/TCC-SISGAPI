@@ -55,9 +55,7 @@
     </div>
 
 
-    <footer>
-        Copywrite SISGAPI Â© 2022 - Todos os direitos reservados
-    </footer>
+    <fo:footer></fo:footer>
 </div>
 </body>
 
