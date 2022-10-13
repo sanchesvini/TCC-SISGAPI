@@ -85,13 +85,13 @@
 
             </tr>
             <c:forEach varStatus="status" var="atividade" items="${atividades}">
-                <c:forEach varStatus="status" var="mes" items="${meses}">
+                
                     <tr>
-                        <td>${atividade.atividade}</td>
+                        <td>${atividade.atividade} ${atividade.prazo.month}</td>
                         <td>
                             <c:choose>
 
-                                <c:when test="${mes == 01}">
+                                <c:when test="${atividade.prazo.month == 0}">
 
                                     ${atividade.prazo}
 
@@ -103,7 +103,7 @@
                         <td>
                             <c:choose>
 
-                                <c:when test="${mes == 02}">
+                                <c:when test="${atividade.prazo.month == 1}">
 
                                     ${atividade.prazo}
 
@@ -115,7 +115,7 @@
                         <td>
                             <c:choose>
 
-                                <c:when test="${mes == 03}">
+                                <c:when test="${atividade.prazo.month == 2}">
 
                                     ${atividade.prazo}
 
@@ -127,7 +127,7 @@
                         <td>
                             <c:choose>
 
-                                <c:when test="${mes == 04}">
+                                <c:when test="${atividade.prazo.month == 3}">
 
                                     ${atividade.prazo}
 
@@ -139,7 +139,7 @@
                         <td>
                             <c:choose>
 
-                                <c:when test="${mes == 05}">
+                                <c:when test="${atividade.prazo.month == 4}">
 
                                     ${atividade.prazo}
 
@@ -151,7 +151,7 @@
                         <td>
                             <c:choose>
 
-                                <c:when test="${mes == 06}">
+                                <c:when test="${atividade.prazo.month == 5}">
 
                                     ${atividade.prazo}
 
@@ -163,7 +163,7 @@
                         <td>
                             <c:choose>
 
-                                <c:when test="${mes == 07}">
+                                <c:when test="${atividade.prazo.month == 6}">
 
                                     ${atividade.prazo}
 
@@ -175,7 +175,7 @@
                         <td>
                             <c:choose>
 
-                                <c:when test="${mes == 08}">
+                                <c:when test="${atividade.prazo.month == 7}">
 
                                     ${atividade.prazo}
 
@@ -187,7 +187,7 @@
                         <td>
                             <c:choose>
 
-                                <c:when test="${mes == 09}">
+                                <c:when test="${atividade.prazo.month == 8}">
 
                                     ${atividade.prazo}
 
@@ -199,7 +199,7 @@
                         <td>
                             <c:choose>
 
-                                <c:when test="${mes == 10}">
+                                <c:when test="${atividade.prazo.month == 9}">
 
                                     ${atividade.prazo}
 
@@ -211,7 +211,7 @@
                         <td>
                             <c:choose>
 
-                                <c:when test="${mes == 11}">
+                                <c:when test="${atividade.prazo.month == 10}">
 
                                     ${atividade.prazo}
 
@@ -223,7 +223,7 @@
                         <td>
                             <c:choose>
 
-                                <c:when test="${mes == 12}">
+                                <c:when test="${atividade.prazo.month == 11}">
 
                                     ${atividade.prazo}
 
@@ -234,7 +234,7 @@
                         </td>
 
                     </tr>
-                </c:forEach>
+         
 
             </c:forEach>
         </table>

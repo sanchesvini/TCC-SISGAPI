@@ -31,7 +31,7 @@ public class AtividadeModel {
        
     }
     
-    public int getMesAtividade(Atividade atv){
+        public int getMesAtividade(Atividade atv){
         
         Date prazo = atv.getPrazo();
         
