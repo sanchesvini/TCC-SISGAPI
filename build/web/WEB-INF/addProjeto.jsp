@@ -1,39 +1,19 @@
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="tags" tagdir="/WEB-INF/tags/" %>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
         <title>Adicionar Projeto</title>
-        <!--        <link rel="stylesheet" type="text/css" href="pagcommenu.css">
-                <link rel="stylesheet" type="text/css" href="CSS/addProjeto.css">-->
-        <!-- CSS only -->
-        <!-- JavaScript Bundle with Popper -->
+        <link rel="stylesheet" type="text/css" href="CSS/cssGeral.css">
+        
         <script src="https://unpkg.com/phosphor-icons"></script>
         
     </head>
     <body>
         <div class="sis">
-            <header>
-                <input type="checkbox" id="check">
-                <label for="check">
-                    <img src="menubotao.png" onclick="displayMenu()">
-                </label>
-                <div class="topo"> SISGAPI </div>
-            </header>
-        </div>
-        <!--
-            <nav id="menu" class="active2">
-              <ul>
-                <li> <a href="index.html">meu projeto</a></li>
-                <li><a href="#"> atividades</a></li>
-                <li> <a href="#"> documentos</a></li>
-                <li><a href="#"> apoio ao projeto</a></li>
-                <li><a href="#"> cronograma</a></li>
-                <li> <a href="cadastro.html">Cadastro</a></li>
-              </ul>
-            </nav>
-        -->              
+            <tags:header> </tags:header>        
        
 
             <h3>${projeto.nome}</h3>

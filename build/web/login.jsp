@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<%@taglib prefix="fo" tagdir="/WEB-INF/tags/" %>
+<%@taglib prefix="tags" tagdir="/WEB-INF/tags/" %>
 
 <!DOCTYPE html>
 <html>
@@ -36,7 +36,7 @@
                 </form>
             </div>
         </div>
-        <fo:footer></fo:footer>
+        <tags:footer></tags:footer>
     </body>
 
 </html>
