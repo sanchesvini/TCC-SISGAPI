@@ -10,7 +10,7 @@
   <head>
     <meta charset="utf-8">
     <title>Cadastrar</title>
-    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" type="text/css" href="CSS/tudo.css">
   </head>
   <body>
     <header>

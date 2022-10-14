@@ -12,6 +12,7 @@
         <!-- CSS only -->
         <!-- JavaScript Bundle with Popper -->
         <script src="https://unpkg.com/phosphor-icons"></script>
+           <link rel="stylesheet" type="text/css" href="CSS/tudo.css">
         
     </head>
     <body>

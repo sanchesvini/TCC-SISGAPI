@@ -2,15 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/WEB-INF/projetoestudante.jsp</file>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/DAOS/ProjetoDAO.java</file>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/ENTITIES/Projeto.java</file>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/CSS/pagWithMenu.css</file>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/WEB-INF/indexes/indexAdm.jsp</file>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/CONTROLLERS/DownloadProjeto.java</file>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/WEB-INF/tags/footer.tag</file>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/MODELS/ProjetoModel.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
