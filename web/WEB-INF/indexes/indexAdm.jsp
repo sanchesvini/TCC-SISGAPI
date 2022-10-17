@@ -11,7 +11,7 @@
     <head>
         <meta charset="utf-8">
         <title>Início</title>
-        <link rel="stylesheet" type="text/css" href="./CSS/pagWithMenu.css">
+        <link rel="stylesheet" type="text/css" href="./CSS/tudo.css">
         <link rel="stylesheet" type="text/css" href="./CSS/indexes.css">
     </head>
     <body>

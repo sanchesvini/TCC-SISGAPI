@@ -11,8 +11,9 @@ and open the template in the editor.
 /*PARTE DO HEADER*/
 
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 .topo{
     background-color: SteelBlue;
@@ -23,7 +24,7 @@ and open the template in the editor.
     padding: 3%;
     letter-spacing: 0.2em;
 }
-/*PARTE DO FORMULÁRIO (DE TODOS)*/
+/*PARTE DO FORMULÁRIO (DE TODOS)
 .form{
     margin: auto;
     font-size: 25%;
@@ -40,11 +41,84 @@ and open the template in the editor.
     font-size: 1rem;
     border-radius: 5px;
 }
-/*ESPECIFICO CADASTROO PROJETOS*/
+/*ESPECIFICO CADASTROO PROJETOS
 .formCadProj{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: px;
     grid-row-gap: 0px;
+}*/
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+.corpo {
+    align-self: center;
+    width: 50%;
+    margin: 20px 0;
+}
+
+
+footer {
+  bottom: 0;
+  background: SteelBlue;
+  width: 100%;
+  padding-top: 40px;
+  text-align: center;
+  font-size: 22px;
+}
+
+/*CSS MENU*/
+a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 20px 5px;
+}
+
+a:hover {
+    background-color: SteelBlue;
+    color: black;
+}
+
+label {
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+}
+
+ul {
+    list-style: none;
+    top: 70px;
+    position: absolute;
+    padding-left: 0
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+nav.active {
+    left: 0;
+}
+
+nav {
+    border: 1px;
+    width: 40vh;
+    height: 100vh;
+    left: -350px;
+    position: absolute;
+    background-color: blue;
+    padding-left: 50px;
+    top: 0;
+
+    transition: left 1s;
+}
+
+input[type="checkbox"]:checked~nav {
+    transform: translateX(10%);
 }
