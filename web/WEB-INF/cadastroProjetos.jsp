@@ -10,9 +10,8 @@
     <head>
         <meta charset="utf-8">
         <title>cadastro de Projetos</title>
-
-        <link rel="stylesheet" type="text/css" href="CSS/tudo.css">
         <link rel="stylesheet" type="text/css" href="CSS/cadastroProjetos2.css">
+        <link rel="stylesheet" type="text/css" href="CSS/tudo.css">
 
     </head>
 
