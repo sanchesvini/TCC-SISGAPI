@@ -4,19 +4,42 @@
     Author     : vinic
 --%>
 
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Cadastrar</title>
-    <link rel="stylesheet" type="text/css" href="">
-  </head>
-  <body>
-    <header>
-    <div class="topo"> SISGAPI </div>
-    </header>
-    <div class="form">
+    <head>
+        <meta charset="utf-8">
+        <title>cadastro de Projetos</title>
+
+        <link rel="stylesheet" type="text/css" href="CSS/tudo.css">
+        <link rel="stylesheet" type="text/css" href="CSS/cadastroProjetos2.css">
+
+    </head>
+
+    <body>
+        <div class="page">
+            <header>
+                <nav id="menu" class="active2">
+                    <ul>
+                        <li> <a href="CadastrarProjeto">meu projeto</a></li>
+                        <li><a href="#"> atividades</a></li>
+                        <li> <a href="#"> documentos</a></li>
+                        <li><a href="#"> apoio ao projeto</a></li>
+                        <li><a href="#"> cronograma</a></li>
+                        <li> <a href="cadastro.html">Cadastro</a></li>
+                    </ul>
+                </nav>
+                <input type="checkbox" id="check">
+                <label for="check">
+                    <i class="ph-list" onclick="displayMenu()"></i>
+                </label>
+                <div class="topo"> SISGAPI </div>
+
+            </header>
+
+            <div class="corpo">
+                <div class="form">
       <form action="CadastrarUsuario" method="post">
           <p> <label for="inome"> Nome: </label>
           <input type="text" size="40px" name="nome" id="inome" placeholder="Digite seu nome completo">
@@ -36,9 +59,21 @@
          <input type="submit" name="enviar" value="Enviar">
       </form>
     </div>
+                    </div>
+                
 
-    <footer>
-      Copywrite SISGAPI  2022 - Todos os direitos reservado
-    </footer>
-  </body>
+
+            </div>
+            <footer>
+                Copywrite SISGAPI © 2022 - Todos os direitos reservados
+            </footer>
+        </div>
+    </body>
 </html>
+<script>
+    function displayMenu() {
+        var menu = document.getElementById('menu');
+        menu.classList.toggle("active");
+
+    }
+</script>
