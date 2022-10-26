@@ -23,7 +23,7 @@ and open the template in the editor.
 #infos-usuario{
     color: #ffffff;
     display: inline-block;
-    margin-left: 1200px;
+    margin-left: 75em;
 }
 
 *{
@@ -72,9 +72,14 @@ footer{
 }
 .icons{
 
-    width: 30px;
-    height: 30px;
+    width: 1px;
+    height: 1px;
 }
 .p-inputs{
     margin-top: 2%;
+}
+
+img{
+width: 5px;
+height: 5px;
 }

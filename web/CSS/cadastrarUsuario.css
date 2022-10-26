@@ -1,18 +1,16 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-
-}
 .box{
     color: black;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
     width: 30%;
 }
-
+fieldset{
+    border: 3px solid black;
+}
 legend{
     border: 1px solid black;
     padding: 10px;
@@ -25,9 +23,9 @@ legend{
 .inputUser{
     background: none;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
     outline: none;
-    color: red;
+    color: black;
     font-size: 15px;
     width: 100%;
     letter-spacing: 2px;
@@ -41,7 +39,7 @@ legend{
 }
 .inputUser:focus ~ .labelInput,
 .inputUser:valid ~ .labelInput{
-    top: -30px;
+    top: -20px;
     font-size: 12px;
     color: dodgerblue;
 }
@@ -50,7 +48,7 @@ legend{
     width: 100%;
     border: none;
     padding: 15px;
-    color: red;
+    color: black;
     font-size: 15px;
     cursor: pointer;
     border-radius: 10px;

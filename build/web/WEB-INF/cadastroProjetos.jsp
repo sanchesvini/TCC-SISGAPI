@@ -10,30 +10,15 @@
     <head>
         <meta charset="utf-8">
         <title>cadastro de Projetos</title>
-        <link rel="stylesheet" type="text/css" href="CSS/cadastroProjetos2.css">
         <link rel="stylesheet" type="text/css" href="CSS/tudo.css">
 
     </head>
 
     <body>
-        <div class="page">
             <header>
-                <nav id="menu" class="active2">
-                    <ul>
-                        <li> <a href="CadastrarProjeto">meu projeto</a></li>
-                        <li><a href="#"> atividades</a></li>
-                        <li> <a href="#"> documentos</a></li>
-                        <li><a href="#"> apoio ao projeto</a></li>
-                        <li><a href="#"> cronograma</a></li>
-                        <li> <a href="cadastro.html">Cadastro</a></li>
-                    </ul>
-                </nav>
-                <input type="checkbox" id="check">
-                <label for="check">
-                    <i class="ph-list" onclick="displayMenu()"></i>
-                </label>
-                <div class="topo"> SISGAPI </div>
-
+                 <div class = "head">
+                <h1>SISGAPI</h1>  
+            </div>  
             </header>
 
             <div class="corpo">
