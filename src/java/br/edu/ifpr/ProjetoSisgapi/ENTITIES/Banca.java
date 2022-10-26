@@ -44,6 +44,14 @@ public class Banca {
         this.tipo = tipo;
     }
 
+    public Banca(int id, int id_projeto, Date data, String local, int tipo) {
+        this.id = id;
+        this.id_projeto = id_projeto;
+        this.data = data;
+        this.local = local;
+        this.tipo = tipo;
+    }
+    
     
 
     public int getTipo() {

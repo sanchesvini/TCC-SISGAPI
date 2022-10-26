@@ -48,27 +48,32 @@
                     </div>
                     <div class="orientadores">
                         <label for="iorientador1">Orientador(es):</label><br><br>
-                        <input type="text" name="iorientador1" id="iorientador" placeholder="digite o nome do orientador"
+                        <input type="text" name="orientador1" id="iorientador" placeholder="digite o nome do orientador"
                                required><br>
-                        <input type="text" name="iorientador2" placeholder="digite o nome do orientador"><br>
-                        <input type="text" name="iorientador3" placeholder="digite o nome do orientador"><br><br>
+                        <input type="text" name="orientador2" placeholder="digite o nome do orientador"><br>
+                        <input type="text" name="orientador3" placeholder="digite o nome do orientador"><br><br>
 
                     </div>
                     <div>
                         <label for="iprojeto">Projeto:
                             <input type="text" name="projeto" id="iprojeto" placeholder="digite o nome do projeto">
                         </label>
+                        <label for="idescricao">Projeto:
+                            <input type="text" name="descricao" id="idescricao" placeholder="digite a descrição do projeto">
+                        </label>
 
                         <div class="texto">
                             <label for="informacoes">Informações:<br>
                                 <select name="informacao" class="informacao">
-                                    <option value="monografia">Monografia</option>
-                                    <option value="artigo">Artigo Científico</option>
+                                    <option value="1">Monografia</option>
+                                    <option value="2">Artigo Científico</option>
+                                </select>
                             </label>
-                            </select>
+                            
                         </div>
-                        <button class="button" type="submit" name="cadastrarProjeto">Cadastrar</button>
+                        
                     </div>
+                    <button class="button" type="submit" name="cadastrarProjeto">Cadastrar</button>
                 </form>
 
 

@@ -53,9 +53,9 @@ public class AdicionarProjeto extends HttpServlet {
         ArrayList<Usuario> orientadores = new ArrayList<>();
         
         try {
-            Projeto projeto = pmodel.getProjetoByIdUsuario(estudante.getId());
+            ArrayList<Projeto> projeto = pmodel.getProjetosByIdUsuario(estudante.getId());
             
-            usuarios = udao.getAllUsersProject(projeto.getId());
+            usuarios = udao.getAllUsersProject(projeto.get(0).getId());
             
             for (Usuario usuario : usuarios) {
                 if(umodel.isEstudante(usuario)){
@@ -70,17 +70,10 @@ public class AdicionarProjeto extends HttpServlet {
             request.setAttribute("projeto", projeto);
             //comentários do adm
             
-            
-            request.getRequestDispatcher("WEB-INF/addProjeto.jsp").forward(request, response);
-            
-            for (Usuario orientador : orientadores) {
-                System.out.println("Orientadores: " + orientador.getNome());
+            for(int i=0; i<estudantes.size(); i++) {
+                System.out.println(estudantes.get(i).getNome());
             }
-            for (Usuario estudante1 : estudantes) {
-                System.out.println("Estudantes: " + estudante.getNome());
-            }
-            
-            
+            request.getRequestDispatcher("WEB-INF/addProjeto.jsp").forward(request, response); 
             
             
             
@@ -107,11 +100,15 @@ public class AdicionarProjeto extends HttpServlet {
         HttpSession sessao = request.getSession();
         Usuario u = (Usuario) sessao.getAttribute("autenticado");
         
+        
+        
         int id_projeto;
         try {
-            id_projeto = pmodel.getProjetoByIdUsuario(u.getId()).getId();
+            id_projeto = pmodel.getProjetosByIdUsuario(u.getId()).get(0).getId();
             
             pmodel.anexarTrabalho(trabalho, tipo, id_projeto);
+            
+            response.sendRedirect("AcessarIndex");
             
             
         } catch (SQLException ex) {

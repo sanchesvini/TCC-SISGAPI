@@ -69,7 +69,7 @@ public class CadastrarUsuario extends HttpServlet {
           
         }
         else{
-            response.sendRedirect("cadastrarUsuario.jsp");
+            request.getRequestDispatcher("WEB-INF/cadastrarUsuario.jsp");
         }
         
      

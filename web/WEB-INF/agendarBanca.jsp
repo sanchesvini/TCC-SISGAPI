@@ -5,12 +5,13 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>cadastro de Projetos</title>
+        <title>Agendar banca</title>
         <link rel="stylesheet" type="text/css" href="CSS/tudo.css">
         <link rel="stylesheet" type="text/css" href="CSS/AgendarBanca.css">
 
@@ -42,11 +43,12 @@
 
             <div class="parent">
 
-
-                <label for="projeto">Projeto<br>
-                    <select name="informacao">
-                        <option value="sisgapi">SISGAPI</option>
-                        <option value="sisgapi">SISGAPI</option>
+                <form method="POST" action="AgendarBanca">
+                    <label for="projeto">Projeto<br>
+                    <select name="projeto">
+                        <c:forEach varStatus="status" var="projeto" items="${projetos}">
+                            <option value="${projeto.id}">${projeto.nome}</option>
+                        </c:forEach>
                 </label>
 
 
@@ -55,14 +57,20 @@
                 <label for="ilocal">Local:</label>
 
 
-                <input type="text" name="membros" value=""placeholder="Digite os membros da banca" required>
-                <label for="ilocal">Membros:</label>
+                <input id="imembros" type="text" name="membro1" placeholder="Digite a matricula do membro da banca" required>
+                <input id="imembros" type="text" name="membro2" placeholder="Digite a matricula do membro da banca">
+                <input id="imembros" type="text" name="membro3" placeholder="Digite a matricula do membro da banca">
+                <input id="imembros" type="text" name="membro4" placeholder="Digite a matricula do membro da banca"> 
+                <input id="imembros" type="text" name="membro5" placeholder="Digite a matricula do membro da banca">
+                <label for="imembros">Membros:</label>
 
-                <input type="radio" name="opcao" value="qualificacao"> Qualificação <br>
-                <input type="radio" name="opcao" value="defesa"> Defesa <br>
+                <input type="radio" name="opcao" value="1"> Qualificação <br>
+                <input type="radio" name="opcao" value="2"> Defesa <br>
 
-                <input type="date" name="opcao" value="data"> Data <br>
-                <button  >Enviar</button>
+                <input type="date" name="data" value="data"> Data <br>
+                <input type="submit" name="enviar" value="Enviar">
+                </form>
+                
 
             </div>
         </fieldset>

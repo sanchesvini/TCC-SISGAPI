@@ -18,9 +18,9 @@
         
         <div class="sis">
             <header>
-                <input type="checkbox" id="check">
+                <input type="checkbox" id="check" onclick="displayMenu()">
                 <label for="check">
-                    <img src="./CSS/menubotao.png" onclick="displayMenu()">
+                    
                 </label>
 
                 <div class="topo"> SISGAPI </div>

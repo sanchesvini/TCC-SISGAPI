@@ -62,7 +62,7 @@ public class PlanejarCronograma extends HttpServlet {
             Atividade atv = new Atividade(atividade, prazo3, id_projeto);
             AtividadeModel am = new AtividadeModel();
             am.create(atv);
-            response.sendRedirect("WEB-INF/indexes/indexAluno.jsp");
+            response.sendRedirect("AcessarIndex");
         } catch (SQLException ex) {
             Logger.getLogger(PlanejarCronograma.class.getName()).log(Level.SEVERE, null, ex);
         }

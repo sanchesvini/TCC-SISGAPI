@@ -27,6 +27,15 @@ public class Projeto {
         this.tipo_arquivo = tipo_arquivo;
     }
 
+    public Projeto(int id, String nome, String descricao, int tipo, int id_curso) {
+        this.id = id;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.tipo = tipo;
+        this.id_curso = id_curso;
+    }
+    
+
     public byte[] getProjeto() {
         return projeto;
     }

@@ -103,9 +103,9 @@ public class ProjetoDAO {
 //        
 //    }
     
-    public Projeto getProjetoByIdUsuario(int id_usuario) throws SQLException{
+    public ArrayList<Projeto> getProjetosByIdUsuario(int id_usuario) throws SQLException{
         
-        String sql = "SELECT up.id_usuario, up.id_projeto, p.id, p.nome, p.descricao, p.tipo FROM PROJETOS AS p INNER JOIN USUARIOSPROJETOS AS up ON p.id = up.id_projeto AND up.id_usuario = ?";
+        String sql = "SELECT up.id_usuario, up.id_projeto, p.id, p.nome, p.descricao, p.tipo, p.id_curso FROM PROJETOS AS p INNER JOIN USUARIOSPROJETOS AS up ON p.id = up.id_projeto AND up.id_usuario = ?";
         
         Connection connection = new ConnectionFactory().getConnection();
         PreparedStatement stmt = connection.prepareStatement(sql);
@@ -113,10 +113,13 @@ public class ProjetoDAO {
         stmt.setInt(1, id_usuario);
 
         ResultSet rs = stmt.executeQuery();
+        
+        ArrayList<Projeto> projetos = new ArrayList<>();
 
-        if (rs.next()) {
-            Projeto p = new Projeto(rs.getInt("ID"), rs.getString("nome"), rs.getString("descricao"), rs.getInt("TIPO"));
-            return p;
+        while (rs.next()) {
+            Projeto p = new Projeto(rs.getInt("ID"), rs.getString("nome"), rs.getString("descricao"), rs.getInt("TIPO"), rs.getInt("ID_CURSO"));
+            projetos.add(p);
+            return projetos;
         }
 
         return null;

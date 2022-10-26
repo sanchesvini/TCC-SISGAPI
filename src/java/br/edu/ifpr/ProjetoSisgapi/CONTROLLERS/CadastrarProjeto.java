@@ -110,7 +110,7 @@ public class CadastrarProjeto extends HttpServlet {
         try {
             pmodel.createProject(projeto);
             pmodel.linkProject(projeto, estudantes, orientadores);
-            response.sendRedirect("WEB-INF/indexes/indexAdm.jsp");
+            response.sendRedirect("AcessarIndex");
         } catch (SQLException ex) {
             Logger.getLogger(CadastrarProjeto.class.getName()).log(Level.SEVERE, null, ex);
         }

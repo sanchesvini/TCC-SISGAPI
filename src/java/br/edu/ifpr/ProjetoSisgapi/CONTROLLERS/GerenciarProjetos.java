@@ -28,40 +28,44 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "GerenciarProjetos", urlPatterns = {"/GerenciarProjetos"})
 public class GerenciarProjetos extends HttpServlet {
 
-   
-
-   
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         HttpSession sessao = request.getSession();
- 
+
         Usuario u = (Usuario) sessao.getAttribute("autenticado");
         ProjetoModel pmodel = new ProjetoModel();
-        try {
-            ArrayList<Projeto> projetos = pmodel.getAllProjetosByIdCurso(u.getId_curso());
-            System.out.println(projetos.get(0));
-            
-            request.setAttribute("curso", u.getId_curso());
-            request.setAttribute("projetos", projetos);
-            request.getRequestDispatcher("WEB-INF/gerenciarProjetos.jsp").forward(request, response);
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(GerenciarProjetos.class.getName()).log(Level.SEVERE, null, ex);
+        ArrayList<Projeto> projetos = null;
+        if (u.getTipo() == 1) {
+            try {
+                projetos = pmodel.getAllProjetosByIdCurso(u.getId_curso());
+                System.out.println(projetos.get(0));
+
+                request.setAttribute("curso", u.getId_curso());
+                request.setAttribute("projetos", projetos);
+                request.getRequestDispatcher("WEB-INF/gerenciarProjetos.jsp").forward(request, response);
+
+            } catch (SQLException ex) {
+                Logger.getLogger(GerenciarProjetos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else if(u.getTipo() == 2){
+            try {
+                projetos = pmodel.getProjetosByIdUsuario(u.getId());
+                
+                request.setAttribute("projetos", projetos);
+                request.getRequestDispatcher("WEB-INF/gerenciarProjetos.jsp").forward(request, response);
+            } catch (SQLException ex) {
+                Logger.getLogger(GerenciarProjetos.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-       
-     
-        
+
     }
 
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-    }
 
-  
+    }
 
 }
