@@ -60,7 +60,8 @@ public class AbrirCronograma extends HttpServlet {
             request.setAttribute("meses", meses);
             
             
-            
+            System.out.println(atividades.size());
+            System.out.println(meses.size());
             
             request.getRequestDispatcher("WEB-INF/telaCronograma.jsp").forward(request, response);
             
