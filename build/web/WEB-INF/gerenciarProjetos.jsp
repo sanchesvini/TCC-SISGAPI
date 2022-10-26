@@ -46,10 +46,10 @@
                             <h3>${projeto.nome}</h3>
                             <p>${projeto.descricao}</p>
                             <c:choose>
-                                <c:when test="${curso == 1}">
+                                <c:when test="${projeto.id_curso == 1}">
                                     <p>Técnico em Informática</p>
                                 </c:when>
-                                <c:when test="${curso == 2}">
+                                <c:when test="${projeto.id_curso == 2}">
                                     <p>Técnico em Produção de Moda</p>
                                 </c:when>
                             </c:choose>

@@ -31,7 +31,7 @@ public class AtividadeDAO {
             stmt.setInt(2, atv.getId_projeto());
             stmt.setDate(3, (Date) atv.getPrazo());
             stmt.execute();
-            System.out.println("Cadastrando atividade no bd");
+            
 
             stmt.close();
 

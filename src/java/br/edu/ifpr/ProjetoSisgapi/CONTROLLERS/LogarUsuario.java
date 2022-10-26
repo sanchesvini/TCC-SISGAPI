@@ -54,20 +54,7 @@ public class LogarUsuario extends HttpServlet {
 
                
            
-                switch (u.getTipo()) { 
-                    
-                    case 1:
-                        request.getRequestDispatcher("WEB-INF/indexes/indexAdm.jsp").forward(request, response);
-                        break;
-                    case 2:
-                        request.getRequestDispatcher("WEB-INF/indexes/indexOri.jsp").forward(request, response);
-                        break;
-                    case 3:
-                        request.getRequestDispatcher("WEB-INF/indexes/indexAluno.jsp").forward(request, response);
-                        break;
-                    default:
-                        break;
-                }
+                response.sendRedirect("AcessarIndex");
 
             }
         } catch (SQLException ex) {

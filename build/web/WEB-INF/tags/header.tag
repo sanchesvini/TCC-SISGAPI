@@ -4,7 +4,7 @@
     Author     : vinic
 --%>
 
-<%@tag description="RodapÃ© do sistema" pageEncoding="UTF-8"%>
+<%@tag description="Header do sistema" pageEncoding="UTF-8"%>
 <header>
     
       <nav id="menu" class="active2">

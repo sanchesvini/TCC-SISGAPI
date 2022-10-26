@@ -95,8 +95,8 @@ public class ProjetoModel {
     public int getIdProjetoByProjeto(Projeto p) throws SQLException{
         return pdao.getIdProjetoByProjeto(p);
     }
-    public Projeto getProjetoByIdUsuario(int id_usuario) throws SQLException{
-       return pdao.getProjetoByIdUsuario(id_usuario);
+    public ArrayList<Projeto> getProjetosByIdUsuario(int id_usuario) throws SQLException{
+       return pdao.getProjetosByIdUsuario(id_usuario);
     }
     
     public ArrayList<Projeto> getAllProjetosByIdCurso(int id_curso) throws SQLException{
@@ -105,6 +105,7 @@ public class ProjetoModel {
     public Projeto getProjetoByIdProjeto(int id_projeto) throws SQLException{
        return pdao.getProjetoByIdProjeto(id_projeto);
     }
+    
     
     
     
