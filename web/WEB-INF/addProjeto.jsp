@@ -7,10 +7,7 @@
     <head>
         <meta charset="utf-8">
         <title>Adicionar Projeto</title>
-        <!--        <link rel="stylesheet" type="text/css" href="pagcommenu.css">
-                <link rel="stylesheet" type="text/css" href="CSS/addProjeto.css">-->
-        <!-- CSS only -->
-        <!-- JavaScript Bundle with Popper -->
+    
         <script src="https://unpkg.com/phosphor-icons"></script>
            <link rel="stylesheet" type="text/css" href="CSS/tudo.css">
         

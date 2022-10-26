@@ -11,23 +11,12 @@
     <head>
         <meta charset="utf-8">
         <title>Início</title>
-        <link rel="stylesheet" type="text/css" href="./CSS/tudo.css">
-        <link rel="stylesheet" type="text/css" href="./CSS/indexes.css">
+        <link rel="stylesheet" type="text/css" href="CSS/tudo.css">
     </head>
     <body>
-        
-        <div class="sis">
             <header>
-                <input type="checkbox" id="check">
-                <label for="check">
-                    <img src="./CSS/menubotao.png" onclick="displayMenu()">
-                </label>
-
                 <div class="topo"> SISGAPI </div>
-                <div id="infos-usuario">
-                    <img class="icons" src="./CSS/do-utilizador.png">
-                    <div>
-                        ${autenticado.nome} <br> 
+                                        ${autenticado.nome} <br> 
                         <c:choose>
                             <c:when test="${autenticado.tipo == 1}">
                                 Administrador
@@ -39,11 +28,11 @@
                                 Estudante
                             </c:when>
                         </c:choose>
-                        <button><a href="Sair">Sair</a></button>
+                        <button><a href="Sair" width = "10px">Sair</a></button>
                     </div>
                 </div>
             </header>
-            <nav id="menu" class="active2">
+            <nav id="menu">
                 <ul>
                     <li> <a href="index.html">meu projeto</a></li>
                     <li><a href="#"> atividades</a></li>
@@ -59,7 +48,7 @@
                 </ul>
             </nav>
 
-            <div class="container">
+                        <main>
                 <p>
                     Sistema de Gerenciamento
                 </p>
@@ -75,13 +64,13 @@
                 </p>
                 <p>
                     de curso com sua equipe!
-                    
-                    <a href="CadastrarProjeto">cadastrar novo projeto</a>
+                   
                 </p>
-            </div>
+                 <input type="button" value="Escolher curso" <a href="cursos.html"></a>
+                        </main>
             <br>
             <div class="button">
-                <input type="button" value="Escolher curso" <a href="cursos.html"></a>
+                
             </div>
 
             <footer>
