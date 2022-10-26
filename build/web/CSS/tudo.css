@@ -10,115 +10,63 @@ and open the template in the editor.
 
 /*PARTE DO HEADER*/
 
+
 *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+padding:0;
+margin:0;
+box-sizing: border-box;
 }
-.topo{
-    background-color: SteelBlue;
-    height: 20%;
-    font-weight: bold;
-    font-size: 2.5em;
-    font-family: "Verdana";
-    padding: 3%;
-    letter-spacing: 0.2em;
-}
-/*PARTE DO FORMULÁRIO (DE TODOS)
-.form{
-    margin: auto;
-    font-size: 25%;
-    font-family: "Verdana";
-    grid-area: 2 / 2 / 3 / 3;
-}
-.form input{
-    width: 300px;
-    border: 2px solid;
-    display: inline-block;
-    padding-left: 10px;
-    height: 40px;
+body {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    flex-direction: column;
+  }
+  
+  main {
+    align-self: center;
+    font-family: Verdana;
+    font-size: 1.5rem;
     text-align: center;
-    font-size: 1rem;
-    border-radius: 5px;
-}
-/*ESPECIFICO CADASTROO PROJETOS
-.formCadProj{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: px;
-    grid-row-gap: 0px;
-}*/
-.page {
+  }
+  
+  header {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    background-image: linear-gradient(dodgerBlue,deepSkyBlue, lightSkyBlue);
+    width: 100vw;
+    height: 10vh;
+    padding:0 1rem
+
+}
+
+ footer{
+    display: flex;
+    background-image: linear-gradient(dodgerBlue,deepSkyBlue, lightSkyBlue);
+    height: 5vh;
+    width: 100vw;
     justify-content: space-between;
+ }
+
+.head{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+   align-items: center;
 }
 
-.corpo {
-    align-self: center;
-    width: 50%;
-    margin: 20px 0;
+.menu{
+display: flex;
+flex-direction: row;
+justify-content: center;
 }
 
 
-footer {
-  bottom: 0;
-  background: SteelBlue;
-  width: 100%;
-  padding-top: 40px;
-  text-align: center;
-  font-size: 22px;
+button{
+border-radius: 12px;
+color:black;
+padding: 10px 24px; 
+background-color:white ;
 }
 
-/*CSS MENU*/
-a {
-    text-decoration: none;
-    color: white;
-    display: block;
-    padding: 20px 5px;
-}
-
-a:hover {
-    background-color: SteelBlue;
-    color: black;
-}
-
-label {
-    padding: 15px;
-    
-    z-index: 1;
-}
-
-ul {
-    list-style: none;
-    top: 70px;
-    position: absolute;
-    padding-left: 0
-}
-
-input[type="checkbox"] {
-    display: none;
-}
-
-nav.active {
-    left: 0;
-}
-
-nav {
-    border: 1px;
-    width: 40vh;
-    height: 100vh;
-    left: -350px;
-    position: absolute;
-    background-color: blue;
-    padding-left: 50px;
-    top: 0;
-
-    transition: left 1s;
-}
-
-input[type="checkbox"]:checked~nav {
-    transform: translateX(10%);
-}
+  

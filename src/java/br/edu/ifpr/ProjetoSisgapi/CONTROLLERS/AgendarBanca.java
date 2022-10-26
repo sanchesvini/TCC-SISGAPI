@@ -46,7 +46,7 @@ public class AgendarBanca extends HttpServlet {
             ArrayList<Projeto> projetos = pmodel.getAllProjetosByIdCurso(id_curso);
             
             request.setAttribute("projetos", projetos);
-            request.getRequestDispatcher("WEB-INF/agendarBanca.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/agendarBanca.jsp").forward(request, response); 
         } catch (SQLException ex) {
             Logger.getLogger(AgendarBanca.class.getName()).log(Level.SEVERE, null, ex);
         }
