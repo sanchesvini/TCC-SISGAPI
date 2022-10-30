@@ -9,6 +9,7 @@
 <%@taglib prefix="fo" tagdir="/WEB-INF/tags/" %>
 <%@taglib prefix="tags" tagdir="/WEB-INF/tags/" %>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,6 +115,8 @@
             </footer>
 </body>
 </html>
+
+
 
 
 

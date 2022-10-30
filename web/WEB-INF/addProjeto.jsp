@@ -13,10 +13,10 @@
     </head>
     <body>
         <div class="sis">
-            <tags:header> </tags:header>        
+               
        
 
-            <h3>${projeto.nome}</h3>
+           
 
             <div id="estudantes">
                 <h3>Estudantes</h3>
@@ -55,15 +55,9 @@
     </div>
 
 
-    <fo:footer></fo:footer>
+    <tags:footer></tags:footer>
 </div>
 </body>
 
-<script>
-    function displayMenu() {
-        var menu = document.getElementById('menu');
-        menu.classList.toggle("active");
 
-    }
-</script>
 </html>
