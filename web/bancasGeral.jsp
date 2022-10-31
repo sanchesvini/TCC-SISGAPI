@@ -9,8 +9,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html>
+<html lang="pt-BR">
     <head>
         <style>
             * {

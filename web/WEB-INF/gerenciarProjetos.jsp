@@ -5,37 +5,26 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+<%@taglib prefix="tags" tagdir="/WEB-INF/tags/" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Gerenciar Projetos</title>
+        
+        <link rel="stylesheet" type="text/css" href="./CSS/default.css">
+        <link rel="stylesheet" type="text/css" href="./CSS/header.css">
+        
+        <script src="https://unpkg.com/phosphor-icons"></script>
     </head>
 
     <body>
         <div class="page">
-            <header>
-                <nav id="menu" class="active2">
-                    <ul>
-                        <li> <a href="index.html">meu projeto</a></li>
-                        <li><a href="#"> atividades</a></li>
-                        <li> <a href="#"> documentos</a></li>
-                        <li><a href="#"> apoio ao projeto</a></li>
-                        <li><a href="#"> cronograma</a></li>
-                        <li> <a href="cadastro.html">Cadastro</a></li>
-                    </ul>
-                </nav>
-                <input type="checkbox" id="check">
-                <label for="check">
-                    <i class="ph-list" onclick="displayMenu()"></i>
-                </label>
-                <div class="topo"> SISGAPI </div>
-
-            </header>
+            <tags:headerAdm></tags:headerAdm>
 
             <div class="corpo">
                 <h1>Gerenciar Projetos</h1>

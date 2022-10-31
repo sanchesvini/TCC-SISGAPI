@@ -1,10 +1,15 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8">
     <title>Minhas Bancas</title>
     <link rel="stylesheet" type="text/css" href="pagcommenu.css">
     <link rel="stylesheet" type="text/css" href="CSS/telaBancaEstudantes.css">
+    
+    <script src="https://unpkg.com/phosphor-icons"></script>
   </head>
   <body>
     <div class="sis">
@@ -35,7 +40,7 @@
                     <div class="qualificacao">
 
 
-                  <u><label for="bancaQualificacao">Banca de Qualificação</label></u>
+                  <u><label for="bancaQualificacao">Banca de QualificaÃ§Ã£o</label></u>
                                       <div>
                                         <div >
                                          <label for="nomeProjeto">Nome do Projeto:</label>
@@ -94,7 +99,7 @@
 
 
     <footer>
-      Copywrite SISGAPI © 2022 - Todos os direitos reservados
+      Copywrite SISGAPI Â© 2022 - Todos os direitos reservados
     </footer>
     </div>
   </body>

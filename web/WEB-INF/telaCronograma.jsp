@@ -9,8 +9,12 @@
 
 <!DOCTYPE html>
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
     <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Cronograma </title>
         <style>
             * {
                 margin: 0;

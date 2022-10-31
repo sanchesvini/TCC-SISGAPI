@@ -50,13 +50,16 @@
     <nav>
         <ul class="menu">
             <li class="menu-item">
+                <a href="CadastrarUsuario">Cadastrar Usuário</a>
+            </li>
+            <li class="menu-item">
                 <a href="CadastrarProjeto">Cadastrar Projeto</a>
             </li>
             <li class="menu-item">
                 <a href="GerenciarProjetos">Gerenciar Projeto</a>
             </li>
             <li class="menu-item">
-                <a href="CadastrarUsuario">Cadastrar Usuário</a>
+                <a href="AgendarBanca">Cadastrar Usuário</a>
             </li>
 
 
