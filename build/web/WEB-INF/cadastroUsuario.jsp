@@ -5,34 +5,32 @@
 --%>
 
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="tags" tagdir="/WEB-INF/tags/" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
-<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cadastrar Usuário</title>
-         <link rel="stylesheet" type="text/css" href="CSS/tudo.css">
-        
-        <style>
-            body{
-                font-family: Arial, Helvetica, sans-serif;
+        <title>Cadastrar UsuÃ¡rio</title>
+        <link rel="stylesheet" type="text/css" href="./CSS/default.css">
+        <link rel="stylesheet" type="text/css" href="./CSS/header.css">
 
-            }
+        <script src="https://unpkg.com/phosphor-icons"></script>
+
+        <style>
+            
             .box{
+                display: flex;
+                align-self: center;
+                justify-content: space-between;
                 color: black;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
+                
                 background-color: white;
                 border-radius: 15px;
-                width: 30%;
+                
             }
             fieldset{
                 border: 3px solid black;
@@ -42,9 +40,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 padding: 10px;
                 text-align: center;
                 border-radius: 8px;
+                width: 30vw;
             }
             .inputBox{
                 position: relative;
+                margin: 8%;
+                
+               
             }
             .inputUser{
                 background: none;
@@ -53,7 +55,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 outline: none;
                 color: black;
                 font-size: 15px;
-                width: 100%;
+                width: 25vw;
                 letter-spacing: 2px;
             }
             .labelInput{
@@ -74,58 +76,54 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 width: 100%;
                 border: none;
                 padding: 15px;
-                color: black;
+                color: #fff;
                 font-size: 15px;
                 cursor: pointer;
                 border-radius: 10px;
             }
             #submit:hover{
-                color: orange;   /* enviar*/
+                color: black;   /* enviar*/
             }
         </style>
     </head>
     <body>
-        <header>
-            <div class = "head">
-                <h1>SISGAPI</h1>  
-            </div>              
-        </header>
+        <tags:headerAdm></tags:headerAdm>
         <div class="box">
-            <form action="">
-                    <legend><b>Cadastrar Novo Usuário</b></legend>
-                    <br>
-                    <div class="inputBox">
-                        <input type="text" name="nome" id="inome" class="inputUser" required>
-                        <label for="nome" class="labelInput">Nome completo</label>
-                    </div>
-                    <br><br>
-                    <div class="inputBox">
-                        <input type="text" name="email" id="email" class="inputUser" required>
-                        <label for="email" class="labelInput">Email</label>
-                    </div>
-                    <br><br>
-                    <div class="inputBox">
-                        <input type="text" name="login" id="matricula" class="inputUser" required>
-                        <label for="telefone" class="labelInput">Matricula</label>
-                    </div>
+            <form action="CadastrarUsuario" method="POST">
+                <legend>Cadastrar Novo UsuÃ¡rio</legend>
+                
+                <div class="inputBox">
+                    <input type="text" name="nome" id="inome" class="inputUser" required>
+                    <label for="nome" class="labelInput">Nome completo</label>
+                </div>
+                
+                <div class="inputBox">
+                    <input type="text" name="email" id="email" class="inputUser" required>
+                    <label for="email" class="labelInput">Email</label>
+                </div>
+                
+                <div class="inputBox">
+                    <input type="text" name="login" id="matricula" class="inputUser" required>
+                    <label for="telefone" class="labelInput">Matricula</label>
+                </div>
 
-                    <br><br><br>
-                    <div class="inputBox">
-                        <input type="password" name="senha" id="isenha" class="inputUser" required>
-                        <label for="cidade" class="labelInput">Senha</label>
-                    </div>
-                    <br><br>
-                    <div class="inputBox">
-                        <input type="password" name="confirmarsenha" id="iconfirmar" class="inputUser" required>
-                        <label for="estado" class="labelInput">Confirme a senha</label>
-                    </div>
-                    <br><br>
-                    <input type="submit" name="submit" id="submit">
+                
+                <div class="inputBox">
+                    <input type="password" name="senha" id="isenha" class="inputUser" required>
+                    <label for="isenha" class="labelInput">Senha</label>
+                </div>
+                
+                <div class="inputBox">
+                    <input type="password" name="confirmarsenha" id="iconfirmar" class="inputUser" required>
+                    <label for="estado" class="labelInput">Confirme a senha</label>
+                </div>
+                
+                <input type="submit" name="submit" id="submit">
             </form>
         </div>
 
     </body>
     <footer>
-        Copywrite SISGAPI © 2022 - Todos os direitos reservados
+        Copywrite SISGAPI Â© 2022 - Todos os direitos reservados
     </footer>
 </html>

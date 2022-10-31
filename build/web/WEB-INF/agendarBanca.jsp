@@ -5,43 +5,141 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+<%@taglib prefix="tags" tagdir="/WEB-INF/tags/" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="pt-BR">
     <head>
         <meta charset="utf-8">
         <title>Agendar banca</title>
-        <link rel="stylesheet" type="text/css" href="CSS/tudo.css">
-        <link rel="stylesheet" type="text/css" href="CSS/AgendarBanca.css">
+        <link rel="stylesheet" type="text/css" href="./CSS/default.css">
+        <link rel="stylesheet" type="text/css" href="./CSS/header.css">
+        
+        <script src="https://unpkg.com/phosphor-icons"></script>
 
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
 
+            }
+            .box{
+                color: black;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                background-color: white;
+                border-radius: 15px;
+                width: 30%;
+            }
+            fieldset{
+                border: 3px solid black;
+            }
+            legend{
+                border: 1px solid black;
+                padding: 10px;
+                text-align: center;
+                border-radius: 8px;
+            }
+            .inputBox{
+                position: relative;
+            }
+            .inputUser{
+                background: none;
+                border: none;
+                border-bottom: 1px solid black;
+                outline: none;
+                color: black;
+                font-size: 15px;
+                width: 100%;
+                letter-spacing: 2px;
+            }
+            .labelInput{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                pointer-events: none;
+                transition: .5s;
+            }
+            .inputUser:focus ~ .labelInput,
+            .inputUser:valid ~ .labelInput{
+                top: -20px;
+                font-size: 12px;
+                color: dodgerblue;
+            }
+            #submit{
+                background-image: linear-gradient(to right,rgb(0, 92, 197), rgb(90, 20, 220));
+                width: 100%;
+                border: none;
+                padding: 15px;
+                color: black;
+                font-size: 15px;
+                cursor: pointer;
+                border-radius: 10px;
+            }
+            #submit:hover{
+                color: orange;   /* enviar*/
+            }
+            select{
+                margin-top: 20px;
+                margin-bottom: 15px;
+            }
+            .radio{
+                display: inline;
+            }
+        </style>
     </head>
-
     <body>
+        <tags:headerAdm></tags:headerAdm>
+        <div class="box">
+            <legend><b>Agendar Banca</b></legend>
+            <br><br>
+            <div class="inputBox">
+                <form method="POST" action="AgendarBanca">
+                    <label for="projeto">Projeto:</label>
+                    <br>
+                    <select name="projeto">
+                        <c:forEach varStatus="status" var="projeto" items="${projetos}">
+                            <option value="${projeto.id}">${projeto.nome}</option>
+                        </c:forEach>
+                    </select>  
 
-        <header>
-            <input type="checkbox" id="check">
-            <label for="check">
-                <img src="menubotao.png" onclick="displayMenu()">
-            </label>
-            <div class="topo"> SISGAPI </div>
-        </header>
-        <nav id="menu" class="active2">
-            <ul>
-                <li> <a href="index.html">meu projeto</a></li>
-                <li><a href="#"> atividades</a></li>
-                <li> <a href="#"> documentos</a></li>
-                <li><a href="#"> apoio ao projeto</a></li>
-                <li><a href="#"> cronograma</a></li>
-                <li> <a href="cadastro.html">Cadastro</a></li>
-            </ul>
-        </nav>
+                    <div class="inputBox">
 
-        <fieldset>
-            <legend>Agendar Banca</legend>
-
-            <div class="parent">
+            
+                        <label for="imembros" class="labelInput">Membros da Banca:</label>
+                        <select>
+                            <option>Luis</option>
+                            <option>Roberto</option>
+                            <option>Alison</option>
+                            
+                        </select>
+                          <select>
+                            <option>Luis</option>
+                            <option>Roberto</option>
+                            <option>Alison</option>
+                            
+                        </select>
+                          <select>
+                            <option>Luis</option>
+                            <option>Roberto</option>
+                            <option>Alison</option>
+                            
+                        </select>
+                          <select>
+                            <option>Luis</option>
+                            <option>Roberto</option>
+                            <option>Alison</option>
+                            
+                        </select>
+                          </select>
+                          <select>
+                            <option>Luis</option>
+                            <option>Roberto</option>
+                            <option>Alison</option>
+                            
+                        </select>
+                       
 
                 <form method="POST" action="AgendarBanca">
                     <label for="projeto">Projeto<br>
@@ -51,33 +149,17 @@
                         </c:forEach>
                 </label>
 
+                    </div>
+                    <br>
 
+                    <input type="submit" name="submit" id="submit">
 
-                <input type="text" name="local" value=""placeholder="Digite o local da banca" required>
-                <label for="ilocal">Local:</label>
-
-
-                <input id="imembros" type="text" name="membro1" placeholder="Digite a matricula do membro da banca" required>
-                <input id="imembros" type="text" name="membro2" placeholder="Digite a matricula do membro da banca">
-                <input id="imembros" type="text" name="membro3" placeholder="Digite a matricula do membro da banca">
-                <input id="imembros" type="text" name="membro4" placeholder="Digite a matricula do membro da banca"> 
-                <input id="imembros" type="text" name="membro5" placeholder="Digite a matricula do membro da banca">
-                <label for="imembros">Membros:</label>
-
-                <input type="radio" name="opcao" value="1"> Qualificação <br>
-                <input type="radio" name="opcao" value="2"> Defesa <br>
-
-                <input type="date" name="data" value="data"> Data <br>
-                <input type="submit" name="enviar" value="Enviar">
                 </form>
-                
-
             </div>
-        </fieldset>
-
-
+        </div>
         <footer>
-            Copywrite SISGAPI © 2022 - Todos os direitos reservados
+            Copywrite SISGAPI � 2022 - Todos os direitos reservados
         </footer>
-    </body>>
-</html>>
+    </body>
+
+</html>

@@ -1,78 +1,174 @@
-<%-- 
-    Document   : cadastroProjetos.jsp
-    Created on : 07/09/2022, 16:13:21
-    Author     : vinic
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="tags" tagdir="/WEB-INF/tags/" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="pt-BR">
     <head>
-        <meta charset="utf-8">
-        <title>cadastro de Projetos</title>
-        <link rel="stylesheet" type="text/css" href="CSS/tudo.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastrar Projeto</title>
+        <link rel="stylesheet" type="text/css" href="./CSS/default.css">
+        <link rel="stylesheet" type="text/css" href="./CSS/header.css">
 
+        <script src="https://unpkg.com/phosphor-icons"></script>
+
+        <style>
+            
+            .box{
+                display: flex;
+                align-self: center;
+                justify-content: space-between;
+                align-content: center;
+                color: black;
+                
+                background-color: white;
+                border-radius: 15px;
+                
+            }
+            fieldset{
+                border: 3px solid black;
+            }
+            legend{
+                border: 1px solid black;
+                padding: 10px;
+                text-align: center;
+                border-radius: 8px;
+                width: 30vw;
+            }
+            .inputBox{
+                position: relative;
+                margin: 6%;
+                
+               
+            }
+            .inputUser{
+                background: none;
+                border: none;
+                border-bottom: 1px solid black;
+                outline: none;
+                color: black;
+                font-size: 15px;
+                width: 25vw;
+                letter-spacing: 2px;
+            }
+            .labelInput{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                pointer-events: none;
+                transition: .5s;
+            }
+            .inputUser:focus ~ .labelInput,
+            .inputUser:valid ~ .labelInput{
+                top: -30px;
+                font-size: 12px;
+                color: dodgerblue;
+            }
+            #submit{
+                background-image: linear-gradient(to right,rgb(0, 92, 197), rgb(90, 20, 220));
+                width: 100%;
+                border: none;
+                padding: 15px;
+                color: #fff;
+                font-size: 15px;
+                cursor: pointer;
+                border-radius: 10px;
+            }
+            #submit:hover{
+                color: black;   /* enviar*/
+            }
+            select{
+                margin-top: 8%;
+            }
+        </style>
+          
     </head>
-
     <body>
-            <header>
-                 <div class = "head">
-                <h1>SISGAPI</h1>  
-            </div>  
-            </header>
+        <tags:headerAdm></tags:headerAdm>
+        <div class="box">
+            <form action="">
+                <legend>Cadastrar Novo Projeto</legend>
+                
+                <div class="inputBox">
+                    <select id="estudantes">
+                        <option>Sara</option>
+                        <option>Vinicius</option>
+                        <option>Natalia</option>
+                        <option>Malu</option>
 
-            <div class="corpo">
-                <h1>Adicionar Projeto</h1>
-                <form class="form" action="CadastrarProjeto" method="post">
-                    <div class="estudantes">
-                        <label for="iestudante">Estudante(s):</label><br><br>
-                        <input type="text" name="estudante1" id="iestudante" placeholder="Digite o nome do estudante" required><br>
-                        <input type="text" name="estudante2" placeholder="Digite o nome do estudante"><br>
-                        <input type="text" name="estudante3" placeholder="Digite o nome do estudante"><br>
-                        <input type="text" name="estudante4" placeholder="Digite o nome do estudante"><br>
-                    </div>
-                    <div class="orientadores">
-                        <label for="iorientador1">Orientador(es):</label><br><br>
-                        <input type="text" name="orientador1" id="iorientador" placeholder="digite o nome do orientador"
-                               required><br>
-                        <input type="text" name="orientador2" placeholder="digite o nome do orientador"><br>
-                        <input type="text" name="orientador3" placeholder="digite o nome do orientador"><br><br>
+                    </select>
+                    <select id="estudantes">
+                        <option>Sara</option>
+                        <option>Vinicius</option>
+                        <option>Natalia</option>
+                        <option>Malu</option>
 
-                    </div>
-                    <div>
-                        <label for="iprojeto">Projeto:
-                            <input type="text" name="projeto" id="iprojeto" placeholder="digite o nome do projeto">
-                        </label>
-                        <label for="idescricao">Projeto:
-                            <input type="text" name="descricao" id="idescricao" placeholder="digite a descrição do projeto">
-                        </label>
+                    </select>
+                    <select id="estudantes">
+                        <option>Sara</option>
+                        <option>Vinicius</option>
+                        <option>Natalia</option>
+                        <option>Malu</option>
 
-                        <div class="texto">
-                            <label for="informacoes">Informações:<br>
-                                <select name="informacao" class="informacao">
-                                    <option value="1">Monografia</option>
-                                    <option value="2">Artigo Científico</option>
-                                </select>
-                            </label>
-                            
-                        </div>
-                        
-                    </div>
-                    <button class="button" type="submit" name="cadastrarProjeto">Cadastrar</button>
-                </form>
+                    </select>
+                    <select id="estudantes">
+                        <option>Sara</option>
+                        <option>Vinicius</option>
+                        <option>Natalia</option>
+                        <option>Malu</option>
 
+                    </select>
 
-            </div>
-            <footer>
-                Copywrite SISGAPI © 2022 - Todos os direitos reservados
-            </footer>
+                    <label for="estudantes" class="labelInput">Nome dos estudantes:</label>
+                </div>
+                
+                <div class="inputBox">
+                    <select>
+                        <option>luis</option>
+                        <option>Gabriel</option>
+                        <option>Paulo</option>
+
+                    </select>
+                    <select>
+                        <option>luis</option>
+                        <option>Gabriel</option>
+                        <option>Paulo</option>
+
+                    </select>
+                    <select>
+                        <option>luis</option>
+                        <option>Gabriel</option>
+                        <option>Paulo</option>
+
+                    </select>
+
+                    <label for="orientadores" class="labelInput">Orientadores(as):</label>
+                </div>
+                
+                <div class="inputBox">
+                    <input type="text" name="login" id="matricula" class="inputUser" required>
+                    <label for="matricula" class="labelInput">Projeto:</label>
+
+                </div>
+                
+                <div class="inputBox">
+                    <input type="text" name="descricao" id="idescricao" class="inputUser" required>
+                    <label for="idescricao" class="labelInput">Descrição do Projeto</label>
+                </div>
+                
+                <div class="inputBox">
+                    <select name="informacao" id="informacao">
+                        <option value="1">Monografia</option><br><br>
+                        <option value="2">Artigo Científico</option>
+                    </select>
+                    <label for="informacao" class="labelInput">Informações</label>
+                </div>
+                <input type="submit" name="submit" id="submit">
+            </form>
         </div>
+        <footer>
+            Copywrite SISGAPI ï¿½ 2022 - Todos os direitos reservados
+        </footer>
     </body>
 </html>
-<script>
-    function displayMenu() {
-        var menu = document.getElementById('menu');
-        menu.classList.toggle("active");
-
-    }
-</script>

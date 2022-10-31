@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="tags" tagdir="/WEB-INF/tags/" %>
-<html lang="en" dir="ltr">
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html lang="pt-BR">
     <head>
         <meta charset="utf-8">
         <title>Adicionar Projeto</title>
         
         <link rel="stylesheet" type="text/css" href="CSS/cssGeral.css">
         
+        <script src="https://unpkg.com/phosphor-icons"></script>
         
     </head>
     <body>
+  
         <div class="sis">
                
        

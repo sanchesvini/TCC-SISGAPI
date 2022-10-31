@@ -1,9 +1,13 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8">
     <title>Projeto</title>
 
+    <script src="https://unpkg.com/phosphor-icons"></script>
   </head>
   <body>
     <div class="sis">
@@ -33,7 +37,7 @@
             <div class="field">
               <h3>${projeto.nome}</h3>
             <p>${projeto.descricao}</p>
-            <!-- adicionar info de qual curso o projeto est�-->>
+            <!-- adicionar info de qual curso o projeto está-->>
             </div>
 
 
@@ -68,7 +72,7 @@
         </div>
         </div>
     <footer>
-      Copywrite SISGAPI © 2022 - Todos os direitos reservados
+      Copywrite SISGAPI Â© 2022 - Todos os direitos reservados
     </footer>
   </body>
 
