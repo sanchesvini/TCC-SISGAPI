@@ -74,15 +74,7 @@ nav li a:hover {
   align-items: flex-start;
   flex-direction: column;
 }
-#sair {
-  background-color: #fff;
-  border-radius: 0.6em;
-  padding: 0.6em 1em;
-  font-size: 1em;
-  margin: 1.2%;
-  color: rgb(0, 95, 189);
-  font-weight: 800;
-}
+
 #btn-sair {
   border-radius: 0.6em;
   color: rgb(0, 95, 189);

@@ -14,7 +14,7 @@
         <title>Agendar banca</title>
         <link rel="stylesheet" type="text/css" href="./CSS/default.css">
         <link rel="stylesheet" type="text/css" href="./CSS/header.css">
-        
+
         <script src="https://unpkg.com/phosphor-icons"></script>
 
         <style>
@@ -91,14 +91,14 @@
     </head>
     <body>
         <tags:headerAdm></tags:headerAdm>
-        <div class="box">
-            <legend><b>Agendar Banca</b></legend>
-            <br><br>
-            <div class="inputBox">
-                <form method="POST" action="AgendarBanca">
-                    <label for="projeto">Projeto:</label>
-                    <br>
-                    <select name="projeto">
+            <div class="box">
+                <legend><b>Agendar Banca</b></legend>
+                <br><br>
+                <div class="inputBox">
+                    <form method="POST" action="AgendarBanca">
+                        <label for="projeto">Projeto:</label>
+                        <br>
+                        <select name="projeto">
                         <c:forEach varStatus="status" var="projeto" items="${projetos}">
                             <option value="${projeto.id}">${projeto.nome}</option>
                         </c:forEach>
@@ -106,60 +106,58 @@
 
                     <div class="inputBox">
 
-            
+
                         <label for="imembros" class="labelInput">Membros da Banca:</label>
                         <select>
                             <option>Luis</option>
                             <option>Roberto</option>
                             <option>Alison</option>
-                            
+
                         </select>
-                          <select>
+                        <select>
                             <option>Luis</option>
                             <option>Roberto</option>
                             <option>Alison</option>
-                            
+
                         </select>
-                          <select>
+                        <select>
                             <option>Luis</option>
                             <option>Roberto</option>
                             <option>Alison</option>
-                            
+
                         </select>
-                          <select>
+                        <select>
                             <option>Luis</option>
                             <option>Roberto</option>
                             <option>Alison</option>
-                            
+
                         </select>
-                          </select>
-                          <select>
+                        <select>
                             <option>Luis</option>
                             <option>Roberto</option>
                             <option>Alison</option>
-                            
+
                         </select>
-                       
+                </form>       
 
                 <form method="POST" action="AgendarBanca">
                     <label for="projeto">Projeto<br>
-                    <select name="projeto">
-                        <c:forEach varStatus="status" var="projeto" items="${projetos}">
-                            <option value="${projeto.id}">${projeto.nome}</option>
-                        </c:forEach>
-                </label>
+                        <select name="projeto">
+                            <c:forEach varStatus="status" var="projeto" items="${projetos}">
+                                <option value="${projeto.id}">${projeto.nome}</option>
+                            </c:forEach>
+                        </select>
+                    </label>
 
-                    </div>
-                    <br>
-
-                    <input type="submit" name="submit" id="submit">
-
-                </form>
             </div>
+            <br>
+
+            <input type="submit" name="submit" id="submit">
+            </form>
         </div>
-        <footer>
-            Copywrite SISGAPI � 2022 - Todos os direitos reservados
-        </footer>
-    </body>
+    </div>
+</body>
+
+<tags:footer></tags:footer>
 
 </html>

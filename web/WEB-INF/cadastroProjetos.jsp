@@ -14,17 +14,17 @@
         <script src="https://unpkg.com/phosphor-icons"></script>
 
         <style>
-            
+
             .box{
                 display: flex;
                 align-self: center;
                 justify-content: space-between;
                 align-content: center;
                 color: black;
-                
+
                 background-color: white;
                 border-radius: 15px;
-                
+
             }
             fieldset{
                 border: 3px solid black;
@@ -39,8 +39,8 @@
             .inputBox{
                 position: relative;
                 margin: 6%;
-                
-               
+
+
             }
             .inputUser{
                 background: none;
@@ -82,93 +82,92 @@
                 margin-top: 8%;
             }
         </style>
-          
+
     </head>
     <body>
         <tags:headerAdm></tags:headerAdm>
-        <div class="box">
-            <form action="">
-                <legend>Cadastrar Novo Projeto</legend>
-                
-                <div class="inputBox">
-                    <select id="estudantes">
-                        <option>Sara</option>
-                        <option>Vinicius</option>
-                        <option>Natalia</option>
-                        <option>Malu</option>
+            <div class="box">
+                <form action="">
+                    <legend>Cadastrar Novo Projeto</legend>
 
-                    </select>
-                    <select id="estudantes">
-                        <option>Sara</option>
-                        <option>Vinicius</option>
-                        <option>Natalia</option>
-                        <option>Malu</option>
+                    <div class="inputBox">
+                        <select id="estudantes">
+                            <option>Sara</option>
+                            <option>Vinicius</option>
+                            <option>Natalia</option>
+                            <option>Malu</option>
 
-                    </select>
-                    <select id="estudantes">
-                        <option>Sara</option>
-                        <option>Vinicius</option>
-                        <option>Natalia</option>
-                        <option>Malu</option>
+                        </select>
+                        <select id="estudantes">
+                            <option>Sara</option>
+                            <option>Vinicius</option>
+                            <option>Natalia</option>
+                            <option>Malu</option>
 
-                    </select>
-                    <select id="estudantes">
-                        <option>Sara</option>
-                        <option>Vinicius</option>
-                        <option>Natalia</option>
-                        <option>Malu</option>
+                        </select>
+                        <select id="estudantes">
+                            <option>Sara</option>
+                            <option>Vinicius</option>
+                            <option>Natalia</option>
+                            <option>Malu</option>
 
-                    </select>
+                        </select>
+                        <select id="estudantes">
+                            <option>Sara</option>
+                            <option>Vinicius</option>
+                            <option>Natalia</option>
+                            <option>Malu</option>
 
-                    <label for="estudantes" class="labelInput">Nome dos estudantes:</label>
-                </div>
-                
-                <div class="inputBox">
-                    <select>
-                        <option>luis</option>
-                        <option>Gabriel</option>
-                        <option>Paulo</option>
+                        </select>
 
-                    </select>
-                    <select>
-                        <option>luis</option>
-                        <option>Gabriel</option>
-                        <option>Paulo</option>
+                        <label for="estudantes" class="labelInput">Nome dos estudantes:</label>
+                    </div>
 
-                    </select>
-                    <select>
-                        <option>luis</option>
-                        <option>Gabriel</option>
-                        <option>Paulo</option>
+                    <div class="inputBox">
+                        <select>
+                            <option>luis</option>
+                            <option>Gabriel</option>
+                            <option>Paulo</option>
 
-                    </select>
+                        </select>
+                        <select>
+                            <option>luis</option>
+                            <option>Gabriel</option>
+                            <option>Paulo</option>
 
-                    <label for="orientadores" class="labelInput">Orientadores(as):</label>
-                </div>
-                
-                <div class="inputBox">
-                    <input type="text" name="login" id="matricula" class="inputUser" required>
-                    <label for="matricula" class="labelInput">Projeto:</label>
+                        </select>
+                        <select>
+                            <option>luis</option>
+                            <option>Gabriel</option>
+                            <option>Paulo</option>
 
-                </div>
-                
-                <div class="inputBox">
-                    <input type="text" name="descricao" id="idescricao" class="inputUser" required>
-                    <label for="idescricao" class="labelInput">Descrição do Projeto</label>
-                </div>
-                
-                <div class="inputBox">
-                    <select name="informacao" id="informacao">
-                        <option value="1">Monografia</option><br><br>
-                        <option value="2">Artigo Científico</option>
-                    </select>
-                    <label for="informacao" class="labelInput">Informações</label>
-                </div>
-                <input type="submit" name="submit" id="submit">
-            </form>
-        </div>
-        <footer>
-            Copywrite SISGAPI ï¿½ 2022 - Todos os direitos reservados
-        </footer>
+                        </select>
+
+                        <label for="orientadores" class="labelInput">Orientadores(as):</label>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="text" name="login" id="matricula" class="inputUser" required>
+                        <label for="matricula" class="labelInput">Projeto:</label>
+
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="text" name="descricao" id="idescricao" class="inputUser" required>
+                        <label for="idescricao" class="labelInput">Descrição do Projeto</label>
+                    </div>
+
+                    <div class="inputBox">
+                        <select name="informacao" id="informacao">
+                            <option value="1">Monografia</option><br><br>
+                            <option value="2">Artigo Científico</option>
+                        </select>
+                        <label for="informacao" class="labelInput">Informações</label>
+                    </div>
+                    <input type="submit" name="submit" id="submit">
+                </form>
+            </div>
+        <tags:footer></tags:footer>
+
     </body>
 </html>

@@ -7,60 +7,56 @@
     <head>
         <meta charset="utf-8">
         <title>Adicionar Projeto</title>
-        
-        <link rel="stylesheet" type="text/css" href="CSS/cssGeral.css">
-        
+
+        <link rel="stylesheet" type="text/css" href="./CSS/default.css">
+        <link rel="stylesheet" type="text/css" href="./CSS/header.css">
+
         <script src="https://unpkg.com/phosphor-icons"></script>
-        
+
     </head>
     <body>
-  
-        <div class="sis">
-               
-       
 
-           
+        <tags:headerAluno></tags:headerAluno>
 
-            <div id="estudantes">
-                <h3>Estudantes</h3>
-                <div id="nome-estudantes">
-            <c:forEach varStatus="status" var="estudante" items="${estudantes}">
-                ${estudante.nome}
-            </c:forEach>
-        </div>
-    </div>
-    <div id="orientadores">
-        <h3>Orientadores</h3>
-        <div id="nome-orientadores">
-            <c:forEach varStatus="status" var="orientador" items="${orientadores}">
-                ${orientador.nome}
-            </c:forEach>
-        </div>
-    </div>
-    <div id="trab-em-andamento">
-        <fieldset>
-            <legend>Trabalho em andamento</legend>
-            <div>
-                <form method="post" action="AdicionarProjeto" enctype="multipart/form-data">
-                    <input type="file" name="trabalho" value="Enviar">
-
-                    <input type="submit" name="enviar" value="Enviar">
-                </form>
+            <main class="addprojeto">
+                <div id="estudantes">
+                    <h4>Estudantes</h4>
+                    <div id="nome-estudantes">
+                    <c:forEach varStatus="status" var="estudante" items="${estudantes}">
+                        ${estudante.nome}
+                    </c:forEach>
+                </div>
             </div>
-            <div>
-                Comentários do Professor do Projeto Integrador
+            <br><br>
+            <div id="orientadores">
+                <h3>Orientadores</h3>
+                <div id="nome-orientadores">
+                    <c:forEach varStatus="status" var="orientador" items="${orientadores}">
+                        ${orientador.nome}
+                    </c:forEach>
+                </div>
             </div>
+            <br><br>
+            <div id="trab-em-andamento">
+                <fieldset>
+                    <legend>Trabalho em andamento</legend>
+                    <div class="file">
+                        <form method="post" action="AdicionarProjeto" enctype="multipart/form-data">
+                            <input type="file" name="trabalho" value="Enviar">
+
+                            <input type="submit" name="enviar" value="Enviar">
+                        </form>
+                    </div>
+                    <div>
+                        Comentários do Professor do Projeto Integrador
+                    </div>
 
 
-        </fieldset>
-        </div>
+                </fieldset>
+            </div>
+            <br><br>
+        </main>
 
-    </div>
-
-
-    <tags:footer></tags:footer>
-</div>
-</body>
-
-
+        <tags:footer></tags:footer>
+    </body>
 </html>

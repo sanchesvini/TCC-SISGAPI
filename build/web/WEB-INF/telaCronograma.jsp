@@ -6,12 +6,12 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
-
+<%@taglib prefix="tags" tagdir="/WEB-INF/tags/" %>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
-        
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Cronograma </title>
@@ -89,162 +89,159 @@
 
             </tr>
             <c:forEach varStatus="status" var="atividade" items="${atividades}">
-                
-                    <tr>
-                        <td>${atividade.atividade} ${atividade.prazo.month}</td>
-                        <td>
-                            <c:choose>
 
-                                <c:when test="${atividade.prazo.month == 0}">
+                <tr>
+                    <td>${atividade.atividade} ${atividade.prazo.month}</td>
+                    <td>
+                        <c:choose>
 
-                                    ${atividade.prazo}
+                            <c:when test="${atividade.prazo.month == 0}">
 
-                                </c:when>
+                                ${atividade.prazo}
 
-
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-
-                                <c:when test="${atividade.prazo.month == 1}">
-
-                                    ${atividade.prazo}
-
-                                </c:when>
+                            </c:when>
 
 
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
 
-                                <c:when test="${atividade.prazo.month == 2}">
+                            <c:when test="${atividade.prazo.month == 1}">
 
-                                    ${atividade.prazo}
+                                ${atividade.prazo}
 
-                                </c:when>
-
-
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-
-                                <c:when test="${atividade.prazo.month == 3}">
-
-                                    ${atividade.prazo}
-
-                                </c:when>
+                            </c:when>
 
 
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
 
-                                <c:when test="${atividade.prazo.month == 4}">
+                            <c:when test="${atividade.prazo.month == 2}">
 
-                                    ${atividade.prazo}
+                                ${atividade.prazo}
 
-                                </c:when>
-
-
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-
-                                <c:when test="${atividade.prazo.month == 5}">
-
-                                    ${atividade.prazo}
-
-                                </c:when>
+                            </c:when>
 
 
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
 
-                                <c:when test="${atividade.prazo.month == 6}">
+                            <c:when test="${atividade.prazo.month == 3}">
 
-                                    ${atividade.prazo}
+                                ${atividade.prazo}
 
-                                </c:when>
-
-
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-
-                                <c:when test="${atividade.prazo.month == 7}">
-
-                                    ${atividade.prazo}
-
-                                </c:when>
+                            </c:when>
 
 
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
 
-                                <c:when test="${atividade.prazo.month == 8}">
+                            <c:when test="${atividade.prazo.month == 4}">
 
-                                    ${atividade.prazo}
+                                ${atividade.prazo}
 
-                                </c:when>
-
-
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-
-                                <c:when test="${atividade.prazo.month == 9}">
-
-                                    ${atividade.prazo}
-
-                                </c:when>
+                            </c:when>
 
 
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
 
-                                <c:when test="${atividade.prazo.month == 10}">
+                            <c:when test="${atividade.prazo.month == 5}">
 
-                                    ${atividade.prazo}
+                                ${atividade.prazo}
 
-                                </c:when>
-
-
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-
-                                <c:when test="${atividade.prazo.month == 11}">
-
-                                    ${atividade.prazo}
-
-                                </c:when>
+                            </c:when>
 
 
-                            </c:choose>
-                        </td>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
 
-                    </tr>
-         
+                            <c:when test="${atividade.prazo.month == 6}">
+
+                                ${atividade.prazo}
+
+                            </c:when>
+
+
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+
+                            <c:when test="${atividade.prazo.month == 7}">
+
+                                ${atividade.prazo}
+
+                            </c:when>
+
+
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+
+                            <c:when test="${atividade.prazo.month == 8}">
+
+                                ${atividade.prazo}
+
+                            </c:when>
+
+
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+
+                            <c:when test="${atividade.prazo.month == 9}">
+
+                                ${atividade.prazo}
+
+                            </c:when>
+
+
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+
+                            <c:when test="${atividade.prazo.month == 10}">
+
+                                ${atividade.prazo}
+
+                            </c:when>
+
+
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+
+                            <c:when test="${atividade.prazo.month == 11}">
+
+                                ${atividade.prazo}
+
+                            </c:when>
+
+
+                        </c:choose>
+                    </td>
+
+                </tr>
+
 
             </c:forEach>
         </table>
-        <footer>
-            Copywrite SISGAPI  2022 - Todos os direitos reservados
-
-        </footer>
+        <tags:footer></tags:footer>
     </body>
 </html>
