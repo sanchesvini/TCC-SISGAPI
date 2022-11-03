@@ -28,6 +28,23 @@ public class Usuario {
         this.id_curso = id_curso;
     }
 
+    public Usuario( int tipo, String nome, String email, String senha, int id_curso) {
+        
+        this.tipo = tipo;
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.id_curso = id_curso;
+    }
+
+    public Usuario(int id, int tipo, String nome, Long matricula, int id_curso) {
+        this.id = id;
+        this.tipo = tipo;
+        this.nome = nome;
+        this.matricula = matricula;
+        this.id_curso = id_curso;
+    }
+
     public Usuario(int tipo, String nome, Long matricula, String email, String senha, int id_curso) {
         this.tipo = tipo;
         this.nome = nome;
