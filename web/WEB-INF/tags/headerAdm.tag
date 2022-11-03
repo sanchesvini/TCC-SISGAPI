@@ -56,10 +56,10 @@
                 <a href="CadastrarProjeto">Cadastrar Projeto</a>
             </li>
             <li class="menu-item">
-                <a href="GerenciarProjetos">Gerenciar Projeto</a>
+                <a href="GerenciarProjetos">Gerenciar Projetos</a>
             </li>
             <li class="menu-item">
-                <a href="AgendarBanca">Cadastrar Usuário</a>
+                <a href="AgendarBanca">Agendar Banca</a>
             </li>
 
 

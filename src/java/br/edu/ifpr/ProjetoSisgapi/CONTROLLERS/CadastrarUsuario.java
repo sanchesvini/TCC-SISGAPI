@@ -25,18 +25,10 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "CadastrarUsuario", urlPatterns = {"/CadastrarUsuario"})
 public class CadastrarUsuario extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         request.getRequestDispatcher("WEB-INF/cadastroUsuario.jsp").forward(request, response);
     }
 
@@ -45,44 +37,74 @@ public class CadastrarUsuario extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        String nome, email, senha, senha2; 
+        String nome, email, senha, senha2;
         int tipo, id_curso;
-        Long matricula;
+        String matricula;
+        Long matriculaSucess;
         Usuario u = null;
+        boolean result = false;
 
         nome = request.getParameter("nome");
         email = request.getParameter("email");
-        matricula = Long.parseLong(request.getParameter("login"));
+        matricula = request.getParameter("login");
         senha = request.getParameter("senha");
         senha2 = request.getParameter("confirmarsenha");
-        tipo = 3;
-        
+        tipo = Integer.parseInt(request.getParameter("tipo"));
+
         HttpSession sessao = request.getSession();
         Usuario adm = (Usuario) sessao.getAttribute("autenticado");
-        
-        System.out.println(adm.getNome() + "    cadastro usuario");
+
         id_curso = adm.getId_curso();
-        System.out.println(id_curso + "    cadastro usuario");
-        
-        if(senha.equals(senha2)){
-            u = new Usuario(tipo, nome, matricula, email, senha, id_curso);
-          
-        }
-        else{
-            request.getRequestDispatcher("WEB-INF/cadastrarUsuario.jsp");
-        }
-        
-     
-        UsuarioModel model = new UsuarioModel();
 
-        try {
-            model.create(u);
+        if (tipo == 2 || tipo == 3) {
 
-            request.getRequestDispatcher("WEB-INF/indexes/indexAdm.jsp").forward(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(CadastrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
+            if (matricula.equals("") || matricula == null) {
+//                result = false;
+//                request.setAttribute("result", result);
+//                System.out.println("deu erro 1");
+
+                response.sendRedirect("AcessarIndex");
+            } else {
+                matriculaSucess = Long.parseLong(matricula);
+                if (senha.equals(senha2)) {
+                    u = new Usuario(tipo, nome, matriculaSucess, email, senha, id_curso);
+                    UsuarioModel model = new UsuarioModel();
+                    try {
+                        result = model.create(u);
+                        if (result == true) {
+//                            request.setAttribute("result", result);
+//                           System.out.println("deu certo 2");
+
+                            response.sendRedirect("AcessarIndex");
+                        }
+
+                    } catch (SQLException ex) {
+                        Logger.getLogger(CadastrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+                } else {
+//                    result = false;
+//                    request.setAttribute("result", result);
+//                    System.out.println("deu erro 3");
+                    response.sendRedirect("AcessarIndex");
+                }
+            }
+
+        } else if (senha.equals(senha2)) {
+            u = new Usuario(tipo, nome, email, senha, id_curso);
+            UsuarioModel model = new UsuarioModel();
+            try {
+                result = model.createConvidado(u);
+                if (result == true) {
+                    response.sendRedirect("AcessarIndex");
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(CadastrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else{
+            response.sendRedirect("AcessarIndex");
         }
+
     }
-   
 
 }

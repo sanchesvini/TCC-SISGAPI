@@ -31,7 +31,7 @@ public class DownloadProjeto extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
     }
 
     @Override
@@ -50,9 +50,15 @@ public class DownloadProjeto extends HttpServlet {
             Projeto p = model.getProjetoByIdProjeto(id_projeto);
 
             response.setContentType(p.getTipo_arquivo());
-            response.getOutputStream().write(p.getProjeto());
+
+            byte[] arquivoProjeto = p.getProjeto();
+            if (arquivoProjeto == null) {
+                response.sendRedirect("AcessarIndex");
+            } else {
+                response.getOutputStream().write(p.getProjeto());
+            }
+
             
-            response.sendRedirect("GerenciarProjeto");
 
         } catch (SQLException ex) {
             Logger.getLogger(DownloadProjeto.class.getName()).log(Level.SEVERE, null, ex);

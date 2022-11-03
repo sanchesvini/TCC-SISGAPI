@@ -87,36 +87,37 @@
     <body>
         <tags:headerAdm></tags:headerAdm>
         <div class="box">
-            <form action="">
+            <form action="CadastrarProjeto" method="POST">
                 <legend>Cadastrar Novo Projeto</legend>
                 
                 <div class="inputBox">
-                    <select id="estudantes">
-                        <option>Sara</option>
-                        <option>Vinicius</option>
-                        <option>Natalia</option>
-                        <option>Malu</option>
+                    <select id="estudantes" name="estudante1">
+                        <option value="selecione">Selecione</option>
+                        <c:forEach varStatus="status" var="estudante" items="${estudantes}">
+                            <option value="${estudante.id}">${estudante.nome}</option>
+                        </c:forEach>
+                       
 
                     </select>
-                    <select id="estudantes">
-                        <option>Sara</option>
-                        <option>Vinicius</option>
-                        <option>Natalia</option>
-                        <option>Malu</option>
+                    <select id="estudantes" name="estudante2">
+                        <option value="selecione">Selecione</option>
+                        <c:forEach varStatus="status" var="estudante" items="${estudantes}">
+                            <option value="${estudante.id}">${estudante.nome}</option>
+                        </c:forEach>
 
                     </select>
-                    <select id="estudantes">
-                        <option>Sara</option>
-                        <option>Vinicius</option>
-                        <option>Natalia</option>
-                        <option>Malu</option>
+                    <select id="estudantes" name="estudante3">
+                        <option value="selecione">Selecione</option>
+                        <c:forEach varStatus="status" var="estudante" items="${estudantes}">
+                            <option value="${estudante.id}">${estudante.nome}</option>
+                        </c:forEach>
 
                     </select>
-                    <select id="estudantes">
-                        <option>Sara</option>
-                        <option>Vinicius</option>
-                        <option>Natalia</option>
-                        <option>Malu</option>
+                    <select id="estudantes" name="estudante4">
+                        <option value="selecione">Selecione</option>
+                        <c:forEach varStatus="status" var="estudante" items="${estudantes}">
+                            <option value="${estudante.id}">${estudante.nome}</option>
+                        </c:forEach>
 
                     </select>
 
@@ -124,22 +125,25 @@
                 </div>
                 
                 <div class="inputBox">
-                    <select>
-                        <option>luis</option>
-                        <option>Gabriel</option>
-                        <option>Paulo</option>
+                    <select name="orientador1">
+                        <option value="selecione">Selecione</option>
+                        <c:forEach varStatus="status" var="orientador" items="${orientadores}">
+                            <option value="${orientador.id}">${orientador.nome}</option>
+                        </c:forEach>
 
                     </select>
-                    <select>
-                        <option>luis</option>
-                        <option>Gabriel</option>
-                        <option>Paulo</option>
+                    <select name="orientador2">
+                        <option value="selecione">Selecione</option>
+                        <c:forEach varStatus="status" var="orientador" items="${orientadores}">
+                            <option value="${orientador.id}">${orientador.nome}</option>
+                        </c:forEach>
 
                     </select>
-                    <select>
-                        <option>luis</option>
-                        <option>Gabriel</option>
-                        <option>Paulo</option>
+                    <select name="orientador3">
+                        <option value="selecione">Selecione</option>
+                        <c:forEach varStatus="status" var="orientador" items="${orientadores}">
+                            <option value="${orientador.id}">${orientador.nome}</option>
+                        </c:forEach>
 
                     </select>
 
@@ -147,8 +151,8 @@
                 </div>
                 
                 <div class="inputBox">
-                    <input type="text" name="login" id="matricula" class="inputUser" required>
-                    <label for="matricula" class="labelInput">Projeto:</label>
+                    <input type="text" name="projeto" id="projeto" class="inputUser" required>
+                    <label for="projeto" class="labelInput">Projeto:</label>
 
                 </div>
                 

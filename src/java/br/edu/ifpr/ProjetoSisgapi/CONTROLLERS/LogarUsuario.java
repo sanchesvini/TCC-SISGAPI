@@ -35,7 +35,9 @@ public class LogarUsuario extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Long login = Long.parseLong(request.getParameter("login"));
+        
+        String login = request.getParameter("login");
+ 
         String senha = request.getParameter("senha");
 
         UsuarioModel model = new UsuarioModel();

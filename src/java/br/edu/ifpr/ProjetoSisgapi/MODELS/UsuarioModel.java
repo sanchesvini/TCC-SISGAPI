@@ -14,44 +14,52 @@ import java.util.ArrayList;
  * @author usuario
  */
 public class UsuarioModel {
+
     UsuarioDAO dao = new UsuarioDAO();
-    public void create(Usuario u) throws SQLException {
-        
-        if (u.getEmail() == null || u.getEmail() == "") {
-            return;
-        }
 
-        if (u.getSenha() == null || u.getSenha() == "") {
-            return;
-        }
+    public boolean create(Usuario u) throws SQLException {
 
-        
         dao.adicionar(u);
-        System.out.println("CHEGUEI AQUI+++++++++++MODEL USUARIO");
+        System.out.println("CHEGUEI AQUI+++++++++++MODEL USUARIO --- create");
+        return true;
+
     }
-    public Usuario login(Long login, String senha) throws SQLException{
-        return dao.login(login, senha);
-        
+    public boolean createConvidado(Usuario u) throws SQLException{
+        dao.adicionarConvidado(u);
+        System.out.println("CHEGUEI AQUI+++++++++++MODEL USUARIO --- createConvidado");
+        return true;
     }
-    
-    public boolean isEstudante(Usuario u){
-        if(u.getTipo() == 3){
+
+    public Usuario login(String email, String senha) throws SQLException {
+        return dao.login(email, senha);
+
+    }
+
+    public boolean isEstudante(Usuario u) {
+        if (u.getTipo() == 3) {
             return true;
         }
         return false;
-        
+
     }
-    
-    public boolean isOrientador(Usuario u){
-        if(u.getTipo() == 2){
+
+    public boolean isOrientador(Usuario u) {
+        if (u.getTipo() == 2) {
             return true;
         }
         return false;
     }
-    public boolean isAdm(Usuario u){
-        if(u.getTipo() == 1){
+
+    public boolean isAdm(Usuario u) {
+        if (u.getTipo() == 1) {
             return true;
         }
         return false;
+    }
+    public ArrayList<Usuario> getAllEstudantesSemProjeto() throws SQLException{
+        return dao.getAllEstudantesSemProjeto();
+    }
+    public ArrayList<Usuario> getAllOrientadoresProjeto() throws SQLException{
+        return dao.getAllOrientadoresProjeto();
     }
 }

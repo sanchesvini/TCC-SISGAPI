@@ -31,57 +31,11 @@ public class ProjetoModel {
         }
         
     }
-    public void linkProject(Projeto p, ArrayList<Long> estudantes, ArrayList<Long> orientadores) throws SQLException{
-        UsuarioDAO udao = new UsuarioDAO();
-        ArrayList<Integer> id_estudantes = new ArrayList<>();
-        ArrayList<Integer> id_orientadores = new ArrayList<>();
-        //removendo valores nulos
-        for(int i=0; i<estudantes.size(); i++){
-            if(estudantes.get(i).equals("") || estudantes.get(i) == null){
-                estudantes.remove(i);
-            }
-        }
-        //adicionando id dos usuarios na lista
-        Usuario estudante = new Usuario();
-        for(int i = 0; i<estudantes.size(); i++){
-            estudante = udao.getUserForMatricula(estudantes.get(i));
-            int id_estudante = estudante.getId();
-            boolean isEstudante = estudante.isEstudante(estudantes.get(i));
-            boolean isExistingUserOnProject = udao.isExistingUserOnProject(estudante.getId());
-            if(isEstudante == true && isExistingUserOnProject == false) {
-                id_estudantes.add(id_estudante);
-            }
-            else{
-                System.out.println("O usuário digitado no campo de estudante já possui um projeto ou não é um estudante válido.");
-                
-            }
-            
-        }
-        
-        //removendo valores nulos
-        for(int i=0; i<orientadores.size(); i++){
-            if(orientadores.get(i).equals("") || orientadores.get(i) == null){
-                orientadores.remove(i);
-            }
-        }
-        //adicionando id dos usuarios na lista
-        int id = 0;
-         Usuario orientador = new Usuario();
-        for(int i = 0; i<orientadores.size(); i++){
-            orientador = udao.getUserForMatricula(orientadores.get(i));
-            if(orientador.isOrientador(orientadores.get(i)) == true) {
-                id_orientadores.add(orientador.getId());
-            }
-            else{
-                System.out.println("O usuário digitado no campo de orientador não é um orientador válido.");
-            }
-            
-        }
-        
-        
+    public void linkProject(Projeto p, ArrayList<Integer> estudantes, ArrayList<Integer> orientadores) throws SQLException{
+     
         int id_projeto = pdao.getIdProjetoByProjeto(p);
         if(id_projeto != 0){
-            pdao.linkProjetoToUsuario(id_projeto, id_estudantes, id_orientadores);
+            pdao.linkProjetoToUsuario(id_projeto, estudantes, orientadores);
         }
         else{
             System.out.println("Projeto inexistente.");
