@@ -7,7 +7,7 @@
 <%@page import="br.edu.ifpr.ProjetoSisgapi.MODELS.ProjetoModel"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
-
+<%@taglib prefix="tags" tagdir="/WEB-INF/tags/" %>
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -80,15 +80,15 @@
 
                 <tr>
                     <td>
-                        
-                        <% 
+
+                        <%
                             int id_projeto = {banca.id_projeto};
                             ProjetoModel pmodel = new ProjetoModel();
                             String projeto = pmodel.getProjetoByIdProjeto(id_projeto).getNome();
-                            
-                            
+
+
                         %>
-                    
+
                         ${projeto}
                     </td>
                     <td>
@@ -108,7 +108,7 @@
 
 
                         </c:choose>
-                       
+
                     </td>
 
                 </tr>
@@ -116,9 +116,6 @@
 
             </c:forEach>
         </table>
-        <footer>
-            Copywrite SISGAPI  2022 - Todos os direitos reservados
-
-        </footer>
+        <tags:footer></tags:footer>
     </body>
 </html>

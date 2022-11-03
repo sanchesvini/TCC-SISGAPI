@@ -14,38 +14,36 @@
         <title>SISGAPI - Início</title>
         <link rel="stylesheet" type="text/css" href="./CSS/default.css">
         <link rel="stylesheet" type="text/css" href="./CSS/header.css">
-        
+
         <script src="https://unpkg.com/phosphor-icons"></script>
     </head>
     <body>
         <tags:headerAdm></tags:headerAdm>
-       
 
-        <main>
-            <p>
-                Sistema de Gerenciamento
-            </p>
-            <p>
-                do
-            </p>
-            <p>
-                Projeto Integrador
-            </p>
-            <br>
-            <p>
-                Organize seu projeto de conclusão
-            </p>
-            <p>
-                de curso com sua equipe!
 
-            </p>
-          
-        </main>
-  
+            <main>
+                <p>
+                    Sistema de Gerenciamento
+                </p>
+                <p>
+                    do
+                </p>
+                <p>
+                    Projeto Integrador
+                </p>
+                <br>
+                <p>
+                    Organize seu projeto de conclusão
+                </p>
+                <p>
+                    de curso com sua equipe!
 
-        <footer>
-            Copywrite SISGAPI © 2022 - Todos os direitos reservados
-        </footer>
+                </p>
+
+            </main>
+
+
+        <tags:footer></tags:footer>
     </div>
 </body>
 

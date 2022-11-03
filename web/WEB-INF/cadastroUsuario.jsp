@@ -21,16 +21,16 @@
         <script src="https://unpkg.com/phosphor-icons"></script>
 
         <style>
-            
+
             .box{
                 display: flex;
                 align-self: center;
                 justify-content: space-between;
                 color: black;
-                
+
                 background-color: white;
                 border-radius: 15px;
-                
+
             }
             fieldset{
                 border: 3px solid black;
@@ -45,8 +45,8 @@
             .inputBox{
                 position: relative;
                 margin: 8%;
-                
-               
+
+
             }
             .inputUser{
                 background: none;
@@ -88,42 +88,41 @@
     </head>
     <body>
         <tags:headerAdm></tags:headerAdm>
-        <div class="box">
-            <form action="CadastrarUsuario" method="POST">
-                <legend>Cadastrar Novo Usuário</legend>
-                
-                <div class="inputBox">
-                    <input type="text" name="nome" id="inome" class="inputUser" required>
-                    <label for="nome" class="labelInput">Nome completo</label>
-                </div>
-                
-                <div class="inputBox">
-                    <input type="text" name="email" id="email" class="inputUser" required>
-                    <label for="email" class="labelInput">Email</label>
-                </div>
-                
-                <div class="inputBox">
-                    <input type="text" name="login" id="matricula" class="inputUser" required>
-                    <label for="telefone" class="labelInput">Matricula</label>
-                </div>
+            <div class="box">
+                <form action="CadastrarUsuario" method="POST">
+                    <legend>Cadastrar Novo Usuário</legend>
 
-                
-                <div class="inputBox">
-                    <input type="password" name="senha" id="isenha" class="inputUser" required>
-                    <label for="isenha" class="labelInput">Senha</label>
-                </div>
-                
-                <div class="inputBox">
-                    <input type="password" name="confirmarsenha" id="iconfirmar" class="inputUser" required>
-                    <label for="estado" class="labelInput">Confirme a senha</label>
-                </div>
-                
-                <input type="submit" name="submit" id="submit">
-            </form>
-        </div>
+                    <div class="inputBox">
+                        <input type="text" name="nome" id="inome" class="inputUser" required>
+                        <label for="nome" class="labelInput">Nome completo</label>
+                    </div>
 
-    </body>
-    <footer>
-        Copywrite SISGAPI © 2022 - Todos os direitos reservados
-    </footer>
+                    <div class="inputBox">
+                        <input type="text" name="email" id="email" class="inputUser" required>
+                        <label for="email" class="labelInput">Email</label>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="text" name="login" id="matricula" class="inputUser" required>
+                        <label for="telefone" class="labelInput">Matricula</label>
+                    </div>
+
+
+                    <div class="inputBox">
+                        <input type="password" name="senha" id="isenha" class="inputUser" required>
+                        <label for="isenha" class="labelInput">Senha</label>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="password" name="confirmarsenha" id="iconfirmar" class="inputUser" required>
+                        <label for="estado" class="labelInput">Confirme a senha</label>
+                    </div>
+
+                    <input type="submit" name="submit" id="submit">
+                </form>
+            </div>
+
+        </body>
+    <tags:footer></tags:footer>
+
 </html>

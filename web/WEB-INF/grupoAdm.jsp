@@ -6,19 +6,19 @@
     <head>
         <meta charset="utf-8">
         <title>Visualizar Projeto</title>
-        
+
         <link rel="stylesheet" type="text/css" href="CSS/addProjeto.css">
-        
+
         <link rel="stylesheet" type="text/css" href="./CSS/default.css">
         <link rel="stylesheet" type="text/css" href="./CSS/header.css">
-        
+
         <script src="https://unpkg.com/phosphor-icons"></script>
     </head>
     <body>
         <tags:headerAdm></tags:headerAdm>
-        <div class="parent">
+            <div class="parent">
 
-            <h3>${projeto.nome}</h3>
+                <h3>${projeto.nome}</h3>
 
             <div id="estudantes">
                 <h3>Estudantes</h3>
@@ -42,10 +42,10 @@
                     <div>
                         <form method="post" action="DownloadProjeto?id=${projeto.id}">
                             ICONE ARQUIVO
-                            
+
                             <button type="submit" > Download</button>
-                            
-                            
+
+
                         </form>
                     </div>
                     <div>
@@ -59,9 +59,7 @@
         </div>
 
 
-        <footer>
-            Copywrite SISGAPI Â© 2022 - Todos os direitos reservados
-        </footer>
+        <tags:footer></tags:footer>
     </div>
 </body>
 
@@ -71,8 +69,8 @@
         menu.classList.toggle("active");
 
     }
-    
-    function visualizarArquivo(){
+
+    function visualizarArquivo() {
         let modal = document.getElementById('dialog-arquivo');
         modal.showModal();
     }
