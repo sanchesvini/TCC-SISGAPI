@@ -14,17 +14,17 @@
         <script src="https://unpkg.com/phosphor-icons"></script>
 
         <style>
-            
+
             .box{
                 display: flex;
                 align-self: center;
                 justify-content: space-between;
                 align-content: center;
                 color: black;
-                
+
                 background-color: white;
                 border-radius: 15px;
-                
+
             }
             fieldset{
                 border: 3px solid black;
@@ -39,8 +39,8 @@
             .inputBox{
                 position: relative;
                 margin: 6%;
-                
-               
+
+
             }
             .inputUser{
                 background: none;
@@ -82,10 +82,11 @@
                 margin-top: 8%;
             }
         </style>
-          
+
     </head>
     <body>
         <tags:headerAdm></tags:headerAdm>
+
         <div class="box">
             <form action="CadastrarProjeto" method="POST">
                 <legend>Cadastrar Novo Projeto</legend>
@@ -171,8 +172,9 @@
                 <input type="submit" name="submit" id="submit">
             </form>
         </div>
-        <footer>
-            Copywrite SISGAPI ï¿½ 2022 - Todos os direitos reservados
-        </footer>
+       
+
+        <tags:footer></tags:footer>
+
     </body>
 </html>

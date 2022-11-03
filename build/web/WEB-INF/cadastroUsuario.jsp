@@ -158,12 +158,10 @@
             </form>
         </div>
 
-
+    <tags:footer></tags:footer>
 
     </body>
-    <footer>
-        Copywrite SISGAPI © 2022 - Todos os direitos reservados
-    </footer>
+    
 </html>
 <script>
     function exibirModal() {
@@ -178,3 +176,6 @@
         }
     }
 </script>
+
+    
+
