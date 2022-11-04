@@ -157,8 +157,9 @@
 
             </form>
         </div>
+        
+         <tags:footer></tags:footer>
 
-    <tags:footer></tags:footer>
 
     </body>
     
@@ -177,5 +178,5 @@
     }
 </script>
 
-    
+   
 

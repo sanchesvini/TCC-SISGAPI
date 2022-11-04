@@ -35,10 +35,6 @@
                 </div>
             </div>
 
-            <div id="sair">
-                sair
-            </div>
-
             <div id="btn-sair">
                 <a href="Sair"><i class="ph-sign-out" style="font-size: 2em;"></i></a>
             </div>

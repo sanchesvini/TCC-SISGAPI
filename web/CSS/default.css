@@ -37,7 +37,7 @@ main{
 .gerenciar {
     display: flex;
     flex-direction: column;
-    align-self: start;
+    align-self: flex-start;
     font-size: 1.5rem;
 }
 
@@ -59,7 +59,7 @@ form{
 
 .botao{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     border-radius: 0.6em;
     color: rgb(0, 95, 189);
     padding: 0.7em 0.7em;
