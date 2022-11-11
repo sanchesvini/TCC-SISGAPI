@@ -12,7 +12,7 @@
 <html lang="pt-BR">
     <head>
 
-        <link rel="stylesheet" href="CSS/default.css"/>
+        <link rel="stylesheet" type="text/css" href="CSS/default.css"/>
         <link rel="stylesheet" type="text/css" href="./CSS/header.css">
         
         <script src="https://unpkg.com/phosphor-icons"></script>
@@ -56,9 +56,9 @@
     <body>
         <header> 
             <div id="header-cima">
-                <div class="btn-voltar">
+<!--                <div class="btn-voltar">
                     <i class="ph-skip-back" style="font-size: 2.8em;"></i>
-                </div>
+                </div>-->
                 <div class="logo"> 
                     SISGAPI
                 </div>

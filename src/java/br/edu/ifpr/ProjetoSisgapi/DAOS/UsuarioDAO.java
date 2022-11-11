@@ -159,7 +159,7 @@ public class UsuarioDAO {
 
         ArrayList<Usuario> usuarios = new ArrayList<>();
 
-        String sql = "SELECT u.id, u.nome, u.id_curso, u.email, u.matricula, u.tipo FROM Usuarios AS u INNER JOIN UsuariosProjetos AS up ON up.id_usuario ";
+        String sql = "SELECT id, nome, id_curso, email, matricula, tipo FROM Usuarios WHERE tipo = 3";
 
         Connection connection = new ConnectionFactory().getConnection();
         PreparedStatement stmt = connection.prepareStatement(sql);
@@ -171,10 +171,10 @@ public class UsuarioDAO {
             usuarios.add(u);
 
         }
-        return usuarios;
+        if()
     }
 
-    public ArrayList<Usuario> getAllOrientadoresProjeto() throws SQLException {
+    public ArrayList<Usuario> getAllOrientadores() throws SQLException {
 
         ArrayList<Usuario> usuarios = new ArrayList<>();
 

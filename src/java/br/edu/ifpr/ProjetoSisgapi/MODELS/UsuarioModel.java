@@ -59,8 +59,8 @@ public class UsuarioModel {
     public ArrayList<Usuario> getAllEstudantesSemProjeto() throws SQLException{
         return dao.getAllEstudantesSemProjeto();
     }
-    public ArrayList<Usuario> getAllOrientadoresProjeto() throws SQLException{
-        return dao.getAllOrientadoresProjeto();
+    public ArrayList<Usuario> getAllOrientadores() throws SQLException{
+        return dao.getAllOrientadores();
     }
     public ArrayList<Usuario> getAllOrientadoresEMembros() throws SQLException{
         return dao.getAllOrientadoresEMebros();
