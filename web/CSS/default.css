@@ -31,10 +31,10 @@ main{
     flex-direction: column;
     align-self: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
-.gerenciar {
+main .gerenciar {
     display: flex;
     flex-direction: column;
     align-self: flex-start;
@@ -42,7 +42,7 @@ main{
 }
 
 form{
-    margin-left: 3em;
+    
 }
 
 
@@ -71,7 +71,7 @@ form{
     display: flex;
     flex-direction: column;
     align-self: center;
-    font-size: 1.5rem;
+   
 }
 
 .file{
@@ -86,4 +86,14 @@ footer {
     width: 100vw;
     justify-content: center;
     align-content: center;
+    align-items: center;
+    
 }
+.btn-voltar{
+      border-radius: 0.6em;
+  color: rgb(0, 95, 189);
+  padding: 0.5em 1em;
+  background-color: white;
+  font-size: 0.7em;
+}
+

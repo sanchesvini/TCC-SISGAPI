@@ -40,6 +40,7 @@ public class UsuarioDAO {
 
         }
     }
+
     public void adicionarConvidado(Usuario u) throws SQLException {
         String sql = "INSERT INTO USUARIOS (nome, tipo, email,"
                 + "senha, id_curso) VALUES (?,?,?,?,?)";
@@ -106,9 +107,7 @@ public class UsuarioDAO {
         Connection connection = new ConnectionFactory().getConnection();
         PreparedStatement stmt = connection.prepareStatement(sql);
 
- 
         stmt.setInt(1, id_estudante);
-        
 
         ResultSet rs = stmt.executeQuery();
 
@@ -118,12 +117,13 @@ public class UsuarioDAO {
         return false;
 
     }
-    public int getUserProject(Usuario u) throws SQLException{
+
+    public int getUserProject(Usuario u) throws SQLException {
         String sql = "SELECT p.id, up.id_usuario, up.id_projeto, u.id FROM projetos AS p INNER JOIN usuariosprojetos AS up ON p.id = up.id_projeto INNER JOIN usuarios AS u ON up.id_usuario = ?";
-        
+
         Connection connection = new ConnectionFactory().getConnection();
         PreparedStatement stmt = connection.prepareStatement(sql);
- 
+
         stmt.setInt(1, u.getId());
         ResultSet rs = stmt.executeQuery();
 
@@ -132,65 +132,84 @@ public class UsuarioDAO {
         }
         return 0;
     }
-    
-    public ArrayList<Usuario> getAllUsersProject(int id_projeto) throws SQLException{
-        
+
+    public ArrayList<Usuario> getAllUsersProject(int id_projeto) throws SQLException {
+
         ArrayList<Usuario> usuarios = new ArrayList<>();
-        
+
         String sql = "SELECT u.id, u.nome, u.id_curso, u.email, u.matricula, u.tipo, up.id_projeto, p.id FROM Usuarios AS u "
                 + "INNER JOIN USUARIOSPROJETOS AS up ON u.id = up.id_usuario "
                 + "INNER JOIN PROJETOS AS p ON p.id = up.id_projeto AND up.id_projeto = ?";
-        
+
         Connection connection = new ConnectionFactory().getConnection();
         PreparedStatement stmt = connection.prepareStatement(sql);
- 
+
         stmt.setInt(1, id_projeto);
         ResultSet rs = stmt.executeQuery();
 
         while (rs.next()) {
             Usuario u = new Usuario(rs.getInt("ID"), rs.getString("NOME"), rs.getString("EMAIL"), rs.getInt("TIPO"), rs.getInt("ID_CURSO"));
             usuarios.add(u);
-             
+
         }
         return usuarios;
-    } 
-    public ArrayList<Usuario> getAllEstudantesSemProjeto() throws SQLException{
-        
+    }
+
+    public ArrayList<Usuario> getAllEstudantesSemProjeto() throws SQLException {
+
         ArrayList<Usuario> usuarios = new ArrayList<>();
-        
-        String sql = "SELECT id, nome, id_curso, email, matricula, tipo FROM Usuarios WHERE id_projeto is null AND tipo = 3";
-        
+
+        String sql = "SELECT u.id, u.nome, u.id_curso, u.email, u.matricula, u.tipo FROM Usuarios AS u INNER JOIN UsuariosProjetos AS up ON up.id_usuario ";
+
         Connection connection = new ConnectionFactory().getConnection();
         PreparedStatement stmt = connection.prepareStatement(sql);
- 
+
         ResultSet rs = stmt.executeQuery();
 
         while (rs.next()) {
             Usuario u = new Usuario(rs.getInt("ID"), rs.getString("NOME"), rs.getString("EMAIL"), rs.getInt("TIPO"), rs.getInt("ID_CURSO"));
             usuarios.add(u);
-             
+
         }
         return usuarios;
     }
-    public ArrayList<Usuario> getAllOrientadoresProjeto() throws SQLException{
-        
+
+    public ArrayList<Usuario> getAllOrientadoresProjeto() throws SQLException {
+
         ArrayList<Usuario> usuarios = new ArrayList<>();
-        
+
         String sql = "SELECT id, nome, id_curso, email, matricula, tipo FROM Usuarios WHERE tipo = 2";
-        
+
         Connection connection = new ConnectionFactory().getConnection();
         PreparedStatement stmt = connection.prepareStatement(sql);
- 
+
         ResultSet rs = stmt.executeQuery();
 
         while (rs.next()) {
             Usuario u = new Usuario(rs.getInt("ID"), rs.getString("NOME"), rs.getString("EMAIL"), rs.getInt("TIPO"), rs.getInt("ID_CURSO"));
             usuarios.add(u);
-             
+
         }
         return usuarios;
     }
-    
-    
+
+    public ArrayList<Usuario> getAllOrientadoresEMebros() throws SQLException {
+
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+
+        String sql = "SELECT id, nome, id_curso, email, matricula, tipo FROM Usuarios WHERE tipo = 2 OR tipo = 4";
+
+        Connection connection = new ConnectionFactory().getConnection();
+        PreparedStatement stmt = connection.prepareStatement(sql);
+
+        ResultSet rs = stmt.executeQuery();
+
+        while (rs.next()) {
+            Usuario u = new Usuario(rs.getInt("ID"), rs.getString("NOME"), rs.getString("EMAIL"), rs.getInt("TIPO"), rs.getInt("ID_CURSO"));
+            usuarios.add(u);
+
+        }
+        return usuarios;
+    }
 
 }

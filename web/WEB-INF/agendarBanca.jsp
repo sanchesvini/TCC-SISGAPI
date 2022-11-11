@@ -91,73 +91,84 @@
     </head>
     <body>
         <tags:headerAdm></tags:headerAdm>
-            <div class="box">
-                <legend><b>Agendar Banca</b></legend>
-                <br><br>
-                <div class="inputBox">
-                    <form method="POST" action="AgendarBanca">
-                        <label for="projeto">Projeto:</label>
-                        <br>
-                        <select name="projeto">
-                        <c:forEach varStatus="status" var="projeto" items="${projetos}">
-                            <option value="${projeto.id}">${projeto.nome}</option>
-                        </c:forEach>
-                    </select>  
-
+            <main>
+                <div class="box">
+                    <legend><b>Agendar Banca</b></legend>
+                    <br><br>
                     <div class="inputBox">
-
-
-                        <label for="imembros" class="labelInput">Membros da Banca:</label>
-                        <select>
-                            <option>Luis</option>
-                            <option>Roberto</option>
-                            <option>Alison</option>
-
-                        </select>
-                        <select>
-                            <option>Luis</option>
-                            <option>Roberto</option>
-                            <option>Alison</option>
-
-                        </select>
-                        <select>
-                            <option>Luis</option>
-                            <option>Roberto</option>
-                            <option>Alison</option>
-
-                        </select>
-                        <select>
-                            <option>Luis</option>
-                            <option>Roberto</option>
-                            <option>Alison</option>
-
-                        </select>
-                        <select>
-                            <option>Luis</option>
-                            <option>Roberto</option>
-                            <option>Alison</option>
-
-                        </select>
-                </form>       
-
-                <form method="POST" action="AgendarBanca">
-                    <label for="projeto">Projeto<br>
-                        <select name="projeto">
+                        <form method="POST" action="AgendarBanca">
+                            <label for="projeto">Projeto:</label>
+                            <br>
+                            <select name="projeto" id="projeto">
                             <c:forEach varStatus="status" var="projeto" items="${projetos}">
                                 <option value="${projeto.id}">${projeto.nome}</option>
                             </c:forEach>
+                        </select>  
+
+
+
+
+                        <label for="imembros" class="labelInput">Membros da Banca:</label>
+                        <select name="membro1" id="imembros">
+                            <option value="selecione">Selecione</option>
+                            <c:forEach varStatus="status" var="membro" items="${membros}">
+                                <option value="${membro.id}">${membro.nome}</option>
+                            </c:forEach>
+
                         </select>
-                    </label>
+                        <select name="membro2" id="imembros">
+                            <option value="selecione">Selecione</option>
+                            <c:forEach varStatus="status" var="membro" items="${membros}">
+                                <option value="${membro.id}">${membro.nome}</option>
+                            </c:forEach>
 
+                        </select>
+                        <select name="membro3" id="imembros">
+                            <option value="selecione">Selecione</option>
+                            <c:forEach varStatus="status" var="membro" items="${membros}">
+                                <option value="${membro.id}">${membro.nome}</option>
+                            </c:forEach>
+
+                        </select>
+                        <select name="membro4" id="imembros">
+                            <option value="selecione">Selecione</option>
+                            <c:forEach varStatus="status" var="membro" items="${membros}">
+                                <option value="${membro.id}">${membro.nome}</option>
+                            </c:forEach>
+
+                        </select>
+                        <select name="membro5" id="imembros">
+                            <option value="selecione">Selecione</option>
+                            <c:forEach varStatus="status" var="membro" items="${membros}">
+                                <option value="${membro.id}">${membro.nome}</option>
+                            </c:forEach>
+
+                        </select>
+
+                        <div class="inputBox">
+                            <input type="text" name="local" id="ilocal" class="inputUser" required>
+                            <label for="ilocal" class="labelInput">Local</label>
+                        </div>
+                        <div class="inputBox">
+                            <input type="date" name="data" id="data" class="inputUser" required>
+                            <label for="data" class="labelInput">Data</label>
+                        </div>
+                        <div class="inputBox radio-inp">
+                            <input type="radio" name="tipoBanca" id="ibanca1" class="inputUser" value="1" required>
+                            <label for="ibanca1" class="labelInput">Qualificação</label>
+                        </div>
+                        <div class="inputBox radio-inp">
+                            <input type="radio" name="tipoBanca" id="ibanca2" class="inputUser" value="2" required>
+                            <label for="ibanca2" class="labelInput">Defesa</label>
+                        </div>
+                        <input type="submit" name="submit" id="submit">
+                    </form>
+                </div>
             </div>
-            <br>
+        </main>
 
-            <input type="submit" name="submit" id="submit">
-            </form>
-        </div>
-    </div>
-</body>
 
-<tags:footer></tags:footer>
+        <tags:footer></tags:footer>
+    </body>
 
 </html>

@@ -7,6 +7,7 @@ package br.edu.ifpr.ProjetoSisgapi.CONTROLLERS;
 
 import br.edu.ifpr.ProjetoSisgapi.ENTITIES.Banca;
 import br.edu.ifpr.ProjetoSisgapi.MODELS.BancaModel;
+import br.edu.ifpr.ProjetoSisgapi.MODELS.ProjetoModel;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -32,14 +33,34 @@ public class AcessarBancas extends HttpServlet {
             throws ServletException, IOException {
         
         BancaModel bm = new BancaModel();
+        ProjetoModel pmodel = new ProjetoModel();
+        
         ArrayList<Banca> bancas = null;
+        
+        ArrayList<String> nomeProjetos = new ArrayList<>();
+        int id_projeto = 0;
+        String nomeProjeto;
+        
         try {
             bancas = bm.getAllBancas();
         } catch (SQLException ex) {
             Logger.getLogger(AcessarBancas.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        for (Banca banca : bancas) {
+             id_projeto = banca.getId_projeto();
+                 
+            try {
+                nomeProjeto = pmodel.getProjetoByIdProjeto(id_projeto).getNome();
+                
+                nomeProjetos.add(nomeProjeto);
+            } catch (SQLException ex) {
+                Logger.getLogger(AcessarBancas.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
         request.setAttribute("bancas", bancas);
+        request.setAttribute("nomeProjetos", nomeProjetos);
         request.getRequestDispatcher("bancasGeral.jsp").forward(request, response);
     }
 

@@ -6,8 +6,10 @@
 package br.edu.ifpr.ProjetoSisgapi.CONTROLLERS;
 
 import br.edu.ifpr.ProjetoSisgapi.DAOS.AtividadeDAO;
+import br.edu.ifpr.ProjetoSisgapi.DAOS.ProjetoDAO;
 import br.edu.ifpr.ProjetoSisgapi.DAOS.UsuarioDAO;
 import br.edu.ifpr.ProjetoSisgapi.ENTITIES.Atividade;
+import br.edu.ifpr.ProjetoSisgapi.ENTITIES.Projeto;
 import br.edu.ifpr.ProjetoSisgapi.ENTITIES.Usuario;
 import br.edu.ifpr.ProjetoSisgapi.MODELS.AtividadeModel;
 import java.io.IOException;
@@ -44,6 +46,7 @@ public class AbrirCronograma extends HttpServlet {
             int id_projeto = udao.getUserProject(u);
             
             AtividadeDAO adao = new AtividadeDAO();
+            ProjetoDAO pdao = new ProjetoDAO();
             
             
             ArrayList<Atividade> atividades = adao.getAllProjectAtivitiesById_Project(id_projeto);
@@ -56,6 +59,9 @@ public class AbrirCronograma extends HttpServlet {
                 meses.add(amodel.getMesAtividade(atividades.get(i)));
             }
             
+            Projeto projeto = pdao.getProjetoByIdProjeto(id_projeto);
+            
+            request.setAttribute("projeto", projeto);
             request.setAttribute("atividades", atividades);
             request.setAttribute("meses", meses);
             

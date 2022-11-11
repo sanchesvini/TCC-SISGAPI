@@ -13,54 +13,59 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 /**
  *
  * @author vinic
  */
 public class ProjetoModel {
+
     ProjetoDAO pdao = new ProjetoDAO();
-    
-    public void createProject(Projeto p) throws SQLException{
-        
-        
+
+    public void createProject(Projeto p) throws SQLException {
+
         try {
             pdao.addProjeto(p);
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(ProjetoModel.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
-    public void linkProject(Projeto p, ArrayList<Integer> estudantes, ArrayList<Integer> orientadores) throws SQLException{
-     
+
+    public void linkProject(Projeto p, ArrayList<Integer> estudantes, ArrayList<Integer> orientadores) throws SQLException {
+
         int id_projeto = pdao.getIdProjetoByProjeto(p);
-        if(id_projeto != 0){
+        if (id_projeto != 0) {
             pdao.linkProjetoToUsuario(id_projeto, estudantes, orientadores);
-        }
-        else{
+        } else {
             System.out.println("Projeto inexistente.");
         }
     }
-    
-    public void anexarTrabalho(byte[] trabalho, String tipo, int id_projeto) throws SQLException{
+
+    public void anexarTrabalho(byte[] trabalho, String tipo, int id_projeto) throws SQLException {
         pdao.anexarProjeto(trabalho, tipo, id_projeto);
-        
+
     }
-    public int getIdProjetoByProjeto(Projeto p) throws SQLException{
+
+    public int getIdProjetoByProjeto(Projeto p) throws SQLException {
         return pdao.getIdProjetoByProjeto(p);
     }
-    public ArrayList<Projeto> getProjetosByIdUsuario(int id_usuario) throws SQLException{
-       return pdao.getProjetosByIdUsuario(id_usuario);
+
+    public ArrayList<Projeto> getProjetosByIdUsuario(int id_usuario) throws SQLException {
+        return pdao.getProjetosByIdUsuario(id_usuario);
     }
-    
-    public ArrayList<Projeto> getAllProjetosByIdCurso(int id_curso) throws SQLException{
+
+    public ArrayList<Projeto> getAllProjetosByIdCurso(int id_curso) throws SQLException {
         return pdao.getAllProjetosByIdCurso(id_curso);
     }
-    public Projeto getProjetoByIdProjeto(int id_projeto) throws SQLException{
-       return pdao.getProjetoByIdProjeto(id_projeto);
+
+    public Projeto getProjetoByIdProjeto(int id_projeto) throws SQLException {
+        return pdao.getProjetoByIdProjeto(id_projeto);
     }
-    
-    
-    
-    
+
+    public boolean isEstudanteComProjeto(int id_usuario) throws SQLException {
+        return pdao.isEstudanteComProjeto(id_usuario);
+    }
+
 }

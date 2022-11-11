@@ -85,7 +85,7 @@
             #submit:hover{
                 color: black;   /* enviar*/
             }
-            
+
             #modalResultTrue{
                 background-color: black;
                 width: 50px;
@@ -99,84 +99,68 @@
     <body>
         <tags:headerAdm></tags:headerAdm>
 
-        <dialog id="modalResultTrue" >
-            <h1>Cadastrado com sucesso.</h1>
-        </dialog>
+            <main>
+
+                <div class="box">
+
+                    <form action="CadastrarUsuario" method="POST">
+                        <legend>Cadastrar Novo Usuário</legend>
+
+                        <div class="inputBox radio-inp">
+                            <input type="radio" name="tipo" id="iestudante" class="inputUser" value="3" required>
+                            <label for="iestudante" class="labelInput">Estudante</label>
+                        </div>
+                        <div class="inputBox radio-inp">
+                            <input type="radio" name="tipo" id="iorientador" class="inputUser" value="2" required>
+                            <label for="iorientador" class="labelInput">Orientador</label>
+                        </div>
+                        <div class="inputBox radio-inp">
+                            <input type="radio" name="tipo" id="iconvidado" class="inputUser" value="4" required>
+                            <label for="iconvidado" class="labelInput">Convidado</label>
+                        </div>
+
+                        <div class="inputBox">
+                            <input type="text" name="nome" id="inome" class="inputUser" required>
+                            <label for="nome" class="labelInput">Nome completo</label>
+                        </div>
+
+                        <div class="inputBox">
+                            <input type="text" name="email" id="email" class="inputUser" required>
+                            <label for="email" class="labelInput">Email</label>
+                        </div>
+
+                        <div class="inputBox">
+                            <input type="text" name="login" id="matricula" class="inputUser">
+                            <label for="telefone" class="labelInput">Matricula</label>
+                        </div>
 
 
-        <dialog id="modalResultFalse">
-            <h1>Erro ao tentar cadastrar usuário.</h1>
-        </dialog>
+                        <div class="inputBox">
+                            <input type="password" name="senha" id="isenha" class="inputUser" required>
+                            <label for="isenha" class="labelInput">Senha</label>
+                        </div>
 
-        <div class="box">
+                        <div class="inputBox">
+                            <input type="password" name="confirmarsenha" id="iconfirmar" class="inputUser" required>
+                            <label for="estado" class="labelInput">Confirme a senha</label>
+                        </div>
 
-            <form action="CadastrarUsuario" method="POST">
-                <legend>Cadastrar Novo Usuário</legend>
+                        <button type="submit" name="submit" id="submit" onclick="exibirModal()">Enviar</button>
 
-                <div class="inputBox radio-inp">
-                    <input type="radio" name="tipo" id="iestudante" class="inputUser" value="3" required>
-                    <label for="iestudante" class="labelInput">Estudante</label>
+
+                    </form>
                 </div>
-                <div class="inputBox radio-inp">
-                    <input type="radio" name="tipo" id="iorientador" class="inputUser" value="2" required>
-                    <label for="iorientador" class="labelInput">Orientador</label>
-                </div>
-                <div class="inputBox radio-inp">
-                    <input type="radio" name="tipo" id="iconvidado" class="inputUser" value="4" required>
-                    <label for="iconvidado" class="labelInput">Convidado</label>
-                </div>
-
-                <div class="inputBox">
-                    <input type="text" name="nome" id="inome" class="inputUser" required>
-                    <label for="nome" class="labelInput">Nome completo</label>
-                </div>
-
-                <div class="inputBox">
-                    <input type="text" name="email" id="email" class="inputUser" required>
-                    <label for="email" class="labelInput">Email</label>
-                </div>
-
-                <div class="inputBox">
-                    <input type="text" name="login" id="matricula" class="inputUser">
-                    <label for="telefone" class="labelInput">Matricula</label>
-                </div>
 
 
-                <div class="inputBox">
-                    <input type="password" name="senha" id="isenha" class="inputUser" required>
-                    <label for="isenha" class="labelInput">Senha</label>
-                </div>
+            </main>
 
-                <div class="inputBox">
-                    <input type="password" name="confirmarsenha" id="iconfirmar" class="inputUser" required>
-                    <label for="estado" class="labelInput">Confirme a senha</label>
-                </div>
-
-                <button type="submit" name="submit" id="submit" onclick="exibirModal()">Enviar</button>
-
-
-            </form>
-        </div>
-        
-         <tags:footer></tags:footer>
+        <tags:footer></tags:footer>
 
 
     </body>
-    
+
 </html>
-<script>
-    function exibirModal() {
-        modalTrue = document.getElementById("modalResultTrue");
-        modalFalse = document.getElementById("modalResultFalse");
 
-        let result = document.getAttribute("result");
-        if (result == true) {
-            modalTrue.showModal();
-        } else {
-            modalFalse.showModal();
-        }
-    }
-</script>
 
-   
+
 

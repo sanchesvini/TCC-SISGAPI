@@ -11,111 +11,107 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
+
+        <link rel="stylesheet" href="CSS/default.css"/>
+        <link rel="stylesheet" type="text/css" href="./CSS/header.css">
+        
+        <script src="https://unpkg.com/phosphor-icons"></script>
+
         <style>
             * {
                 margin: 0;
-                padding: 1;
-            }
-            header{
-                background-color: SteelBlue;
-                height: 70px;
-                font-weight: bold;
-                padding: 20px;
+                padding: 0;
             }
 
-            .topo{
-                font-size: 50px;
-                font-family: "Verdana";
-                letter-spacing: 10px;
-            }
-            .entrar{
-                float: right;
-                align-content: center;
-            }
+
+
+
             table, td, th {
                 border: 1px solid black;
             }
-            table, td, th {
-                border: 2px solid black;
-            }
 
             table {
+               
                 border-collapse: collapse;
-                width: 100%;
+                width: 70vw;
             }
 
-            th {
-                height: 50px;
-            }
-            footer{
-                position: absolute;
-                bottom: 0;
-                background: SteelBlue;
-                width: 100%;
-                padding-top: 40px;
-                text-align: center;
-                font-size: 22px;
+            th, td {
+
+                padding: 2%;
             }
 
             .button{
                 float: right;
             }
+            #bancas{
+                padding: 3%;
+            }
+
+            #titulo{
+                padding: 3% 1%;
+            }
         </style>
     </head>
     <body>
-        <header>
-            <div class="topo"> SISGAPI </div>
-
+        <header> 
+            <div id="header-cima">
+                <div class="btn-voltar">
+                    <i class="ph-skip-back" style="font-size: 2.8em;"></i>
+                </div>
+                <div class="logo"> 
+                    SISGAPI
+                </div>
+            </div>
         </header>
-        <table>
-            <tr>
-                <th>Projeto</th>
-                <th>Local</th>
-                <th>Data</th>
-                <th>Tipo</th>
+        <main>
 
 
-            </tr>
-            <c:forEach varStatus="status" var="banca" items="${bancas}">
-
-                <tr>
-                    <td>
-
-                        <%
-                            int id_projeto = {banca.id_projeto};
-                            ProjetoModel pmodel = new ProjetoModel();
-                            String projeto = pmodel.getProjetoByIdProjeto(id_projeto).getNome();
+            <div id="bancas">
+                <div id="titulo"> <h2> Bancas </h2></div>
+                <table>
+                    <tr>
+                        <th>Projeto</th>
+                        <th>Local</th>
+                        <th>Data</th>
+                        <th>Tipo</th>
 
 
-                        %>
+                    </tr>
+                    <c:forEach varStatus="status" var="banca" items="${bancas}">
+                        <tr>
+                            <td>
 
-                        ${projeto}
-                    </td>
-                    <td>
-                        ${banca.local}
-                    </td>
-                    <td>
-                        ${banca.data}
-                    </td>
-                    <td>
-                        <c:choose>
-                            <c:when test="${banca.tipo == 1}">
-                                Qualificação
-                            </c:when>
-                            <c:when test="${banca.tipo == 2}">
-                                Defesa
-                            </c:when>
-
-
-                        </c:choose>
-
-                    </td>
-
-                </tr>
+                                ${nomeProjetos[status.index]}
+                            </td>
+                            <td>
+                                ${banca.local}
+                            </td>
+                            <td>
+                                ${banca.data}
+                            </td>
+                            <td>
+                                <c:choose>
+                                    <c:when test="${banca.tipo == 1}">
+                                        Qualificação
+                                    </c:when>
+                                    <c:when test="${banca.tipo == 2}">
+                                        Defesa
+                                    </c:when>
 
 
-            </c:forEach>
-        </table>
+                                </c:choose>
+
+                            </td>
+
+                        </tr>
+                    </c:forEach>
+                </table>
+            </div>
+
+
+
+        </main>
         <tags:footer></tags:footer>
     </body>
 </html>

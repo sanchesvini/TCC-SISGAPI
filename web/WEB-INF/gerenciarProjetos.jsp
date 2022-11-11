@@ -23,7 +23,17 @@
     </head>
 
     <body>
-        <tags:headerAdm></tags:headerAdm>
+       <c:choose>
+            <c:when test="${autenticado.tipo == 1}">
+                <tags:headerAdm></tags:headerAdm>
+            </c:when>
+            <c:when test="${autenticado.tipo == 2}">
+                <tags:headerOrient></tags:headerOrient>
+            </c:when>
+            <c:when test="${autenticado.tipo == 3}">
+                <tags:headerAluno></tags:headerAluno>
+            </c:when>
+        </c:choose>
 
             <main class="gerenciar">
             <c:forEach varStatus="status" var="projeto" items="${projetos}">
@@ -64,7 +74,7 @@
 
         </main>
         <tags:footer></tags:footer>
-    </div>
+    
 </body>
 
 </html>

@@ -21,6 +21,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -50,7 +51,6 @@ public class GerenciarProjeto extends HttpServlet {
         try {
             Projeto p = pmodel.getProjetoByIdProjeto(id_projeto);
 
-
             usuarios = udao.getAllUsersProject(p.getId());
 
             for (Usuario usuario : usuarios) {
@@ -65,7 +65,7 @@ public class GerenciarProjeto extends HttpServlet {
             request.setAttribute("orientadores", orientadores);
             //comentários do adm
             request.setAttribute("projeto", p);
-            request.getRequestDispatcher("WEB-INF/grupoAdm.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/gerenciarProjeto.jsp").forward(request, response);
 
         } catch (SQLException ex) {
             Logger.getLogger(GerenciarProjetos.class.getName()).log(Level.SEVERE, null, ex);

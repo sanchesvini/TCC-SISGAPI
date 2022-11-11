@@ -63,10 +63,7 @@ public class ProjetoDAO {
 
         Connection connection = new ConnectionFactory().getConnection();
 
-        //estudantes
-        for (int i = 0; i < id_estudantes.size(); i++) {
-            System.out.println("O ESTUDANTE COM ID: " + id_estudantes.get(i) + " ESTÁ SENDO ADICIONADO AO PROJETO COM ID: " + id_projeto);
-        }
+       
 
         for (int i = 0; i < id_estudantes.size(); i++) {
             PreparedStatement stmt2 = connection.prepareStatement(sql2); //a cada usuario teremos que abrir uma nova conexão para cadastrar um por um
@@ -78,10 +75,7 @@ public class ProjetoDAO {
             //tive que fazer esses métodos separados do adicionar porque estava dando esse erro: INSERT na tabela 'USUARIOSPROJETOS' causou uma violação na restrição de chave estrangeira 'FK_PROJETOS_USUARIOS' para a chave (0).  A instrução foi desfeita.
         }
 
-        //orientadores
-        for (int i = 0; i < id_orientadores.size(); i++) {
-            System.out.println("O ORIENTADOR COM ID: " + id_orientadores.get(i) + " ESTÁ SENDO ADICIONADO AO PROJETO COM ID: " + id_projeto);
-        }
+        
 
         for (int i = 0; i < id_orientadores.size(); i++) {
             PreparedStatement stmt2 = connection.prepareStatement(sql2); //a cada usuario teremos que abrir uma nova conexão para cadastrar um por um
@@ -186,6 +180,21 @@ public class ProjetoDAO {
         }else{
             return null;
         }
+        
+    }
+    public boolean isEstudanteComProjeto(int id_usuario) throws SQLException{
+        
+        String sql = "SELECT up.id_usuario, up.id_projeto FROM USUARIOSPROJETOS WHERE up.id_usuario = ?";
+        
+        Connection connection = new ConnectionFactory().getConnection();
+        PreparedStatement stmt = connection.prepareStatement(sql);
+
+        stmt.setInt(1, id_usuario);
+
+        ResultSet rs = stmt.executeQuery();
+       
+
+        return rs.next();
         
     }
 

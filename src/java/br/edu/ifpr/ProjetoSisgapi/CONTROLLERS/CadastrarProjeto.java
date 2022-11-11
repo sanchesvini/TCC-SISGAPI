@@ -41,7 +41,7 @@ public class CadastrarProjeto extends HttpServlet {
         ArrayList<Usuario> orientadores = null;
         try {
             estudantes = umodel.getAllEstudantesSemProjeto();
-            orientadores = umodel.getAllOrientadoresProjeto();
+            orientadores = umodel.getAllOrientadores();
         } catch (SQLException ex) {
             Logger.getLogger(CadastrarProjeto.class.getName()).log(Level.SEVERE, null, ex);
         }

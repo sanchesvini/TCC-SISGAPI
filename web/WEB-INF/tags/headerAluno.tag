@@ -46,13 +46,16 @@
     <nav>
         <ul class="menu">
             <li class="menu-item">
-                <a href="AdicionarProjeto">Adicionar Projeto</a>
+                <a href="AdicionarProjeto">Gerenciar Projeto</a>
             </li>
             <li class="menu-item">
                 <a href="PlanejarCronograma">Planejar Cronograma</a>
             </li>
             <li class="menu-item">
                 <a href="AbrirCronograma">Acessar Cronograma</a>
+            </li>
+            <li class="menu-item">
+                <a href="VisualizarBancas">Bancas Agendadas</a>
             </li>
         </ul>
     </nav>

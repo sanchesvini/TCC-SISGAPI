@@ -10,6 +10,7 @@ import br.edu.ifpr.ProjetoSisgapi.ENTITIES.Projeto;
 import br.edu.ifpr.ProjetoSisgapi.ENTITIES.Usuario;
 import br.edu.ifpr.ProjetoSisgapi.MODELS.BancaModel;
 import br.edu.ifpr.ProjetoSisgapi.MODELS.ProjetoModel;
+import br.edu.ifpr.ProjetoSisgapi.MODELS.UsuarioModel;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
@@ -37,6 +38,7 @@ public class AgendarBanca extends HttpServlet {
             throws ServletException, IOException {
         
         ProjetoModel pmodel = new ProjetoModel();
+        UsuarioModel umodel = new UsuarioModel();
         
         HttpSession sessao = request.getSession();
         Usuario u = (Usuario) sessao.getAttribute("autenticado");
@@ -44,8 +46,13 @@ public class AgendarBanca extends HttpServlet {
         
         try {
             ArrayList<Projeto> projetos = pmodel.getAllProjetosByIdCurso(id_curso);
+            ArrayList<Usuario> membros = umodel.getAllOrientadoresEMembros();
+            
+            System.out.println(membros.get(0));
+            
             
             request.setAttribute("projetos", projetos);
+            request.setAttribute("membros", membros);
             request.getRequestDispatcher("WEB-INF/agendarBanca.jsp").forward(request, response); 
         } catch (SQLException ex) {
             Logger.getLogger(AgendarBanca.class.getName()).log(Level.SEVERE, null, ex);
@@ -64,9 +71,9 @@ public class AgendarBanca extends HttpServlet {
         int id_projeto = Integer.valueOf(request.getParameter("projeto"));
         String local = request.getParameter("local");
         
-        ArrayList<Long> membros = new ArrayList<>();//criar uma tabela nova no bd para adicionar os membros pq pode ser que alguns não estejam cadastrados no sistema
+        ArrayList<Integer> membros = new ArrayList<>();//criar uma tabela nova no bd para adicionar os membros pq pode ser que alguns não estejam cadastrados no sistema
         String membro1, membro2, membro3, membro4, membro5;
-        Long membro11, membro22, membro33, membro44, membro55;
+        int membro11, membro22, membro33, membro44, membro55;
         
         membro2 = request.getParameter("membro2");
         membro1 = request.getParameter("membro1");
@@ -74,28 +81,29 @@ public class AgendarBanca extends HttpServlet {
         membro4 = request.getParameter("membro4");
         membro5 = request.getParameter("membro5");
         
-        if(!membro1.equals("")){
-            membro11 = Long.parseLong(membro1);
+        if(!membro1.equals("selecione")){
+            membro11 = Integer.parseInt(membro1);
             membros.add(membro11);
         }
-        else if(!membro2.equals("")){
-            membro22 = Long.parseLong(membro2);
+        else if(!membro2.equals("selecione")){
+            membro22 = Integer.parseInt(membro2);
             membros.add(membro22);
-        }
-        else if(!membro3.equals("")){
-            membro33 = Long.parseLong(membro3);
+        }else if(!membro3.equals("selecione")){
+            membro33 = Integer.parseInt(membro3);
             membros.add(membro33);
         }
-        else if(!membro4.equals("")){
-            membro44 = Long.parseLong(membro4);
+        else if(!membro4.equals("selecione")){
+            membro44 = Integer.parseInt(membro4);
             membros.add(membro44);
         }
-        else if(!membro5.equals("")){
-            membro55 = Long.parseLong(membro5);
+        else if(!membro5.equals("selecione")){
+            membro55 = Integer.parseInt(membro5);
             membros.add(membro55);
+        }else{
+            System.out.println("Nenhum membro informado.");
         }
         
-        int tipo = Integer.parseInt(request.getParameter("opcao"));
+        int tipo = Integer.parseInt(request.getParameter("tipoBanca"));
         
         String data = request.getParameter("data");
         

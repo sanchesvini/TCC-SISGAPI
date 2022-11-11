@@ -46,10 +46,13 @@
     <nav>
         <ul class="menu">
             <li class="menu-item">
-                <a href="#">teste</a>
+                <a href="GerenciarProjetos">Gerenciar Projetos</a>
             </li>
             <li class="menu-item">
-                <a href="#"> teste</a>
+                <a href="AcessarMinhasBancas">Minhas Bancas</a>
+            </li>
+            <li class="menu-item">
+                <a href="VisualizarBancas">Bancas Agendadas</a>
             </li>
         </ul>
     </nav>

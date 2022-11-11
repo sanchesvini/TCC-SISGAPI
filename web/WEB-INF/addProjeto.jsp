@@ -6,7 +6,7 @@
 <html lang="pt-BR">
     <head>
         <meta charset="utf-8">
-        <title>Adicionar Projeto</title>
+        <title>gerenciar Projeto</title>
 
         <link rel="stylesheet" type="text/css" href="./CSS/default.css">
         <link rel="stylesheet" type="text/css" href="./CSS/header.css">

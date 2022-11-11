@@ -3,7 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/CONTROLLERS/AbrirCronograma.java</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/WEB-INF/telaCronograma.jsp</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/CONTROLLERS/GerenciarProjeto.java</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/WEB-INF/gerenciarProjetos.jsp</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/WEB-INF/tags/headerAluno.tag</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/CONTROLLERS/AcessarMinhasBancas.java</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/CONTROLLERS/GerenciarProjetos.java</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/WEB-INF/tags/headerAdm.tag</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/WEB-INF/gerenciarProjeto.jsp</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/WEB-INF/tags/headerOrient.tag</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/CONTROLLERS/VisualizarBancas.java</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/WEB-INF/addProjeto.jsp</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/WEB-INF/telaBancaEstudantes.jsp</file>
             <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/CONTROLLERS/CadastrarProjeto.java</file>
         </group>
     </open-files>
