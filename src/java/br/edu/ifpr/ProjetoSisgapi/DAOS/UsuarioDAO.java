@@ -159,7 +159,9 @@ public class UsuarioDAO {
 
         ArrayList<Usuario> usuarios = new ArrayList<>();
 
-        String sql = "SELECT id, nome, id_curso, email, matricula, tipo FROM Usuarios WHERE tipo = 3";
+        String sql = "SELECT u.*, up.*\n"
+                + "FROM Usuarios u LEFT JOIN USUARIOSPROJETOS up on u.ID = up.ID_USUARIO\n"
+                + "WHERE tipo = 3 and up.ID_USUARIO IS NULL";
 
         Connection connection = new ConnectionFactory().getConnection();
         PreparedStatement stmt = connection.prepareStatement(sql);
@@ -171,7 +173,7 @@ public class UsuarioDAO {
             usuarios.add(u);
 
         }
-        if()
+        return usuarios;
     }
 
     public ArrayList<Usuario> getAllOrientadores() throws SQLException {

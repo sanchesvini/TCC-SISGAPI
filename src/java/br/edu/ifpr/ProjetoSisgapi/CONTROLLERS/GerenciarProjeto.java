@@ -39,6 +39,8 @@ public class GerenciarProjeto extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        request.setCharacterEncoding("UTF-8");
         int id_projeto = Integer.valueOf(request.getParameter("id"));
 
         ProjetoModel pmodel = new ProjetoModel();

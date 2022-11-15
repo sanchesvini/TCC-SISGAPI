@@ -20,6 +20,24 @@
         <link rel="stylesheet" type="text/css" href="./CSS/header.css">
 
         <script src="https://unpkg.com/phosphor-icons"></script>
+        
+        <style>
+            .box-projeto{
+                width: 30vw;
+                padding: 2%;
+                margin: 1%;
+                border: 1px solid black;
+                height: 25vh;
+                
+                
+            }
+            .gerenciar{
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+                justify-content: space-between;
+            }
+        </style>
     </head>
 
     <body>
@@ -39,7 +57,7 @@
             <c:forEach varStatus="status" var="projeto" items="${projetos}">
 
                 <form class="form" action="GerenciarProjeto?id=${projeto.id}" method="post">
-                    <fieldset>
+                    <div class="box-projeto">
                         <legend> ${projeto.nome}</legend>
                         <br>
                         <div id="infos-projeto">
@@ -57,18 +75,10 @@
                         </div>
                         <br><br>
 
-                        <div id="prof-pi">
-                            <h4>Professor do Projeto Integrador</h4>
-                            <div>
-                                ${adm.nome}
-                            </div>
-                        </div>
-                        <br><br>
-
                         <div class="botao">
-                            <button type="submit" class="botao" name="acessar projeto">Acessar Projeto</button>
+                            <button type="submit" class="botao">Acessar Projeto</button>
                         </div>
-                    </fieldset>
+                    </div>
                 </form>
             </c:forEach>
 

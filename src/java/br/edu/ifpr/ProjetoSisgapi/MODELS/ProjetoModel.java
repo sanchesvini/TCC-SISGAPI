@@ -6,9 +6,7 @@
 package br.edu.ifpr.ProjetoSisgapi.MODELS;
 
 import br.edu.ifpr.ProjetoSisgapi.DAOS.ProjetoDAO;
-import br.edu.ifpr.ProjetoSisgapi.DAOS.UsuarioDAO;
 import br.edu.ifpr.ProjetoSisgapi.ENTITIES.Projeto;
-import br.edu.ifpr.ProjetoSisgapi.ENTITIES.Usuario;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -22,25 +20,15 @@ public class ProjetoModel {
 
     ProjetoDAO pdao = new ProjetoDAO();
 
-    public void createProject(Projeto p) throws SQLException {
+    public void createProject(Projeto p, ArrayList<Integer> id_estudantes, ArrayList<Integer> id_orientadores) throws SQLException {
 
         try {
-            pdao.addProjeto(p);
+            pdao.linkProjetoToUsuario(p, id_estudantes, id_orientadores);
 
         } catch (SQLException ex) {
             Logger.getLogger(ProjetoModel.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    }
-
-    public void linkProject(Projeto p, ArrayList<Integer> estudantes, ArrayList<Integer> orientadores) throws SQLException {
-
-        int id_projeto = pdao.getIdProjetoByProjeto(p);
-        if (id_projeto != 0) {
-            pdao.linkProjetoToUsuario(id_projeto, estudantes, orientadores);
-        } else {
-            System.out.println("Projeto inexistente.");
-        }
     }
 
     public void anexarTrabalho(byte[] trabalho, String tipo, int id_projeto) throws SQLException {

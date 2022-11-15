@@ -86,41 +86,39 @@
     </head>
     <body>
         <tags:headerAdm></tags:headerAdm>
-
+            
             <main>
                 <div class="box">
                     <form action="CadastrarProjeto" method="POST">
                         <legend>Cadastrar Novo Projeto</legend>
 
                         <div class="inputBox">
-                            <select id="estudantes" name="estudante1">
-                                <option value="selecione">Selecione</option>
+                        <select id="estudantes" name="estudante1">
+                            <option value="0">Selecione</option>
                             <c:forEach varStatus="status" var="estudante" items="${estudantes}">
                                 <option value="${estudante.id}">${estudante.nome}</option>
                             </c:forEach>
-
-
                         </select>
+
                         <select id="estudantes" name="estudante2">
-                            <option value="selecione">Selecione</option>
+                            <option value="0">Selecione</option>
                             <c:forEach varStatus="status" var="estudante" items="${estudantes}">
                                 <option value="${estudante.id}">${estudante.nome}</option>
                             </c:forEach>
-
                         </select>
+
                         <select id="estudantes" name="estudante3">
-                            <option value="selecione">Selecione</option>
+                            <option value="0">Selecione</option>
                             <c:forEach varStatus="status" var="estudante" items="${estudantes}">
                                 <option value="${estudante.id}">${estudante.nome}</option>
                             </c:forEach>
-
                         </select>
+
                         <select id="estudantes" name="estudante4">
-                            <option value="selecione">Selecione</option>
+                            <option value="0">Selecione</option>
                             <c:forEach varStatus="status" var="estudante" items="${estudantes}">
                                 <option value="${estudante.id}">${estudante.nome}</option>
                             </c:forEach>
-
                         </select>
 
                         <label for="estudantes" class="labelInput">Nome dos estudantes:</label>
@@ -128,21 +126,21 @@
 
                     <div class="inputBox">
                         <select name="orientador1">
-                            <option value="selecione">Selecione</option>
+                            <option value="0">Selecione</option>
                             <c:forEach varStatus="status" var="orientador" items="${orientadores}">
                                 <option value="${orientador.id}">${orientador.nome}</option>
                             </c:forEach>
 
                         </select>
                         <select name="orientador2">
-                            <option value="selecione">Selecione</option>
+                            <option value="0">Selecione</option>
                             <c:forEach varStatus="status" var="orientador" items="${orientadores}">
                                 <option value="${orientador.id}">${orientador.nome}</option>
                             </c:forEach>
 
                         </select>
                         <select name="orientador3">
-                            <option value="selecione">Selecione</option>
+                            <option value="0">Selecione</option>
                             <c:forEach varStatus="status" var="orientador" items="${orientadores}">
                                 <option value="${orientador.id}">${orientador.nome}</option>
                             </c:forEach>
@@ -176,6 +174,12 @@
 
         </main>
         <tags:footer></tags:footer>
+        
+        <c:if test="${param.m != null}">
+        <script>
+            alert('${param.m}')
+        </script>
+        </c:if>
 
     </body>
 </html>

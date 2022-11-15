@@ -36,6 +36,8 @@ public class LogarUsuario extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        request.setCharacterEncoding("UTF-8");
+        
         String login = request.getParameter("login");
  
         String senha = request.getParameter("senha");
@@ -46,7 +48,7 @@ public class LogarUsuario extends HttpServlet {
             u = model.login(login, senha);
 
             if (u == null) {
-                response.sendRedirect("LogarUsuario");
+                response.sendRedirect("LogarUsuario?m=Login/senha incorretos.");
            
             } else {
 

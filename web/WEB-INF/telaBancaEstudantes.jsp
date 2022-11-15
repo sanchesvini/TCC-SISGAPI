@@ -98,14 +98,14 @@
 
                 <tags:footer></tags:footer>
 
-            </div>
+                </div>
+
+            <c:if test="${param.m != null}">
+                <script>
+                    alert('${param.m}')
+                </script>
+            </c:if>
     </body>
 
-    <script>
-        function displayMenu() {
-            var menu = document.getElementById('menu');
-            menu.classList.toggle("active");
 
-        }
-    </script>
 </html>

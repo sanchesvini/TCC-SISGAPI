@@ -58,5 +58,11 @@
         </main>
 
         <tags:footer></tags:footer>
+        <c:if test="${param.m != null}">
+        <script>
+            alert('${param.m}')
+        </script>
+        </c:if>
+        
     </body>
 </html>

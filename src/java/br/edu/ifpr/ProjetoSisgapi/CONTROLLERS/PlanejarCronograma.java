@@ -42,6 +42,7 @@ public class PlanejarCronograma extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         
         String atividade = request.getParameter("atividade");
         String prazo = request.getParameter("prazo");
@@ -62,9 +63,10 @@ public class PlanejarCronograma extends HttpServlet {
             Atividade atv = new Atividade(atividade, prazo3, id_projeto);
             AtividadeModel am = new AtividadeModel();
             am.create(atv);
-            response.sendRedirect("AcessarIndex");
+            response.sendRedirect("PlanejarCronograma?m=Atividade adicionada com sucesso.");
         } catch (SQLException ex) {
             Logger.getLogger(PlanejarCronograma.class.getName()).log(Level.SEVERE, null, ex);
+            response.sendRedirect("PlanejarCronograma?m=Erro ao adicionar atividade.");
         }
         
         

@@ -99,7 +99,9 @@
                         <form method="POST" action="AgendarBanca">
                             <label for="projeto">Projeto:</label>
                             <br>
+                            
                             <select name="projeto" id="projeto">
+                                <option value="selecione">Selecione</option>
                             <c:forEach varStatus="status" var="projeto" items="${projetos}">
                                 <option value="${projeto.id}">${projeto.nome}</option>
                             </c:forEach>
@@ -169,6 +171,12 @@
 
 
         <tags:footer></tags:footer>
+        
+        <c:if test="${param.m != null}">
+        <script>
+            alert('${param.m}')
+        </script>
+        </c:if>
     </body>
 
 </html>

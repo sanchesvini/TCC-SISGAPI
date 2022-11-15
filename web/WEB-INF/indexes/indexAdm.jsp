@@ -18,33 +18,35 @@
         <script src="https://unpkg.com/phosphor-icons"></script>
     </head>
     <body>
-        <tags:headerAdm></tags:headerAdm>
-
-
+        <tags:headerAdm></tags:headerAdm>        
             <main>
                 <p>
-                    Sistema de Gerenciamento
-                </p>
-                <p>
-                    do
-                </p>
-                <p>
-                    Projeto Integrador
-                </p>
-                <br>
-                <p>
-                    Organize seu projeto de conclusão
-                </p>
-                <p>
-                    de curso com sua equipe!
+                    Sistema de Gerenciamento 
+            </p>
+            <p>
+                do
+            </p>
+            <p>
+                Projeto Integrador
+            </p>
+            <br>
+            <p>
+                Organize seu projeto de conclusão
+            </p>
+            <p>
+                de curso com sua equipe!
 
-                </p>
+            </p>
 
-            </main>
+        </main>
 
 
         <tags:footer></tags:footer>
-    </div>
-</body>
+        <c:if test="${param.m != null}">
+        <script>
+            alert('${param.m}')
+        </script>
+        </c:if>
+    </body>
 
 </html>

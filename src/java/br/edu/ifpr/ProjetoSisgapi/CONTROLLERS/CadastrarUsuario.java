@@ -35,7 +35,7 @@ public class CadastrarUsuario extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
 
         String nome, email, senha, senha2;
         int tipo, id_curso;
@@ -75,7 +75,7 @@ public class CadastrarUsuario extends HttpServlet {
 //                            request.setAttribute("result", result);
 //                           System.out.println("deu certo 2");
 
-                            response.sendRedirect("AcessarIndex");
+                            response.sendRedirect("CadastrarUsuario?m=Cadastro realizado com sucesso.");
                         }
 
                     } catch (SQLException ex) {
@@ -96,13 +96,13 @@ public class CadastrarUsuario extends HttpServlet {
             try {
                 result = model.createConvidado(u);
                 if (result == true) {
-                    response.sendRedirect("AcessarIndex");
+                    response.sendRedirect("CadastrarUsuario?m=Cadastro realizado com sucesso.");
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(CadastrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
             }
         }else{
-            response.sendRedirect("AcessarIndex");
+            response.sendRedirect("CadastrarUsuario?m=Erro ao realizar cadastro.");
         }
 
     }

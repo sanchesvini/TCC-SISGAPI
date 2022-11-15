@@ -37,6 +37,8 @@ public class DownloadProjeto extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        request.setCharacterEncoding("UTF-8");
         int id_projeto = Integer.parseInt(request.getParameter("id"));
 
         ProjetoModel model = new ProjetoModel();
@@ -53,7 +55,7 @@ public class DownloadProjeto extends HttpServlet {
 
             byte[] arquivoProjeto = p.getProjeto();
             if (arquivoProjeto == null) {
-                response.sendRedirect("AcessarIndex");
+                response.sendRedirect("GerenciarProjeto?id=" + id_projeto +"&m=Não existe arquivo disponível para visualização.");
             } else {
                 response.getOutputStream().write(p.getProjeto());
             }

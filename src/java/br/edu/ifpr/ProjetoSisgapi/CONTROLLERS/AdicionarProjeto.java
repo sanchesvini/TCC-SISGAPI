@@ -87,6 +87,8 @@ public class AdicionarProjeto extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        request.setCharacterEncoding("UTF-8");
+        
         Part part = request.getPart("trabalho");
         
         String tipo = part.getContentType();
@@ -108,11 +110,12 @@ public class AdicionarProjeto extends HttpServlet {
             
             pmodel.anexarTrabalho(trabalho, tipo, id_projeto);
             
-            response.sendRedirect("AcessarIndex");
+            response.sendRedirect("GerenciarProjeto?m=Projeto anexado com sucesso.");
             
             
         } catch (SQLException ex) {
             Logger.getLogger(AdicionarProjeto.class.getName()).log(Level.SEVERE, null, ex);
+            response.sendRedirect("GerenciarProjeto?m=Erro ao anexar projeto.");
         }
         
         

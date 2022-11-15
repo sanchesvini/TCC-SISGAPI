@@ -34,9 +34,9 @@ public class CadastrarProjeto extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //estudantes e orientador
-        
+
         UsuarioModel umodel = new UsuarioModel();
-        
+
         ArrayList<Usuario> estudantes = null;
         ArrayList<Usuario> orientadores = null;
         try {
@@ -45,100 +45,86 @@ public class CadastrarProjeto extends HttpServlet {
         } catch (SQLException ex) {
             Logger.getLogger(CadastrarProjeto.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
-        
+
         request.setAttribute("estudantes", estudantes);
         request.setAttribute("orientadores", orientadores);
-        
+
         request.getRequestDispatcher("WEB-INF/cadastroProjetos.jsp").forward(request, response);
-        
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        request.setCharacterEncoding("UTF-8");
+
         ArrayList<Integer> estudantes = new ArrayList<>();
         ArrayList<Integer> orientadores = new ArrayList<>();
         int estudante11, estudante22, estudante33, estudante44, orientador11, orientador22, orientador33;
         String estudante1, estudante2, estudante3, estudante4, orientador1, orientador2, orientador3;
         String nome_projeto, descricao;
         int tipo, id_curso;
-        
+
         estudante1 = request.getParameter("estudante1");
         estudante2 = request.getParameter("estudante2");
         estudante3 = request.getParameter("estudante3");
         estudante4 = request.getParameter("estudante4");
-        
-        if(!estudante1.equals("selecione")){
+
+        if (!estudante1.equals("0")) {
             estudante11 = Integer.parseInt(estudante1);
             estudantes.add(estudante11);
-        }
-        else if(!estudante2.equals("selecione")){
+        } if (!estudante2.equals("0")) {
             estudante22 = Integer.parseInt(estudante2);
             estudantes.add(estudante22);
-        }else if(!estudante3.equals("selecione")){
+        } if (!estudante3.equals("0")) {
             estudante33 = Integer.parseInt(estudante3);
             estudantes.add(estudante33);
-        }
-        else if(!estudante4.equals("selecione")){
+        } if (!estudante4.equals("0")) {
             estudante44 = Integer.parseInt(estudante4);
             estudantes.add(estudante44);
-        }else{
+        } else {
             System.out.println("Nenhum estudante informado.");
         }
-        
-        
+
         orientador1 = request.getParameter("orientador1");
         orientador2 = request.getParameter("orientador2");
         orientador3 = request.getParameter("orientador3");
-        
-        if(!orientador1.equals("selecione")){
+
+        if (!orientador1.equals("0")) {
             orientador11 = Integer.parseInt(orientador1);
             orientadores.add(orientador11);
-        }else if(!orientador2.equals("selecione")){
+        } else if (!orientador2.equals("0")) {
             orientador22 = Integer.parseInt(orientador2);
             orientadores.add(orientador22);
-        }
-        else if(!orientador3.equals("selecione")){
+        }else if (!orientador3.equals("0")) {
             orientador33 = Integer.parseInt(orientador3);
             orientadores.add(orientador33);
-        }else{
+        } else {
             System.out.println("Nenhum orientador informado.");
         }
-        
-        
-        
+
         descricao = request.getParameter("descricao");
-        
+
         nome_projeto = request.getParameter("projeto");
-        
+
         tipo = Integer.parseInt(request.getParameter("informacao"));
-        
+
         HttpSession sessao = request.getSession();
         Usuario adm = (Usuario) sessao.getAttribute("autenticado");
         id_curso = adm.getId_curso();
-        
+
         Projeto projeto = new Projeto(nome_projeto, descricao, tipo, id_curso);
-  
-        
+
         ProjetoModel pmodel = new ProjetoModel();
-        
-  
-        try {
-            
-            for (Integer orientador : orientadores) {
-                System.out.println(orientador);
-                
-            }
-            pmodel.createProject(projeto);
-            pmodel.linkProject(projeto, estudantes, orientadores);
-            response.sendRedirect("AcessarIndex");
+
+        try { 
+            pmodel.createProject(projeto, estudantes, orientadores);
+            response.sendRedirect("CadastrarProjeto?m=Projeto cadastrado com sucesso!");
         } catch (SQLException ex) {
             Logger.getLogger(CadastrarProjeto.class.getName()).log(Level.SEVERE, null, ex);
+            response.sendRedirect("CadastrarProjeto?m=Erro ao cadastrar projeto.");
         }
-        
-    }
 
+    }
 
 }
