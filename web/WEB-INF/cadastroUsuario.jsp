@@ -41,6 +41,7 @@
                 text-align: center;
                 border-radius: 8px;
                 width: 30vw;
+                margin-top: 5%;
             }
             .inputBox{
                 position: relative;

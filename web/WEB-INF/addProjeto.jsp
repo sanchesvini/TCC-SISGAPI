@@ -23,33 +23,37 @@
                     <h4>Estudantes</h4>
                     <div id="nome-estudantes">
                     <c:forEach varStatus="status" var="estudante" items="${estudantes}">
-                        ${estudante.nome}
+                        <div>
+                            ${estudante.nome}
+                        </div>
                     </c:forEach>
                 </div>
             </div>
-            <br><br>
+            
             <div id="orientadores">
                 <h3>Orientadores</h3>
                 <div id="nome-orientadores">
                     <c:forEach varStatus="status" var="orientador" items="${orientadores}">
-                        ${orientador.nome}
+                        <div>
+                            ${orientador.nome}
+                        </div>
                     </c:forEach>
                 </div>
             </div>
-            <br><br>
+            
             <div id="trab-em-andamento">
                 <fieldset>
                     <legend>Trabalho em andamento</legend>
-                    <div class="file">
+                    
+                    <div id="trab-andamento-interno">
                         <form method="post" action="AdicionarProjeto" enctype="multipart/form-data">
+                            <i class="ph-folder-open" style="font-size: 2em"></i>
                             <input type="file" name="trabalho" value="Enviar">
 
-                            <input type="submit" name="enviar" value="Enviar">
+                            <input type="submit" name="enviar" value="Enviar" id="sub-file">
                         </form>
                     </div>
-                    <div>
-                        Comentários do Professor do Projeto Integrador
-                    </div>
+                    
 
 
                 </fieldset>

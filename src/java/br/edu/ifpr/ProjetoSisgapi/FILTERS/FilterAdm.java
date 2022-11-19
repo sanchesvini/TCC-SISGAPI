@@ -25,7 +25,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author vinic
  */
-@WebFilter(filterName = "FilterAdm", servletNames = {"CadastrarUsuario"})
+@WebFilter(filterName = "FilterAdm", servletNames = {"CadastrarUsuario", "CadastrarProjeto", "AgendarBanca"})
 public class FilterAdm implements Filter {
     
  

@@ -55,7 +55,10 @@
                 <a href="AbrirCronograma">Acessar Cronograma</a>
             </li>
             <li class="menu-item">
-                <a href="VisualizarBancas">Bancas Agendadas</a>
+                <a href="AcessarBancas">Todas Bancas Agendadas</a>
+            </li>
+            <li class="menu-item">
+                <a href="AcessarMinhasBancas">Minhas Bancas</a>
             </li>
         </ul>
     </nav>

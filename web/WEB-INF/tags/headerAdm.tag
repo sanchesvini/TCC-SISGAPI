@@ -58,7 +58,10 @@
                 <a href="AgendarBanca">Agendar Banca</a>
             </li>
             <li class="menu-item">
-                <a href="VisualizarBancas">Bancas Agendadas</a>
+                <a href="AcessarBancas">Todas Bancas Agendadas</a>
+            </li>
+            <li class="menu-item">
+                <a href="AcessarMinhasBancas">Minhas Bancas</a>
             </li>
 
 

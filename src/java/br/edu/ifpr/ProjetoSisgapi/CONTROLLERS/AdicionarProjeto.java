@@ -110,12 +110,12 @@ public class AdicionarProjeto extends HttpServlet {
             
             pmodel.anexarTrabalho(trabalho, tipo, id_projeto);
             
-            response.sendRedirect("GerenciarProjeto?m=Projeto anexado com sucesso.");
+            response.sendRedirect("GerenciarProjeto?id="+id_projeto+"&m=Projeto anexado com sucesso.");
             
             
         } catch (SQLException ex) {
             Logger.getLogger(AdicionarProjeto.class.getName()).log(Level.SEVERE, null, ex);
-            response.sendRedirect("GerenciarProjeto?m=Erro ao anexar projeto.");
+            response.sendRedirect("AcessarIndex?m=Erro ao anexar projeto.");
         }
         
         

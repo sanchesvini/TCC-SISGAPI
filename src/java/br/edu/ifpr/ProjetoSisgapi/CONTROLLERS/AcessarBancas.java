@@ -6,6 +6,7 @@
 package br.edu.ifpr.ProjetoSisgapi.CONTROLLERS;
 
 import br.edu.ifpr.ProjetoSisgapi.ENTITIES.Banca;
+import br.edu.ifpr.ProjetoSisgapi.ENTITIES.Usuario;
 import br.edu.ifpr.ProjetoSisgapi.MODELS.BancaModel;
 import br.edu.ifpr.ProjetoSisgapi.MODELS.ProjetoModel;
 import java.io.IOException;
@@ -19,6 +20,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -61,7 +63,15 @@ public class AcessarBancas extends HttpServlet {
         
         request.setAttribute("bancas", bancas);
         request.setAttribute("nomeProjetos", nomeProjetos);
-        request.getRequestDispatcher("bancasGeral.jsp").forward(request, response);
+        
+        HttpSession sessao = request.getSession();
+        Usuario u = (Usuario) sessao.getAttribute("autenticado");
+        
+        if(u != null){
+            request.getRequestDispatcher("WEB-INF/bancasGeral.jsp").forward(request, response);
+        }else{
+            request.getRequestDispatcher("bancasGeral.jsp").forward(request, response);
+        }
     }
 
 

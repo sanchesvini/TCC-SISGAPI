@@ -115,6 +115,26 @@ public class BancaDAO {
         }
         return bancas;
     }
+    public ArrayList<Banca> getMinhasBancas(int id_usuario) throws SQLException{
+        String sql = "SELECT b.id, b.id_projeto, b.data, b.local, b.tipo FROM BANCAS AS b INNER JOIN USUARIOSBANCAS AS ub ON b.id = ub.id_banca AND ub.id_usuario = ?";
+        
+        Connection connection = new ConnectionFactory().getConnection();
+        PreparedStatement stmt = connection.prepareStatement(sql); 
+        
+        stmt.setInt(1, id_usuario);
+       
+        ResultSet rs = stmt.executeQuery();
+        
+        ArrayList<Banca> bancas = new ArrayList();
+        
+        Banca banca = null;
+        while(rs.next()){
+            banca = new Banca(rs.getInt("ID"), rs.getInt("ID_PROJETO"), rs.getDate("DATA"), rs.getString("LOCAL"), rs.getInt("TIPO"));
+            bancas.add(banca);
+            
+        }
+        return bancas;
+    }
     
 }
 

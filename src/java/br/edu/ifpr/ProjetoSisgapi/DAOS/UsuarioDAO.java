@@ -195,11 +195,11 @@ public class UsuarioDAO {
         return usuarios;
     }
 
-    public ArrayList<Usuario> getAllOrientadoresEMebros() throws SQLException {
+    public ArrayList<Usuario> getAllOrientadoresEMembros() throws SQLException {
 
         ArrayList<Usuario> usuarios = new ArrayList<>();
 
-        String sql = "SELECT id, nome, id_curso, email, matricula, tipo FROM Usuarios WHERE tipo = 2 OR tipo = 4";
+        String sql = "SELECT id, nome, id_curso, email, matricula, tipo FROM Usuarios WHERE tipo = 2 OR tipo = 4 OR tipo = 1";
 
         Connection connection = new ConnectionFactory().getConnection();
         PreparedStatement stmt = connection.prepareStatement(sql);

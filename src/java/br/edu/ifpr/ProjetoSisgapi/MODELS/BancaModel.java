@@ -39,4 +39,7 @@ public class BancaModel {
     public ArrayList<Banca> getAllBancas() throws SQLException{
         return bdao.getAllBancas();
     }
+    public ArrayList<Banca> getMinhasBancas(int id_usuario) throws SQLException{
+        return bdao.getMinhasBancas(id_usuario);
+    }
 }

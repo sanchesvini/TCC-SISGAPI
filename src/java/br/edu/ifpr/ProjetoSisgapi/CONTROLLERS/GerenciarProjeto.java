@@ -33,14 +33,9 @@ public class GerenciarProjeto extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-    }
+        HttpSession sessao = request.getSession();
+        Usuario u = (Usuario) sessao.getAttribute("autenticado");
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
-        request.setCharacterEncoding("UTF-8");
         int id_projeto = Integer.valueOf(request.getParameter("id"));
 
         ProjetoModel pmodel = new ProjetoModel();
@@ -52,6 +47,15 @@ public class GerenciarProjeto extends HttpServlet {
 
         try {
             Projeto p = pmodel.getProjetoByIdProjeto(id_projeto);
+
+            byte[] arquivoProjeto = p.getProjeto();
+            String nomeArquivo;
+
+            if (arquivoProjeto != null) {
+                nomeArquivo = p.getNome().concat(p.getTipo_arquivo());
+            } else {
+                nomeArquivo = "Não há arquivo anexado.";
+            }
 
             usuarios = udao.getAllUsersProject(p.getId());
 
@@ -67,11 +71,77 @@ public class GerenciarProjeto extends HttpServlet {
             request.setAttribute("orientadores", orientadores);
             //comentários do adm
             request.setAttribute("projeto", p);
-            request.getRequestDispatcher("WEB-INF/gerenciarProjeto.jsp").forward(request, response);
+            request.setAttribute("nomeArquivo", nomeArquivo);
 
+            if (u.getTipo() == 1 || u.getTipo() == 2) {
+                
+                request.getRequestDispatcher("WEB-INF/gerenciarProjeto.jsp").forward(request, response);
+            } else {
+                if(p != null){
+                    request.getRequestDispatcher("WEB-INF/addProjeto.jsp").forward(request, response);
+                }else{
+                    response.sendRedirect("AcessarIndex?m=Não foi encontrado nenhum projeto.");
+                }
+                
+            }
         } catch (SQLException ex) {
             Logger.getLogger(GerenciarProjetos.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        HttpSession sessao = request.getSession();
+        Usuario u = (Usuario) sessao.getAttribute("autenticado");
+
+        int id_projeto = Integer.valueOf(request.getParameter("id"));
+
+        ProjetoModel pmodel = new ProjetoModel();
+        UsuarioDAO udao = new UsuarioDAO();
+        UsuarioModel umodel = new UsuarioModel();
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+        ArrayList<Usuario> estudantes = new ArrayList<>();
+        ArrayList<Usuario> orientadores = new ArrayList<>();
+
+        try {
+            Projeto p = pmodel.getProjetoByIdProjeto(id_projeto);
+
+            byte[] arquivoProjeto = p.getProjeto();
+            String nomeArquivo;
+
+            if (arquivoProjeto != null) {
+                nomeArquivo = p.getNome() + "." + p.getTipo_arquivo();
+            } else {
+                nomeArquivo = "Não há arquivo anexado.";
+            }
+
+            usuarios = udao.getAllUsersProject(p.getId());
+
+            for (Usuario usuario : usuarios) {
+                if (umodel.isEstudante(usuario)) {
+                    estudantes.add(usuario);
+                } else if (umodel.isOrientador(usuario)) {
+                    orientadores.add(usuario);
+                }
+            }
+
+            request.setAttribute("estudantes", estudantes);
+            request.setAttribute("orientadores", orientadores);
+            //comentários do adm
+            request.setAttribute("projeto", p);
+            request.setAttribute("nomeArquivo", nomeArquivo);
+
+            if (u.getTipo() == 1 || u.getTipo() == 2) {
+                request.getRequestDispatcher("WEB-INF/gerenciarProjeto.jsp").forward(request, response);
+            } else {
+                request.getRequestDispatcher("WEB-INF/addProjeto.jsp").forward(request, response);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(GerenciarProjetos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
 }

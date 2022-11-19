@@ -3,19 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/DAOS/ProjetoDAO.java</file>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/login.jsp</file>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/bancasGeral.jsp</file>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/MODELS/BancaModel.java</file>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/CSS/header.css</file>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/MODELS/ProjetoModel.java</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/WEB-INF/bancasGeral.jsp</file>
             <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/CSS/default.css</file>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/WEB-INF/tags/headerAdm.tag</file>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/WEB-INF/cadastroUsuario.jsp</file>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/CONTROLLERS/VisualizarBancas.java</file>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/CONTROLLERS/AgendarBanca.java</file>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/CONTROLLERS/CadastrarProjeto.java</file>
-            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/WEB-INF/agendarBanca.jsp</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/login.jsp</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/FILTERS/FilterOrientador.java</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/index.html</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/WEB-INF/gerenciarProjeto.jsp</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/FILTERS/FilterAutenticado.java</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/web/WEB-INF/tags/headerOrient.tag</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/DAOS/BancaDAO.java</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/CONTROLLERS/CadastrarUsuario.java</file>
+            <file>file:/C:/Users/vinic/OneDrive/Documentos/NetBeansProjects/TCC-SISGAPI-master/src/java/br/edu/ifpr/ProjetoSisgapi/FILTERS/FilterAdm.java</file>
         </group>
     </open-files>
 </project-private>

@@ -41,7 +41,7 @@ nav li a {
   white-space: nowrap;
   text-decoration: none;
   border-bottom: 3px solid rgb(0, 119, 255);
-  font-size: 1.4em;
+  font-size: 1em;
 }
 
 nav li a:hover {

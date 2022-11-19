@@ -7,26 +7,46 @@
         <meta charset="utf-8">
         <title>Visualizar Projeto</title>
 
-        <link rel="stylesheet" type="text/css" href="CSS/addProjeto.css">
-
         <link rel="stylesheet" type="text/css" href="./CSS/default.css">
         <link rel="stylesheet" type="text/css" href="./CSS/header.css">
 
         <script src="https://unpkg.com/phosphor-icons"></script>
+
+        <style>
+            #erro{
+                color: #ff9900;
+            }
+            #nome-estudantes, #nome-orientadores{
+                margin: 2% 0;
+            }
+            #titulo-projeto{
+                margin: 2% 0;
+            }
+        </style>
     </head>
     <body>
-        <tags:headerAdm></tags:headerAdm>
+        <c:choose>
+            <c:when test="${autenticado.tipo == 1}">
+                <tags:headerAdm></tags:headerAdm>
+            </c:when>
+            <c:when test="${autenticado.tipo == 2}">
+                <tags:headerOrient></tags:headerOrient>
+            </c:when>
+            <c:when test="${autenticado.tipo == 3}">
+                <tags:headerAluno></tags:headerAluno>
+            </c:when>
+        </c:choose>
             <main>
 
                 <div class="parent">
 
-                    <h3>${projeto.nome}</h3>
+                    <h3 id="titulo-projeto">${projeto.nome}</h3>
 
                 <div id="estudantes">
                     <h3>Estudantes</h3>
                     <div id="nome-estudantes">
                         <c:forEach varStatus="status" var="estudante" items="${estudantes}">
-                            ${estudante.nome}
+                            <div>${estudante.nome}</div>
                         </c:forEach>
                     </div>
                 </div>
@@ -34,25 +54,25 @@
                     <h3>Orientadores</h3>
                     <div id="nome-orientadores">
                         <c:forEach varStatus="status" var="orientador" items="${orientadores}">
-                            ${orientador.nome}
+                            <div>${orientador.nome}</div>
                         </c:forEach>
                     </div>
                 </div>
                 <div id="trab-em-andamento">
                     <fieldset>
                         <legend>Trabalho em andamento</legend>
-                        <div>
+                        <div id="trab-andamento-interno">
                             <form method="post" action="DownloadProjeto?id=${projeto.id}">
-                                ICONE ARQUIVO
+                                <i class="ph-folder-open" style="font-size: 2em"></i>
 
-                                <button type="submit" > Download</button>
+                                ${nomeArquivo}
 
+                                <button type="submit" id="sub-file"> Download</button>
+                                <div hidden id="erro">Não existe arquivo disponível para visualização.</div>
 
                             </form>
                         </div>
-                        <div>
-                            Comentários do Professor do Projeto Integrador
-                        </div>
+                        
 
 
                     </fieldset>
@@ -60,16 +80,16 @@
 
             </div>
         </main>
-
-
         <tags:footer></tags:footer>
-        
         <c:if test="${param.m != null}">
-        <script>
-            alert('${param.m}')
-        </script>
+            <script>
+
+
+                document.getElementById('erro').hidden = false;
+
+            </script>
+
         </c:if>
-    
-</body>
+    </body>
 
 </html>

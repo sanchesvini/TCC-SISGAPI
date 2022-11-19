@@ -23,11 +23,12 @@
 
             }
             .box{
+                
+                
+                align-self: center;
+                justify-content: space-between;
+                align-content: center;
                 color: black;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
                 background-color: white;
                 border-radius: 15px;
                 width: 30%;
@@ -40,9 +41,11 @@
                 padding: 10px;
                 text-align: center;
                 border-radius: 8px;
+                margin-top: 5%;
             }
             .inputBox{
                 position: relative;
+                margin: 3%;
             }
             .inputUser{
                 background: none;
@@ -51,11 +54,11 @@
                 outline: none;
                 color: black;
                 font-size: 15px;
-                width: 100%;
+                
                 letter-spacing: 2px;
             }
             .labelInput{
-                position: absolute;
+                
                 top: 0px;
                 left: 0px;
                 pointer-events: none;
@@ -87,19 +90,21 @@
             .radio{
                 display: inline;
             }
+            
         </style>
     </head>
     <body>
         <tags:headerAdm></tags:headerAdm>
             <main>
                 <div class="box">
-                    <legend><b>Agendar Banca</b></legend>
-                    <br><br>
+                    <legend>Agendar Banca</legend>
+                   
                     <div class="inputBox">
                         <form method="POST" action="AgendarBanca">
+                            <div>
                             <label for="projeto">Projeto:</label>
-                            <br>
-                            
+                            </div>
+                       
                             <select name="projeto" id="projeto">
                                 <option value="selecione">Selecione</option>
                             <c:forEach varStatus="status" var="projeto" items="${projetos}">
@@ -109,8 +114,9 @@
 
 
 
-
+                            <div>
                         <label for="imembros" class="labelInput">Membros da Banca:</label>
+                             </div>
                         <select name="membro1" id="imembros">
                             <option value="selecione">Selecione</option>
                             <c:forEach varStatus="status" var="membro" items="${membros}">
@@ -148,12 +154,14 @@
                         </select>
 
                         <div class="inputBox">
-                            <input type="text" name="local" id="ilocal" class="inputUser" required>
                             <label for="ilocal" class="labelInput">Local</label>
+                            <input type="text" name="local" id="ilocal" class="inputUser" required>
+                            
                         </div>
                         <div class="inputBox">
-                            <input type="date" name="data" id="data" class="inputUser" required>
                             <label for="data" class="labelInput">Data</label>
+                            <input type="date" name="data" id="data" class="inputUser" required>
+                            
                         </div>
                         <div class="inputBox radio-inp">
                             <input type="radio" name="tipoBanca" id="ibanca1" class="inputUser" value="1" required>

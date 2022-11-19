@@ -35,10 +35,11 @@
                 text-align: center;
                 border-radius: 8px;
                 width: 30vw;
+                margin-top: 5%;
             }
             .inputBox{
                 position: relative;
-                margin: 6%;
+                margin: 3%;
 
 
             }
@@ -48,12 +49,12 @@
                 border-bottom: 1px solid black;
                 outline: none;
                 color: black;
-                font-size: 15px;
-                width: 25vw;
+                display: block;
+                width: 30vw;
                 letter-spacing: 2px;
             }
             .labelInput{
-                position: absolute;
+                
                 top: 0px;
                 left: 0px;
                 pointer-events: none;
@@ -79,7 +80,10 @@
                 color: black;   /* enviar*/
             }
             select{
-                margin-top: 8%;
+                margin: 4% 0;
+                display: flex;
+                justify-content: center;
+                align-content: center;
             }
         </style>
 
@@ -93,6 +97,7 @@
                         <legend>Cadastrar Novo Projeto</legend>
 
                         <div class="inputBox">
+                            <label for="estudantes" class="labelInput">Nome dos estudantes:</label>
                         <select id="estudantes" name="estudante1">
                             <option value="0">Selecione</option>
                             <c:forEach varStatus="status" var="estudante" items="${estudantes}">
@@ -121,10 +126,12 @@
                             </c:forEach>
                         </select>
 
-                        <label for="estudantes" class="labelInput">Nome dos estudantes:</label>
+                        
                     </div>
 
                     <div class="inputBox">
+                        
+                        <label for="orientadores" class="labelInput">Orientadores(as):</label>
                         <select name="orientador1">
                             <option value="0">Selecione</option>
                             <c:forEach varStatus="status" var="orientador" items="${orientadores}">
@@ -147,26 +154,29 @@
 
                         </select>
 
-                        <label for="orientadores" class="labelInput">Orientadores(as):</label>
+                        
                     </div>
 
                     <div class="inputBox">
-                        <input type="text" name="projeto" id="projeto" class="inputUser" required>
                         <label for="projeto" class="labelInput">Projeto:</label>
+                        <input type="text" name="projeto" id="projeto" class="inputUser" required>
+                        
 
                     </div>
 
                     <div class="inputBox">
+                        <label for="idescricao" class="labelInput">Descrição do Projeto:</label>
                         <input type="text" name="descricao" id="idescricao" class="inputUser" required>
-                        <label for="idescricao" class="labelInput">Descrição do Projeto</label>
+                        
                     </div>
 
                     <div class="inputBox">
+                        <label for="informacao" class="labelInput">Informações:</label>
                         <select name="informacao" id="informacao">
                             <option value="1">Monografia</option><br><br>
                             <option value="2">Artigo Científico</option>
                         </select>
-                        <label for="informacao" class="labelInput">Informações</label>
+                        
                     </div>
                     <input type="submit" name="submit" id="submit">
                 </form>

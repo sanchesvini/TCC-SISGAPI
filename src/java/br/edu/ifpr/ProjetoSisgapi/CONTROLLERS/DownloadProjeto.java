@@ -55,7 +55,9 @@ public class DownloadProjeto extends HttpServlet {
 
             byte[] arquivoProjeto = p.getProjeto();
             if (arquivoProjeto == null) {
-                response.sendRedirect("GerenciarProjeto?id=" + id_projeto +"&m=Não existe arquivo disponível para visualização.");
+                
+                //arrumar a mensagem de erro
+                response.sendRedirect("GerenciarProjeto?id="+id_projeto+"&m=erro");
             } else {
                 response.getOutputStream().write(p.getProjeto());
             }

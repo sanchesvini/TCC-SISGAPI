@@ -20,28 +20,27 @@
         <link rel="stylesheet" type="text/css" href="./CSS/header.css">
 
         <script src="https://unpkg.com/phosphor-icons"></script>
-        
+
         <style>
             .box-projeto{
-                width: 30vw;
+                width: 25vw;
                 padding: 2%;
                 margin: 1%;
                 border: 1px solid black;
-                height: 25vh;
+                height: 15vh;
+
+
+            }
+            main{
                 
                 
             }
-            .gerenciar{
-                display: flex;
-                flex-wrap: wrap;
-                align-content: center;
-                justify-content: space-between;
-            }
+
         </style>
     </head>
 
     <body>
-       <c:choose>
+        <c:choose>
             <c:when test="${autenticado.tipo == 1}">
                 <tags:headerAdm></tags:headerAdm>
             </c:when>
@@ -53,38 +52,40 @@
             </c:when>
         </c:choose>
 
-            <main class="gerenciar">
-            <c:forEach varStatus="status" var="projeto" items="${projetos}">
+        <main>
 
-                <form class="form" action="GerenciarProjeto?id=${projeto.id}" method="post">
-                    <div class="box-projeto">
-                        <legend> ${projeto.nome}</legend>
-                        <br>
-                        <div id="infos-projeto">
+            <div class="gerenciar">
+                <c:forEach varStatus="status" var="projeto" items="${projetos}">
+                    <div class="gerenciar-box">
+                        <form class="form" action="GerenciarProjeto?id=${projeto.id}" method="POST">
+                            <div class="box-projeto">
+                                <legend> ${projeto.nome}</legend>
+                                <br>
+                                <div id="infos-projeto">
 
-                            <p>${projeto.descricao}</p>
-                            <c:choose>
-                                <c:when test="${projeto.id_curso == 1}">
-                                    <p>Técnico em Informática</p>
-                                </c:when>
-                                <c:when test="${projeto.id_curso == 2}">
-                                    <p>Técnico em Produção de Moda</p>
-                                </c:when>
-                            </c:choose>
+                                    <p>${projeto.descricao}</p>
+                                    <c:choose>
+                                        <c:when test="${projeto.id_curso == 1}">
+                                            <p>Técnico em Informática</p>
+                                        </c:when>
+                                        <c:when test="${projeto.id_curso == 2}">
+                                            <p>Técnico em Produção de Moda</p>
+                                        </c:when>
+                                    </c:choose>
 
-                        </div>
-                        <br><br>
-
-                        <div class="botao">
-                            <button type="submit" class="botao">Acessar Projeto</button>
-                        </div>
+                                </div>
+                                
+                                <div class="botao">
+                                    <button type="submit">Acessar Projeto</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                </form>
-            </c:forEach>
-
+                </c:forEach>
+            </div>
         </main>
         <tags:footer></tags:footer>
-    
-</body>
+
+    </body>
 
 </html>

@@ -110,7 +110,7 @@
                 </div>
                 <br><br><br>
 
-                <input type="submit" name="enviar" id="inp-entrar" value = "Entrar">
+                <input type="submit" name="enviar" id="inp-entrar" value = "Entrar" style="color: white">
 
             </form>
         </div>

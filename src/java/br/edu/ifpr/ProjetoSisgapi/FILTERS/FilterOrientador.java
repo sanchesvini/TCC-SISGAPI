@@ -25,28 +25,26 @@ import javax.servlet.http.HttpSession;
  *
  * @author vinic
  */
-@WebFilter(filterName = "FilterAutenticado", servletNames = {"CadastrarUsuario", "CadastrarProjeto", "AbrirCronograma", "AcessarMinhasBancas", "AdicionarProjeto", "AgendarBanca", "DownloadProjeto", "GerenciarProjeto", "GerenciarProjetos", "PlanejarCronograma", "Sair"})
-public class FilterAutenticado implements Filter {
-    
-    
-    public void doFilter(ServletRequest request, ServletResponse response,
+@WebFilter(filterName = "FilterOrientador", servletNames = {"GerenciarProjetos"})
+public class FilterOrientador implements Filter {
+  
+    public void doFilter(ServletRequest req, ServletResponse res,
             FilterChain filter)
             throws IOException, ServletException {
-         HttpServletRequest req = (HttpServletRequest) request;
-        HttpServletResponse res = (HttpServletResponse) response;
         
-        HttpSession sessao = req.getSession();
+        HttpServletRequest request = (HttpServletRequest) req;
+        HttpServletResponse response = (HttpServletResponse) res;
+        
+        HttpSession sessao = request.getSession();
         Usuario u = (Usuario) sessao.getAttribute("autenticado");
-        if(u == null){
-            res.sendRedirect("index.html");
+        if(u.getTipo() == 2 || u.getTipo() == 1){
+            System.out.println("FILTER ORIENTADOR");
+            filter.doFilter(req, res);
+           
         }else{
-            filter.doFilter(request, response);
-            System.out.println("CHEGUEI AQUI================================ FILTER AUTENTICADO");
-
+            response.sendRedirect("index.html");
         }
 
         
     }
-
-   
 }
