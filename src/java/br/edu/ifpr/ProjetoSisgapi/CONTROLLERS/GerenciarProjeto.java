@@ -124,6 +124,7 @@ public class GerenciarProjeto extends HttpServlet {
                     estudantes.add(usuario);
                 } else if (umodel.isOrientador(usuario)) {
                     orientadores.add(usuario);
+                    System.out.println(usuario.getNome());
                 }
             }
 

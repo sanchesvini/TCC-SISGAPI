@@ -93,10 +93,10 @@ public class CadastrarProjeto extends HttpServlet {
         if (!orientador1.equals("0")) {
             orientador11 = Integer.parseInt(orientador1);
             orientadores.add(orientador11);
-        } else if (!orientador2.equals("0")) {
+        } if (!orientador2.equals("0")) {
             orientador22 = Integer.parseInt(orientador2);
             orientadores.add(orientador22);
-        }else if (!orientador3.equals("0")) {
+        } if (!orientador3.equals("0")) {
             orientador33 = Integer.parseInt(orientador3);
             orientadores.add(orientador33);
         } else {
