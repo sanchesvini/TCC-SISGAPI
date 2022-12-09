@@ -50,3 +50,9 @@ Foram utilizadas tecnologias abordadas durante todo o curso, as quais, os contri
 
 ![Diagrama Relacional de Banco de Dados](https://github.com/sanchesvini/imgs/blob/main/diagramaV3.png)
 
+## 5. Autores
+
+- Natalia de Souza
+- Sara Juliane
+- Vinicius Sanches
+
