@@ -27,4 +27,26 @@ Foram utilizadas tecnologias abordadas durante todo o curso, as quais, os contri
 - CSS Flexbox 
 - Java Script
 
-### 2.3 
+### 2.3 Em Implantação
+
+## 3. Layout do sistema
+
+### 3.1 Tela de Início
+
+
+### 3.2 Tela de Administrador Logado
+
+![Tela de Administrador Logado](https://github.com/sanchesvini/imgs/blob/main/telaAdmLogado.png)
+
+### 3.3 Tela de Orientador Logado
+
+![Tela de Orientador Logado](https://github.com/sanchesvini/imgs/blob/main/telaOrientadorLogado.png)
+
+### 3.4 Tela de Estudante Logado
+
+![Tela de Estudante Logado](https://github.com/sanchesvini/imgs/blob/main/telaEstudanteLogado.png)
+
+## 4. Diagrama Relacional de Banco de Dados
+
+![Diagrama Relacional de Banco de Dados](https://github.com/sanchesvini/imgs/blob/main/diagramaV3.png)
+
